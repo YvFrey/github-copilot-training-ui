@@ -1,19 +1,35 @@
 import React from "react";
 import { Lock, Clock, ArrowRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface ModulePlaceholderProps {
   title: string;
   subtitle: string;
   icon: React.ReactNode;
+  difficulty?: "Beginner" | "Intermediate" | "Advanced";
 }
 
-export function ModulePlaceholder({ title, subtitle, icon }: ModulePlaceholderProps) {
+export function ModulePlaceholder({ title, subtitle, icon, difficulty }: ModulePlaceholderProps) {
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 md:p-12 text-center">
       <div className="inline-flex items-center justify-center p-6 bg-gray-50 rounded-full mb-6">
         {icon}
       </div>
-      <h2 className="text-3xl font-bold text-gray-900 mb-3">{title}</h2>
+      
+      <div className="flex items-center justify-center gap-3 mb-3">
+        <h2 className="text-3xl font-bold text-gray-900">{title}</h2>
+        {difficulty && (
+          <span className={cn(
+            "text-sm px-3 py-1 rounded-full border font-medium",
+            difficulty === "Beginner" && "bg-green-100 text-green-700 border-green-200",
+            difficulty === "Intermediate" && "bg-blue-100 text-blue-700 border-blue-200",
+            difficulty === "Advanced" && "bg-purple-100 text-purple-700 border-purple-200"
+          )}>
+            {difficulty}
+          </span>
+        )}
+      </div>
+      
       <p className="text-xl text-gray-500 mb-8">{subtitle}</p>
       
       <div className="max-w-md mx-auto bg-indigo-50 rounded-xl p-6 border border-indigo-100">

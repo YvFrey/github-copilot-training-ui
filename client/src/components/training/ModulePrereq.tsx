@@ -30,6 +30,9 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
             <p className="text-indigo-800">
               The training is based on a <strong>simple FastAPI application</strong>, manageable by any engineer familiar with foundational programming concepts. We expect everyone to <strong>explore the capabilities and limitations of GitHub Copilot</strong>. You'll learn how to prompt effectively, use agentic features safely, and validate generated code.
             </p>
+            <p className="text-indigo-800 mt-4">
+              We encourage you to discuss actively with your colleagues during the session, and <strong>manifest your new learned skills</strong> by continuing to practice the concepts outside of the classroom.
+            </p>
           </div>
         </div>
       </div>
@@ -40,6 +43,7 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
           <CheckCircle2 className="w-6 h-6 text-green-500 mr-2" />
           Prerequisites Checklist
         </h3>
+        <p className="text-gray-600 mb-4">To ensure a smooth session, please ensure the following items are verified <em>before</em> the start of the hands-on session:</p>
         
         <div className="grid gap-2">
           {[
@@ -105,7 +109,7 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
           Important: Feature Alignment and Version Check
         </h3>
         <p className="text-gray-600 mb-4">
-          Copilot features evolve rapidly. Please note that this training was tested on the following stable environment:
+          Copilot features evolve <strong>rapidly</strong>, with changes and new features often released on a <strong>weekly basis</strong>. Please excuse if a specific task is not fully up to date or available in your version. This training was tested on the following stable environment. If you encounter errors, verify your version alignment or report the discrepancy to the trainer.
         </p>
         <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
           <ul className="space-y-2 text-sm text-gray-700 font-mono">
@@ -115,7 +119,7 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
             </li>
             <li className="flex items-center">
               <span className="w-2 h-2 bg-indigo-400 rounded-full mr-2"></span>
-              GitHub Copilot Extension: 1.388.0
+              GitHub Copilot Extension: github.copilot@1.388.0, github.copilot-chat@0.33.3
             </li>
             <li className="flex items-center">
               <span className="w-2 h-2 bg-indigo-400 rounded-full mr-2"></span>
@@ -136,7 +140,7 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
           {/* Section 1 */}
           <div>
             <h4 className="text-lg font-semibold text-gray-800 mb-3">1. Running the FastAPI App</h4>
-            <p className="text-gray-600 mb-4">Run the following in the project root to install <code>uv</code>, sync the environment, and start the app locally.</p>
+            <p className="text-gray-600 mb-4">Run the following in the project root to install <code>uv</code>, sync the environment, and start the app locally. These commands assume you have a Python environment and <code>pip</code> available.</p>
             
             <div className="bg-gray-900 rounded-lg p-4 text-gray-100 font-mono text-sm overflow-x-auto shadow-inner">
               <div className="flex gap-2 mb-2 border-b border-gray-700 pb-2">
@@ -151,6 +155,7 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
               <p className="mb-1"><span className="text-gray-500"># Run server</span></p>
               <p>uv run uvicorn app.main:app --reload --host 127.0.0.1 --port 8000</p>
             </div>
+            <p className="mt-4 text-gray-600">The Swagger UI will now be available at: <a href="http://127.0.0.1:8000/docs" className="text-indigo-600 hover:underline">http://127.0.0.1:8000/docs</a></p>
           </div>
 
           {/* Section 2 */}
@@ -158,7 +163,7 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
             <h4 className="text-lg font-semibold text-gray-800 mb-3">2. Verify Copilot</h4>
             <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
               <p className="text-gray-700 text-sm">
-                Open the Copilot Chat panel in VS Code and ask a project-aware question such as: 
+                Verify Copilot: Open the Copilot Chat panel in VS Code and ask a project-aware question such as: 
                 <span className="font-medium italic text-gray-900"> "What is the main purpose of this repository?"</span> 
                 A coherent response indicates Copilot is active and has access to the workspace.
               </p>
@@ -179,7 +184,7 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
             <strong className="text-gray-700"> The developer remains the final authority.</strong>
           </p>
           <p>
-            You are responsible for <strong>rigorously reviewing, testing, and validating</strong> all code generated by Copilot before deployment.
+            You are responsible for <strong>rigorously reviewing, testing, and validating</strong> all code generated by Copilot before deployment, ensuring compliance with all security standards.
             <span className="italic"> Always be skeptical of generated code.</span>
           </p>
         </div>

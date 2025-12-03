@@ -12,6 +12,7 @@ interface Tab {
   label: string;
   icon: React.ReactNode;
   title: string;
+  difficulty?: "Beginner" | "Intermediate" | "Advanced";
 }
 
 const tabs: Tab[] = [
@@ -25,31 +26,36 @@ const tabs: Tab[] = [
     id: "module1", 
     label: "Module I", 
     icon: <BookOpen className="w-4 h-4" />,
-    title: "Module I: Context & Control"
+    title: "Module I: Context & Control",
+    difficulty: "Beginner"
   },
   { 
     id: "module2", 
     label: "Module II", 
     icon: <Terminal className="w-4 h-4" />,
-    title: "Module II: Dynamic Interaction Modes"
+    title: "Module II: Dynamic Interaction Modes",
+    difficulty: "Intermediate"
   },
   { 
     id: "module3", 
     label: "Module III", 
     icon: <GitBranch className="w-4 h-4" />,
-    title: "Module III: Version Control & Quality"
+    title: "Module III: Version Control & Quality",
+    difficulty: "Beginner"
   },
   { 
     id: "module4", 
     label: "Module IV", 
     icon: <ShieldCheck className="w-4 h-4" />,
-    title: "Module IV: Testing Framework"
+    title: "Module IV: Testing Framework",
+    difficulty: "Intermediate"
   },
   { 
     id: "module5", 
     label: "Module V", 
     icon: <Bot className="w-4 h-4" />,
-    title: "Module V: Agentic Workflows"
+    title: "Module V: Agentic Workflows",
+    difficulty: "Advanced"
   },
 ];
 
@@ -61,20 +67,34 @@ export default function CopilotTraining() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const getDifficultyBadge = (difficulty?: string) => {
+    if (!difficulty) return null;
+    const colors = {
+      Beginner: "bg-green-100 text-green-700 border-green-200",
+      Intermediate: "bg-blue-100 text-blue-700 border-blue-200",
+      Advanced: "bg-purple-100 text-purple-700 border-purple-200",
+    };
+    return (
+      <span className={cn("text-xs px-2 py-0.5 rounded-full border ml-2", colors[difficulty as keyof typeof colors])}>
+        {difficulty}
+      </span>
+    );
+  };
+
   const renderContent = () => {
     switch (activeTab) {
       case "prereq":
         return <ModulePrereq onNext={() => handleNext("module1")} />;
       case "module1":
-        return <ModulePlaceholder title="Module I: Context & Control" subtitle="Precise Prompting and Workspace Awareness" icon={<BookOpen className="w-12 h-12 text-primary/20" />} />;
+        return <ModulePlaceholder title="Module I: Context & Control" subtitle="Precise Prompting and Workspace Awareness" icon={<BookOpen className="w-12 h-12 text-primary/20" />} difficulty="Beginner" />;
       case "module2":
-        return <ModulePlaceholder title="Module II: Dynamic Interaction Modes" subtitle="Completions, Inline Chat, Chat Panel, Terminal" icon={<Terminal className="w-12 h-12 text-primary/20" />} />;
+        return <ModulePlaceholder title="Module II: Dynamic Interaction Modes" subtitle="Completions, Inline Chat, Chat Panel, Terminal" icon={<Terminal className="w-12 h-12 text-primary/20" />} difficulty="Intermediate" />;
       case "module3":
-        return <ModulePlaceholder title="Module III: Version Control & Quality" subtitle="Git Workflow Integration" icon={<GitBranch className="w-12 h-12 text-primary/20" />} />;
+        return <ModulePlaceholder title="Module III: Version Control & Quality" subtitle="Git Workflow Integration" icon={<GitBranch className="w-12 h-12 text-primary/20" />} difficulty="Beginner" />;
       case "module4":
-        return <ModulePlaceholder title="Module IV: Testing Framework" subtitle="Automating Tests and Policy Checks" icon={<ShieldCheck className="w-12 h-12 text-primary/20" />} />;
+        return <ModulePlaceholder title="Module IV: Testing Framework" subtitle="Automating Tests and Policy Checks" icon={<ShieldCheck className="w-12 h-12 text-primary/20" />} difficulty="Intermediate" />;
       case "module5":
-        return <ModulePlaceholder title="Module V: Agentic Workflows" subtitle="Delegating and Supervising Autonomous Agents" icon={<Bot className="w-12 h-12 text-primary/20" />} />;
+        return <ModulePlaceholder title="Module V: Agentic Workflows" subtitle="Delegating and Supervising Autonomous Agents" icon={<Bot className="w-12 h-12 text-primary/20" />} difficulty="Advanced" />;
       default:
         return null;
     }
@@ -104,19 +124,31 @@ export default function CopilotTraining() {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={cn(
-                  "group flex items-center py-4 px-6 border-b-2 font-medium text-sm transition-all duration-200",
+                  "group flex flex-col items-center justify-center py-3 px-4 border-b-2 font-medium text-sm transition-all duration-200 min-w-[120px]",
                   activeTab === tab.id
                     ? "border-indigo-600 text-indigo-600 bg-indigo-50/50"
                     : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 hover:bg-gray-50"
                 )}
               >
-                <span className={cn(
-                  "mr-2 transition-colors",
-                  activeTab === tab.id ? "text-indigo-600" : "text-gray-400 group-hover:text-gray-500"
-                )}>
-                  {tab.icon}
-                </span>
-                {tab.label}
+                <div className="flex items-center mb-1">
+                  <span className={cn(
+                    "mr-2 transition-colors",
+                    activeTab === tab.id ? "text-indigo-600" : "text-gray-400 group-hover:text-gray-500"
+                  )}>
+                    {tab.icon}
+                  </span>
+                  {tab.label}
+                </div>
+                {tab.difficulty && (
+                  <span className={cn(
+                    "text-[10px] px-1.5 py-0.5 rounded-full border",
+                    tab.difficulty === "Beginner" && "bg-green-50 text-green-600 border-green-100",
+                    tab.difficulty === "Intermediate" && "bg-blue-50 text-blue-600 border-blue-100",
+                    tab.difficulty === "Advanced" && "bg-purple-50 text-purple-600 border-purple-100"
+                  )}>
+                    {tab.difficulty}
+                  </span>
+                )}
               </button>
             ))}
           </nav>
