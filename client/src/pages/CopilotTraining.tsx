@@ -10,6 +10,7 @@ type TabId = "prereq" | "module1" | "module2" | "module3" | "module4" | "module5
 interface Tab {
   id: TabId;
   label: string;
+  topic: string;
   icon: React.ReactNode;
   title: string;
   difficulty?: "Beginner" | "Intermediate" | "Advanced";
@@ -18,13 +19,15 @@ interface Tab {
 const tabs: Tab[] = [
   { 
     id: "prereq", 
-    label: "Prerequisites", 
+    label: "Module 0", 
+    topic: "Prerequisites",
     icon: <LayoutTemplate className="w-4 h-4" />,
     title: "Module 00: Prerequisites and Developer Responsibility"
   },
   { 
     id: "module1", 
     label: "Module I", 
+    topic: "Context & Control",
     icon: <BookOpen className="w-4 h-4" />,
     title: "Module I: Context & Control",
     difficulty: "Beginner"
@@ -32,6 +35,7 @@ const tabs: Tab[] = [
   { 
     id: "module2", 
     label: "Module II", 
+    topic: "Interaction Modes",
     icon: <Terminal className="w-4 h-4" />,
     title: "Module II: Dynamic Interaction Modes",
     difficulty: "Intermediate"
@@ -39,6 +43,7 @@ const tabs: Tab[] = [
   { 
     id: "module3", 
     label: "Module III", 
+    topic: "Version Control",
     icon: <GitBranch className="w-4 h-4" />,
     title: "Module III: Version Control & Quality",
     difficulty: "Beginner"
@@ -46,6 +51,7 @@ const tabs: Tab[] = [
   { 
     id: "module4", 
     label: "Module IV", 
+    topic: "Testing Framework",
     icon: <ShieldCheck className="w-4 h-4" />,
     title: "Module IV: Testing Framework",
     difficulty: "Intermediate"
@@ -53,6 +59,7 @@ const tabs: Tab[] = [
   { 
     id: "module5", 
     label: "Module V", 
+    topic: "Agentic Workflows",
     icon: <Bot className="w-4 h-4" />,
     title: "Module V: Agentic Workflows",
     difficulty: "Advanced"
@@ -124,10 +131,10 @@ export default function CopilotTraining() {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={cn(
-                  "group flex flex-col items-center justify-center py-3 px-4 border-b-2 font-medium text-sm transition-all duration-200 min-w-[120px]",
+                  "group flex flex-col items-center justify-center py-4 px-4 border-b-2 transition-all duration-200 min-w-[160px]",
                   activeTab === tab.id
-                    ? "border-indigo-600 text-indigo-600 bg-indigo-50/50"
-                    : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 hover:bg-gray-50"
+                    ? "border-indigo-600 bg-indigo-50/50"
+                    : "border-transparent hover:border-gray-300 hover:bg-gray-50"
                 )}
               >
                 <div className="flex items-center mb-1">
@@ -137,11 +144,24 @@ export default function CopilotTraining() {
                   )}>
                     {tab.icon}
                   </span>
-                  {tab.label}
+                  <span className={cn(
+                    "font-bold text-sm",
+                    activeTab === tab.id ? "text-indigo-600" : "text-gray-600"
+                  )}>
+                    {tab.label}
+                  </span>
                 </div>
+                
+                <span className={cn(
+                  "text-xs font-medium mb-2 max-w-[140px] truncate",
+                  activeTab === tab.id ? "text-indigo-500" : "text-gray-500"
+                )}>
+                  {tab.topic}
+                </span>
+
                 {tab.difficulty && (
                   <span className={cn(
-                    "text-[10px] px-1.5 py-0.5 rounded-full border",
+                    "text-[10px] px-2 py-0.5 rounded-full border",
                     tab.difficulty === "Beginner" && "bg-green-50 text-green-600 border-green-100",
                     tab.difficulty === "Intermediate" && "bg-blue-50 text-blue-600 border-blue-100",
                     tab.difficulty === "Advanced" && "bg-purple-50 text-purple-600 border-purple-100"
@@ -155,6 +175,7 @@ export default function CopilotTraining() {
         </div>
 
         {/* Content Area */}
+
         <main>
           <AnimatePresence mode="wait">
             <motion.div
