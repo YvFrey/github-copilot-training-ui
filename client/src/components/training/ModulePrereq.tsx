@@ -34,59 +34,61 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
         </div>
       </div>
 
-      {/* Prerequisites Checklist Card */}
+      {/* Prerequisites Checklist Card - Compact Version */}
       <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 hover:shadow-md transition-shadow duration-300">
-        <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
+        <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
           <CheckCircle2 className="w-6 h-6 text-green-500 mr-2" />
           Prerequisites Checklist
         </h3>
         
-        <div className="grid gap-4">
+        <div className="grid gap-2">
           {[
             {
               title: "GitHub Copilot License",
               desc: "Copilot Pro or Business/Enterprise tied to your GitHub account.",
               link: "https://github.com/github-copilot/pro",
-              linkText: "Sign up for 30-day trial"
+              linkText: "Sign up"
             },
             {
               title: "Visual Studio Code",
-              desc: "Recommended to use latest stable VS Code to ensure agent/chat features are available."
+              desc: "Latest stable VS Code for agent/chat features."
             },
             {
               title: "Required Extensions",
-              desc: "Install GitHub Copilot and GitHub Pull Requests & Issues extensions in VS Code.",
+              desc: "Install GitHub Copilot and GitHub Pull Requests & Issues.",
               link: "https://marketplace.visualstudio.com/items?itemName=GitHub.copilot",
-              linkText: "View Extension"
+              linkText: "View"
             },
             {
               title: "uv Package Manager",
-              desc: "The uv utility is required for fast environment and dependency management.",
+              desc: "Required for environment management.",
               link: "https://docs.astral.sh/uv/getting-started/installation/",
-              linkText: "Installation Guide"
+              linkText: "Install"
             },
             {
               title: "Git Configuration",
-              desc: "Ensure your local git client is configured with your correct user name and email."
+              desc: "Local git configured with correct user/email."
             },
             {
               title: "Code Base",
-              desc: "Fork the course repository to your own GitHub account and clone locally.",
+              desc: "Fork and clone the course repository.",
               link: "https://github.com/YvFrey/training-github-copilot/tree/main",
-              linkText: "Course Repository"
+              linkText: "Repo"
             }
           ].map((item, idx) => (
-            <div key={idx} className="flex items-start p-4 bg-gray-50 rounded-lg border border-gray-100">
-              <div className="min-w-6 mt-1 mr-3">
-                 <div className="w-5 h-5 rounded-full border-2 border-indigo-200 flex items-center justify-center">
-                    <span className="text-xs font-bold text-indigo-600">{idx + 1}</span>
+            <div key={idx} className="flex items-center p-2.5 bg-gray-50/50 rounded-lg border border-gray-100 hover:bg-gray-50 transition-colors">
+              <div className="min-w-6 mr-3">
+                 <div className="w-5 h-5 rounded-full border border-indigo-200 bg-white flex items-center justify-center text-[10px] font-bold text-indigo-600">
+                    {idx + 1}
                  </div>
               </div>
-              <div className="flex-1">
-                <h4 className="font-semibold text-gray-900">{item.title}</h4>
-                <p className="text-gray-600 text-sm mt-1">{item.desc}</p>
+              <div className="flex-1 flex items-center justify-between flex-wrap gap-2">
+                <div className="flex-1 min-w-[200px]">
+                  <span className="font-semibold text-gray-900 text-sm">{item.title}: </span>
+                  <span className="text-gray-600 text-sm">{item.desc}</span>
+                </div>
                 {item.link && (
-                  <a href={item.link} target="_blank" rel="noreferrer" className="inline-flex items-center text-indigo-600 hover:text-indigo-700 text-sm font-medium mt-2">
+                  <a href={item.link} target="_blank" rel="noreferrer" className="inline-flex items-center text-indigo-600 hover:text-indigo-700 text-xs font-medium px-2 py-1 bg-indigo-50 rounded hover:bg-indigo-100 transition-colors whitespace-nowrap">
                     {item.linkText} <ExternalLink className="w-3 h-3 ml-1" />
                   </a>
                 )}
@@ -123,53 +125,64 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
         </div>
       </div>
 
-      {/* Getting Started Card */}
+      {/* Getting Started Card - Updated */}
       <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 hover:shadow-md transition-shadow duration-300">
         <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
           <Terminal className="w-6 h-6 text-gray-700 mr-2" />
-          Getting Started: Running the FastAPI App
+          Getting Started
         </h3>
         
-        <p className="text-gray-600 mb-4">Run the following in the project root to install <code>uv</code>, sync the environment, and start the app locally.</p>
-        
-        <div className="bg-gray-900 rounded-lg p-4 text-gray-100 font-mono text-sm overflow-x-auto mb-6 shadow-inner">
-          <div className="flex gap-2 mb-2 border-b border-gray-700 pb-2">
-            <span className="w-3 h-3 rounded-full bg-red-500"></span>
-            <span className="w-3 h-3 rounded-full bg-yellow-500"></span>
-            <span className="w-3 h-3 rounded-full bg-green-500"></span>
+        <div className="space-y-8">
+          {/* Section 1 */}
+          <div>
+            <h4 className="text-lg font-semibold text-gray-800 mb-3">1. Running the FastAPI App</h4>
+            <p className="text-gray-600 mb-4">Run the following in the project root to install <code>uv</code>, sync the environment, and start the app locally.</p>
+            
+            <div className="bg-gray-900 rounded-lg p-4 text-gray-100 font-mono text-sm overflow-x-auto shadow-inner">
+              <div className="flex gap-2 mb-2 border-b border-gray-700 pb-2">
+                <span className="w-3 h-3 rounded-full bg-red-500"></span>
+                <span className="w-3 h-3 rounded-full bg-yellow-500"></span>
+                <span className="w-3 h-3 rounded-full bg-green-500"></span>
+              </div>
+              <p className="mb-1"><span className="text-gray-500"># Install and sync</span></p>
+              <p className="mb-2">cd app</p>
+              <p className="mb-2">pip install --upgrade uv</p>
+              <p className="mb-2">uv sync</p>
+              <p className="mb-1"><span className="text-gray-500"># Run server</span></p>
+              <p>uv run uvicorn app.main:app --reload --host 127.0.0.1 --port 8000</p>
+            </div>
           </div>
-          <p className="mb-1"><span className="text-gray-500"># Install and sync</span></p>
-          <p className="mb-2">cd app</p>
-          <p className="mb-2">pip install --upgrade uv</p>
-          <p className="mb-2">uv sync</p>
-          <p className="mb-1"><span className="text-gray-500"># Run server</span></p>
-          <p>uv run uvicorn app.main:app --reload --host 127.0.0.1 --port 8000</p>
-        </div>
 
-        <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-          <h4 className="text-green-800 font-semibold mb-1">Verify Copilot</h4>
-          <p className="text-green-700 text-sm">
-            Open the Copilot Chat panel in VS Code and ask a project-aware question such as: 
-            <span className="font-medium italic"> "What is the main purpose of this repository?"</span> 
-            A coherent response indicates Copilot is active and has access to the workspace.
-          </p>
+          {/* Section 2 */}
+          <div>
+            <h4 className="text-lg font-semibold text-gray-800 mb-3">2. Verify Copilot</h4>
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+              <p className="text-gray-700 text-sm">
+                Open the Copilot Chat panel in VS Code and ask a project-aware question such as: 
+                <span className="font-medium italic text-gray-900"> "What is the main purpose of this repository?"</span> 
+                A coherent response indicates Copilot is active and has access to the workspace.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Responsibility Mandate */}
-      <div className="bg-red-50 rounded-xl border border-red-100 p-6 md:p-8">
-        <h3 className="text-xl font-bold text-red-900 mb-4 flex items-center">
-          <AlertTriangle className="w-6 h-6 text-red-600 mr-2" />
+      {/* Responsibility Mandate - Less Prominent */}
+      <div className="bg-gray-50 rounded-xl border border-gray-200 p-6">
+        <h3 className="text-lg font-semibold text-gray-700 mb-2 flex items-center">
+          <AlertTriangle className="w-5 h-5 text-gray-500 mr-2" />
           Developer Responsibility Mandate
         </h3>
-        <p className="text-red-800 leading-relaxed">
-          As an AI coding tool, Copilot provides suggestions based on learned patterns, but it does not guarantee correctness, optimality, or security. 
-          <strong className="block mt-2">The developer remains the final authority.</strong>
-        </p>
-        <p className="text-red-800 mt-4">
-          You are responsible for <strong>rigorously reviewing, testing, and validating</strong> all code generated by Copilot before deployment, ensuring compliance with all security standards. 
-          <span className="font-semibold italic"> Always be skeptical of generated code.</span>
-        </p>
+        <div className="text-gray-600 text-sm leading-relaxed space-y-2">
+          <p>
+            As an AI coding tool, Copilot provides suggestions based on learned patterns, but it does not guarantee correctness, optimality, or security. 
+            <strong className="text-gray-700"> The developer remains the final authority.</strong>
+          </p>
+          <p>
+            You are responsible for <strong>rigorously reviewing, testing, and validating</strong> all code generated by Copilot before deployment.
+            <span className="italic"> Always be skeptical of generated code.</span>
+          </p>
+        </div>
       </div>
 
       {/* Next Step */}
