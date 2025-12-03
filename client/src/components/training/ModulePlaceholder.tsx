@@ -1,5 +1,5 @@
 import React from "react";
-import { Clock, ArrowRight } from "lucide-react";
+import { Lock, Clock, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface ModulePlaceholderProps {
@@ -10,37 +10,24 @@ interface ModulePlaceholderProps {
 }
 
 export function ModulePlaceholder({ title, subtitle, icon, difficulty }: ModulePlaceholderProps) {
-  const difficultyBg = {
-    Beginner: "bg-emerald-50 text-emerald-700 border-emerald-100",
-    Intermediate: "bg-blue-50 text-blue-700 border-blue-100",
-    Advanced: "bg-purple-50 text-purple-700 border-purple-100",
-  };
-
-  const iconBg = {
-    Beginner: "bg-emerald-50",
-    Intermediate: "bg-blue-50",
-    Advanced: "bg-purple-50",
-  };
-
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 md:p-12 text-center relative overflow-hidden">
-      {/* Top colored accent bar */}
-      {difficulty && (
-        <div className={cn("absolute top-0 left-0 right-0 h-1.5", 
-          difficulty === "Beginner" && "bg-emerald-400",
-          difficulty === "Intermediate" && "bg-blue-400",
-          difficulty === "Advanced" && "bg-purple-400"
-        )}></div>
-      )}
-
-      <div className={cn("inline-flex items-center justify-center p-6 rounded-full mb-6", 
-        difficulty ? iconBg[difficulty] : "bg-gray-50"
-      )}>
+    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 md:p-12 text-center">
+      <div className="inline-flex items-center justify-center p-6 bg-gray-50 rounded-full mb-6">
         {icon}
       </div>
       
-      <div className="flex flex-col items-center justify-center gap-2 mb-3">
+      <div className="flex items-center justify-center gap-3 mb-3">
         <h2 className="text-3xl font-bold text-gray-900">{title}</h2>
+        {difficulty && (
+          <span className={cn(
+            "text-sm px-3 py-1 rounded-full border font-medium",
+            difficulty === "Beginner" && "bg-green-100 text-green-700 border-green-200",
+            difficulty === "Intermediate" && "bg-blue-100 text-blue-700 border-blue-200",
+            difficulty === "Advanced" && "bg-purple-100 text-purple-700 border-purple-200"
+          )}>
+            {difficulty}
+          </span>
+        )}
       </div>
       
       <p className="text-xl text-gray-500 mb-8">{subtitle}</p>
