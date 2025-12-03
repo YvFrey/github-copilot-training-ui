@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reinventing Software: Agentic Application Development</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-active {
+            display: block;
+        }
+        .tab-btn.active {
+            border-color: #4f46e5;
+            color: #4f46e5;
+            background-color: #eef2ff;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #111827;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        p, li {
+            color: #374151;
+            line-height: 1.6;
+        }
+        .accent-text {
+            color: #4f46e5;
+        }
+        .prompt {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #eef2ff;
+            color: #4338ca;
+            padding: 0.75rem;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            margin-top: 1rem;
+            border-left: 4px solid #6366f1;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .mockup-container {
+            background-color: #f9fafb;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            border: 1px solid #e5e7eb;
+        }
+        .tool-card {
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .criteria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .criteria-card {
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+        }
+        .criteria-card h4 {
+            font-weight: 600;
+            color: #1f2937;
+        }
+         .criteria-card ul {
+            list-style-type: disc;
+            padding-left: 1.25rem;
+            margin-top: 0.5rem;
+            color: #4b5563;
+        }
+        .tool-tab-btn.active {
+            border-bottom-color: #4f46e5;
+            color: #4f46e5;
+            font-weight: 600;
+        }
+        .tool-logo {
+            height: 48px;
+            width: 48px;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="min-h-screen bg-gray-100 p-4 sm:p-6 lg:p-8">
+        <div class="max-w-7xl mx-auto">
+            <!-- Header -->
+            <header class="text-center mb-10">
+                <i class="fas fa-rocket fa-3x text-indigo-600 mx-auto mb-4"></i>
+                <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Reinventing Software: Agentic Application Development</h1>
+                <p class="mt-4 text-xl text-gray-600">A Strategic Initiative for the ASG DAI Network</p>
+                <p class="mt-2 text-lg font-semibold text-indigo-600">October 1st - 2nd, Campus Kronberg</p>
+            </header>
+
+            <!-- Tabs -->
+            <div class="mb-8 border-b border-gray-200">
+                <nav class="flex flex-wrap -mb-px" aria-label="Tabs">
+                    <button onclick="changeTab('primer')" class="tab-btn active text-gray-600 hover:text-indigo-600 whitespace-nowrap py-4 px-4 border-b-2 font-medium text-sm">
+                        <i class="fas fa-bullhorn mr-2"></i>Primer
+                    </button>
+                    <button onclick="changeTab('prep')" class="tab-btn text-gray-600 hover:text-indigo-600 whitespace-nowrap py-4 px-4 border-b-2 font-medium text-sm">
+                        <i class="fas fa-calendar-check mr-2"></i>Briefing Sessions
+                    </button>
+                    <button onclick="changeTab('themes')" class="tab-btn text-gray-600 hover:text-indigo-600 whitespace-nowrap py-4 px-4 border-b-2 font-medium text-sm">
+                        <i class="fas fa-lightbulb mr-2"></i>Reinvention Themes
+                    </button>
+                    <button onclick="changeTab('tools')" class="tab-btn text-gray-600 hover:text-indigo-600 whitespace-nowrap py-4 px-4 border-b-2 font-medium text-sm">
+                        <i class="fas fa-tools mr-2"></i>Tools
+                    </button>
+                    <button onclick="changeTab('instructions')" class="tab-btn text-gray-600 hover:text-indigo-600 whitespace-nowrap py-4 px-4 border-b-2 font-medium text-sm">
+                        <i class="fas fa-list-check mr-2"></i>Evaluation Criteria
+                    </button>
+                    <button onclick="changeTab('agenda')" class="tab-btn text-gray-600 hover:text-indigo-600 whitespace-nowrap py-4 px-4 border-b-2 font-medium text-sm">
+                        <i class="fas fa-tasks mr-2"></i>Agenda
+                    </button>
+                    <button onclick="changeTab('logistics')" class="tab-btn text-gray-600 hover:text-indigo-600 whitespace-nowrap py-4 px-4 border-b-2 font-medium text-sm">
+                        <i class="fas fa-map-location-dot mr-2"></i>Logistics & Next Steps
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Tab Content -->
+            <main>
+                <!-- Primer Content -->
+                <div id="primer" class="tab-content">
+                    <div class="card p-6 md:p-8">
+                        <h2><i class="fas fa-rocket mr-3 accent-text"></i>The New Paradigm: Agentic Application Development</h2>
+                        <p class="mb-4">Welcome to a pivotal moment in technology. We are witnessing a fundamental shift where the cost of generating software is plummeting by a factor of 10-100x. This isn't just an incremental improvement; it's a paradigm shift that challenges the dominance of traditional SaaS models. The era of bespoke, AI-generated applications is here, and it's making custom software development faster, cheaper, and more accessible than ever before.</p>
+                        <p class="mb-4">This transformation democratizes creation. The ability to build software is no longer confined to developers. Product owners, business analysts, and designers can now directly translate their vision into functional applications, shipping features and iterating on ideas at unprecedented speeds. This is the core of <strong>Agentic Application Development</strong>.</p>
+                        <p class="mb-6">However, this power comes with significant challenges. To move from a clever prototype to a secure, scalable, and compliant enterprise application requires a new set of skills and frameworks. How do we ensure security? How do we manage governance and IP? How do we build systems that are maintainable? <strong>Tackling these challenges is the central goal of this hackathon.</strong> We are here to build the serious, structured capabilities needed to deliver real client value in this new world.</p>
+
+                        <div class="my-6 border-t border-gray-200"></div>
+
+                        <h3>Your Mission: From Idea to Enterprise-Grade Prototype</h3>
+                        <p class="mb-4">Your challenge is to tackle real-world business problems and build solutions that are not just functional, but demonstrate a clear path to production. This requires a business-first framing and a commitment to enterprise-grade implementation.</p>
+                        <ul class="list-disc list-inside space-y-2 mb-6">
+                            <li><strong>Goal:</strong> Develop an end-to-end solution for a sanitized, real-world client scenario, proving the value of an AI-native SDLC.</li>
+                            <li><strong>Team:</strong> Form cross-functional teams that combine business acumen, industry expertise, and technical skill.</li>
+                            <li><strong>Approach:</strong> Think beyond the code. Your solution must consider security, governance, documentation, and scalability from the start.</li>
+                        </ul>
+                        <div class="bg-indigo-50 border-l-4 border-indigo-500 text-indigo-800 p-4 rounded-md">
+                            <p class="font-bold">The Ultimate Goal:</p>
+                            <p>To build the skills and frameworks that will allow us to confidently approach clients with a new, agentic way of delivering value, positioning our network as pioneers in this space.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prep Month Content -->
+                <div id="prep" class="tab-content">
+                    <div class="card p-6 md:p-8">
+                        <h2><i class="fas fa-calendar-check mr-3 accent-text"></i>Briefing Sessions & Onboarding</h2>
+                        <p class="mb-6">Success at the hackathon begins now. September is dedicated to getting your team aligned, your ideas solidified, and your skills sharpened. All sessions will be recorded and available in the Engage community for those who cannot attend live.</p>
+                        
+                        <h3>Key Onboarding Actions</h3>
+                        <ul class="list-disc list-inside space-y-2 mb-6">
+                            <li><strong>Official Registration:</strong> All participants must register via the myLearning link that has been sent to you.</li>
+                            <li><strong>Team Collaboration:</strong> Use the official Engage community to finalize your team roles and refine your project idea.</li>
+                             <li><strong>Travel Alignment:</strong> Please coordinate your travel to Kronberg. See the Logistics tab for more details.</li>
+                        </ul>
+
+                        <div class="my-6 border-t border-gray-200"></div>
+
+                        <h3>September Briefing & Deep-Dive Schedule</h3>
+                        <div class="space-y-4">
+                            <div class="p-4 rounded-md bg-indigo-50 border border-indigo-200">
+                                <p class="font-bold text-indigo-800">Hackathon Intro Briefing</p>
+                                <p class="text-sm text-indigo-700">Covering strategic goals, criteria, logistics, and how to shape a winning pitch with Alexander Pinter.</p>
+                            </div>
+                            <div class="p-4 rounded-md bg-gray-50 border">
+                                <p class="font-bold text-gray-800">General Vibecoding Tools Overview</p>
+                                <p class="text-sm text-gray-700">An introduction to the core agentic development tools and platforms like Cursor, Lovable, and more.</p>
+                            </div>
+                            <div class="p-4 rounded-md bg-gray-50 border">
+                                <p class="font-bold text-gray-800">Azure Tech Deep-Dive</p>
+                                <p class="text-sm text-gray-700">How to build with AI using Azure services (Copilot, Foundry, VS Code, Azure OpenAI).</p>
+                            </div>
+                             <div class="p-4 rounded-md bg-gray-50 border">
+                                <p class="font-bold text-gray-800">AWS Tech Deep-Dive</p>
+                                <p class="text-sm text-gray-700">How to build with AI using AWS services (Bedrock, Claude, Amazon Q).</p>
+                            </div>
+                            <div class="p-4 rounded-md bg-gray-50 border">
+                                <p class="font-bold text-gray-800">GCP Tech Deep-Dive</p>
+                                <p class="text-sm text-gray-700">How to build with AI using Google Cloud services (Firebase Studio, Jules, Gemini).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reinvention Themes Content -->
+                <div id="themes" class="tab-content">
+                    <div class="card p-6 md:p-8">
+                        <h2><i class="fas fa-lightbulb mr-3 accent-text"></i>Reinvention Themes: Disruptive Enterprise Scenarios</h2>
+                        <p class="mb-6">This hackathon is about bold ideas. When you can develop applications 100x faster, entirely new ways of solving problems emerge. Your challenge is to explore these disruptive scenarios.</p>
+                        
+                        <h3><i class="fas fa-exchange-alt mr-2 text-gray-500"></i>Theme 1: Legacy Modernization as Reinvention</h3>
+                        <div class="mockup-container mb-8">
+                            <h4 class="font-bold text-lg"><i class="fas fa-cogs mr-2 accent-text"></i>The Disruption: Build, Don't Just Lift-and-Shift</h4>
+                            <p class="text-sm text-gray-600 mb-4">A client is trapped by a costly, inflexible legacy system. The traditional approach is a multi-year migration project to a similar, modern system. The AI-native approach is different: generate a brand-new, perfectly tailored application from business rules and user stories in a fraction of the time and cost.</p>
+                            <div class="prompt"><strong>Your Mission:</strong> Prototype a core module of a legacy system (e.g., CRM, ERP) as a new, AI-generated application. Demonstrate how you can go from business requirements to a functional, secure, and scalable application, leapfrogging the traditional modernization lifecycle.</div>
+                        </div>
+
+                        <h3><i class="fas fa-store-slash mr-2 text-gray-500"></i>Theme 2: SaaS Re-platforming & The End of "Good Enough"</h3>
+                        <div class="mockup-container mb-8">
+                            <h4 class="font-bold text-lg"><i class="fas fa-file-invoice-dollar mr-2 accent-text"></i>The Disruption: Why Buy When You Can Build?</h4>
+                            <p class="text-sm text-gray-600 mb-4">Clients often compromise with off-the-shelf SaaS products that are 80% right but 100% rigid. When development is 100x cheaper, building a bespoke solution that is 100% right becomes the smarter financial and operational choice. The "build vs. buy" calculation has fundamentally changed.</p>
+                            <div class="prompt"><strong>Your Mission:</strong> Identify a common SaaS category (e.g., project management, HR onboarding, expense reporting) and build a superior, AI-generated alternative. Show how your custom-built solution offers better workflow integration, data control, and a lower total cost of ownership than a standard SaaS subscription.</div>
+                        </div>
+
+                        <h3><i class="fas fa-retweet mr-2 text-gray-500"></i>Theme 3: Business Process Reinvention</h3>
+                        <div class="mockup-container">
+                            <h4 class="font-bold text-lg"><i class="fas fa-project-diagram mr-2 accent-text"></i>The Disruption: From Manual Mess to Agentic Automation</h4>
+                            <p class="text-sm text-gray-600 mb-4">Many core business processes still run on a chaotic mix of emails, spreadsheets, and manual data entry. These processes are too niche or complex for standard automation tools. Agentic Application Development allows us to build hyper-specific tools that automate these unique workflows instantly.</p>
+                            <div class="prompt"><strong>Your Mission:</strong> Take a known manual business process (e.g., claims processing, customer onboarding, report generation) and build an AI-powered application that completely automates it. Your solution should demonstrate how an agentic workflow can replace hours of manual work, reduce errors, and provide real-time insights.</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Tools Content -->
+                <div id="tools" class="tab-content">
+                    <div class="card p-6 md:p-8">
+                        <h2><i class="fas fa-tools mr-3 accent-text"></i>The Agentic Development Toolkit</h2>
+                        <p class="text-gray-700 leading-relaxed">We believe in freedom of tooling. While we provide a set of recommended and supported tools, you are encouraged to choose your own tools of the trade. The focus is on building enterprise-grade, server-based applications that run on containers or VMs with databases, accessible on the web.</p>
+                        
+                        <div class="mb-12 mt-8">
+                            <h3 class="text-2xl font-bold text-center text-gray-800 mb-6">Choose Your Orchestration Path</h3>
+                            <div class="grid md:grid-cols-3 gap-8">
+                                <!-- Human Orchestration -->
+                                <div class="card p-6">
+                                    <h4 class="text-xl font-bold text-gray-800 mb-3">1. Human Orchestration with Vibecoding</h4>
+                                    <p class="text-gray-600 mb-4">Use pre-built user interfaces from vibecoding systems (e.g., Lovable, Firebase Studio) to prompt what you want. This path is great for understanding the end-to-end flow of work and identifying gaps in current systems.</p>
+                                    <p class="font-semibold text-indigo-600">Focus: Business problem and rapid prototyping.</p>
+                                </div>
+                                <!-- Partial Automation -->
+                                <div class="card p-6">
+                                    <h4 class="text-xl font-bold text-gray-800 mb-3">2. Partial Automation (Integrated CI/CD)</h4>
+                                    <p class="text-gray-600 mb-4">Combine human expertise with AI. Use AI agents within your IDE (like Cursor or Copilot) to generate artifacts, and a classic CI/CD pipeline (like GitHub Actions or Azure DevOps) to deploy.</p>
+                                    <p class="font-semibold text-indigo-600">Focus: Blending AI assistance with traditional DevOps.</p>
+                                </div>
+                                <!-- End-to-End Agentic Orchestration -->
+                                <div class="card p-6">
+                                    <h4 class="text-xl font-bold text-gray-800 mb-3">3. End-to-End Agentic Orchestration</h4>
+                                    <p class="text-gray-600 mb-4">Build an agentic AI layer on top of different components. Use an orchestration engine (like LangChain or AutoGen) to manage a pipeline of AI tools that generates, builds, tests, and deploys your application from a single prompt.</p>
+                                    <p class="font-semibold text-indigo-600">Focus: Showcasing a true "Idea to App" automated flow.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="border-b border-gray-200 mb-8">
+                                <nav class="-mb-px flex justify-center space-x-4 md:space-x-8" aria-label="Tool Tabs">
+                                    <button class="tool-tab-btn active whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg" onclick="changeToolTab('azure')">
+                                        <i class="fab fa-microsoft text-blue-500 mr-2"></i>Azure
+                                    </button>
+                                    <button class="tool-tab-btn whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg text-gray-500 hover:text-gray-700 hover:border-gray-300" onclick="changeToolTab('gcp')">
+                                        <i class="fab fa-google text-red-500 mr-2"></i>GCP
+                                    </button>
+                                    <button class="tool-tab-btn whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg text-gray-500 hover:text-gray-700 hover:border-gray-300" onclick="changeToolTab('aws')">
+                                       <i class="fab fa-aws text-yellow-500 mr-2"></i>AWS
+                                    </button>
+                                    <button class="tool-tab-btn whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg text-gray-500 hover:text-gray-700 hover:border-gray-300" onclick="changeToolTab('other')">
+                                        <i class="fas fa-cubes mr-2"></i>Other Tools
+                                    </button>
+                                </nav>
+                            </div>
+
+                            <div id="azure" class="tool-tab-content">
+                                <div class="card p-8">
+                                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Azure</h3>
+                                    <p class="text-gray-700 mb-6">Azure will be the primary offered infrastructure backbone for the hackathon. All participants will receive an Azure ID, and each team will get a dedicated Resource Group. Azure provides a robust suite of tools for source code management, DevOps, delivery, and documentation, with full integration capabilities.</p>
+                                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                        <div class="flex items-start space-x-4">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="tool-logo text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v1.5M12 17.747v-1.5M12 12v.01M18.253 12h-1.5M5.747 12h1.5M16.036 6.964l-1.06-1.06M7.964 17.036l-1.06-1.06M16.036 17.036l-1.06 1.06M7.964 6.964l-1.06 1.06M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                            <div>
+                                                <h4 class="font-semibold text-lg">Azure DevOps</h4>
+                                                <p class="text-gray-600">Services for teams to share code, track work, and ship software. Includes Azure Repos, Pipelines, Boards, Test Plans, and Artifacts.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-4">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="tool-logo text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" /></svg>
+                                            <div>
+                                                <h4 class="font-semibold text-lg">Azure App Service</h4>
+                                                <p class="text-gray-600">Quickly build, deploy, and scale web apps and APIs. Supports .NET, .NET Core, Node.js, Java, Python, and more.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-4">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="tool-logo text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 21v-1.5M15.75 3v1.5m4.5 3.75H21m-3.75 6H21m-3.75 6H21m-15-3.75h1.5m15 0h1.5m-15 0h1.5m15 0h1.5M15.75 21v-1.5m-4.5-16.5a1.5 1.5 0 011.5-1.5h3a1.5 1.5 0 011.5 1.5v3a1.5 1.5 0 01-1.5 1.5h-3a1.5 1.5 0 01-1.5-1.5v-3zM8.25 9a1.5 1.5 0 011.5-1.5h3a1.5 1.5 0 011.5 1.5v3a1.5 1.5 0 01-1.5 1.5h-3a1.5 1.5 0 01-1.5-1.5v-3zM8.25 15a1.5 1.5 0 011.5-1.5h3a1.5 1.5 0 011.5 1.5v3a1.5 1.5 0 01-1.5 1.5h-3a1.5 1.5 0 01-1.5-1.5v-3z" /></svg>
+                                            <div>
+                                                <h4 class="font-semibold text-lg">Azure AI Services</h4>
+                                                <p class="text-gray-600">Deploy AI capabilities with services like Azure OpenAI, Cognitive Services for vision, speech, language, and decision.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-4">
+                                            <i class="fab fa-docker tool-logo text-blue-500"></i>
+                                            <div>
+                                                <h4 class="font-semibold text-lg">Azure Kubernetes Service (AKS)</h4>
+                                                <p class="text-gray-600">Deploy and manage containerized applications with a fully managed Kubernetes service.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-4">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="tool-logo text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>
+                                            <div>
+                                                <h4 class="font-semibold text-lg">Azure Functions</h4>
+                                                <p class="text-gray-600">An event-driven, serverless compute platform to build and run applications without managing infrastructure.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="gcp" class="tool-tab-content" style="display:none;">
+                                <div class="card p-8">
+                                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Google Cloud Platform (GCP)</h3>
+                                     <p class="text-gray-700 mb-6">GCP can be used for the hackathon, and we will provide API keys. It offers powerful tools for building applications quickly, especially with serverless and AI-driven capabilities.</p>
+                                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                        <div class="flex items-start space-x-4">
+                                             <svg xmlns="http://www.w3.org/2000/svg" class="tool-logo text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.362-3.797z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 15L11 11V3h2v8l-1 4z" /></svg>
+                                            <div>
+                                                <h4 class="font-semibold text-lg">Firebase (including Firebase Studio)</h4>
+                                                <p class="text-gray-600">An app development platform that helps you build and grow apps. Use services like Authentication, Firestore, and Hosting. Firebase Studio helps turn prompts into app architectures.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-4">
+                                           <svg xmlns="http://www.w3.org/2000/svg" class="tool-logo text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z" /></svg>
+                                            <div>
+                                                <h4 class="font-semibold text-lg">Google Cloud Run</h4>
+                                                <p class="text-gray-600">Deploy and scale containerized applications on a fully managed serverless platform.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-4">
+                                             <svg xmlns="http://www.w3.org/2000/svg" class="tool-logo text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" /></svg>
+                                            <div>
+                                                <h4 class="font-semibold text-lg">Google Cloud CLI</h4>
+                                                <p class="text-gray-600">The gcloud CLI is a set of tools to create and manage Google Cloud resources from the command line.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-4">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="tool-logo text-cyan-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" /></svg>
+                                            <div>
+                                                <h4 class="font-semibold text-lg">Cloud Build</h4>
+                                                <p class="text-gray-600">Continuously build, test, and deploy applications in any language, on any cloud.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-4">
+                                           <svg xmlns="http://www.w3.org/2000/svg" class="tool-logo text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 21v-1.5M15.75 3v1.5m4.5 3.75h-1.5m-3 3.75h.01M16.5 12h.01M16.5 15.75h.01M12 15.75h.01M12 12h.01M12 8.25h.01M8.25 15.75h.01M8.25 12h.01" /></svg>
+                                            <div>
+                                                <h4 class="font-semibold text-lg">Vertex AI</h4>
+                                                <p class="text-gray-600">A unified platform for building, deploying, and scaling machine learning models.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-4">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="tool-logo text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.898 20.572L16.25 21.75l-.648-1.178a2.25 2.25 0 01-1.47-1.47L12.95 18l1.178-.648a2.25 2.25 0 011.47-1.47L16.25 15l.648 1.178a2.25 2.25 0 011.47 1.47L19.55 18l-1.178.648a2.25 2.25 0 01-1.47 1.47z" />
+                                            </svg>
+                                            <div>
+                                                <h4 class="font-semibold text-lg">Gemini CLI</h4>
+                                                <p class="text-gray-600">Interact with Gemini models directly from your terminal for quick scripting, prototyping, and powerful command-line workflows.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="aws" class="tool-tab-content" style="display:none;">
+                                <div class="card p-8">
+                                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Amazon Web Services (AWS)</h3>
+                                    <p class="text-gray-700 mb-6">AWS is another excellent choice for your projects. Participants can get an Amazon Builder ID via self-registration. AWS provides a vast and mature ecosystem of services for computing, storage, databases, and machine learning.</p>
+                                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                        <div class="flex items-start space-x-4">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="tool-logo text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 016 0v8.25a3 3 0 01-3 3z" /></svg>
+                                            <div>
+                                                <h4 class="font-semibold text-lg">AWS Amplify</h4>
+                                                <p class="text-gray-600">A set of purpose-built tools and features that lets front-end web and mobile developers quickly and easily build full-stack applications.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-4">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="tool-logo text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-1.5h5.25m-5.25 0h3m-3 0h-1.5m2.25-4.5H5.25m5.25 0h3m-3 0h-1.5m2.25-4.5H5.25m5.25 0h3m-3 0h-1.5m2.25-4.5H5.25" /></svg>
+                                            <div>
+                                                <h4 class="font-semibold text-lg">AWS CodePipeline</h4>
+                                                <p class="text-gray-600">A fully managed continuous delivery service that helps you automate your release pipelines.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-4">
+                                           <svg xmlns="http://www.w3.org/2000/svg" class="tool-logo text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.362-3.797z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.323-5.323" /></svg>
+                                            <div>
+                                                <h4 class="font-semibold text-lg">AWS Elastic Beanstalk</h4>
+                                                <p class="text-gray-600">An easy-to-use service for deploying and scaling web applications and services developed with Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-4">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="tool-logo text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 8.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v8.25A2.25 2.25 0 006 16.5h2.25m8.25-8.25H18a2.25 2.25 0 012.25 2.25v8.25A2.25 2.25 0 0118 20.25h-7.5A2.25 2.25 0 018.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25h6a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25z" /></svg>
+                                            <div>
+                                                <h4 class="font-semibold text-lg">Amazon SageMaker</h4>
+                                                <p class="text-gray-600">Build, train, and deploy machine learning (ML) models for any use case with fully managed infrastructure, tools, and workflows.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-4">
+                                           <svg xmlns="http://www.w3.org/2000/svg" class="tool-logo text-orange-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12.33 2.1a1 1 0 0 0-1.2.3L4.9 9.87a1 1 0 0 0-.15.54l.05.51.92 6.37a1 1 0 0 0 .61.72l.49.2 5.09 2a1 1 0 0 0 .8 0l5.09-2 .49-.2a1 1 0 0 0 .61-.72l.92-6.37.05-.51a1 1 0 0 0-.15-.54L12.91 2.4a1 1 0 0 0-.58-.3Z"/></svg>
+                                            <div>
+                                                <h4 class="font-semibold text-lg">AWS Lambda</h4>
+                                                <p class="text-gray-600">A serverless, event-driven compute service that lets you run code for virtually any type of application or backend service without provisioning or managing servers.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-4">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="tool-logo text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.125-.504 1.125-1.125V14.25m-17.25 4.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H3.375a1.125 1.125 0 01-1.125-1.125V4.5A2.25 2.25 0 014.5 2.25h15A2.25 2.25 0 0121.75 4.5v15.75c0 .621-.504 1.125-1.125 1.125h-1.125" /></svg>
+                                            <div>
+                                                <h4 class="font-semibold text-lg">Amazon Q</h4>
+                                                <p class="text-gray-600">A generative AI-powered assistant that is specifically for work and can be tailored to your business.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="other" class="tool-tab-content" style="display:none;">
+                                 <div class="card p-8">
+                                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Other Tools</h3>
+                                    <p class="text-gray-700 mb-6">Here is a list of powerful AI-driven tools you can use to accelerate your development process. We encourage you to explore these and choose what works best for your team. If you require more than the free or basic tier offers, please contact us.</p>
+                                    <div class="overflow-x-auto">
+                                        <table class="min-w-full divide-y divide-gray-200">
+                                            <thead class="bg-gray-50">
+                                                <tr>
+                                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tool</th>
+                                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Description</th>
+                                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Free Tier Highlights</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="bg-white divide-y divide-gray-200">
+                                                <!-- Data will be injected by JS -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Instructions Content -->
+                <div id="instructions" class="tab-content">
+                    <div class="card p-6 md:p-8">
+                        <h2><i class="fas fa-list-check mr-3 accent-text"></i>Official Evaluation Scorecard</h2>
+                        <p class="mb-6">A great hack is more than a demo; it's a well-planned, enterprise-aware solution. The jury will evaluate your project using this official scorecard. Each of the 12 criteria will be rated on a <strong>1-5 star scale.</strong></p>
+                        
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-xl font-bold text-indigo-700">Category 1: Business Value & Impact (Weight: 25%)</h3>
+                                <div class="criteria-grid mt-4">
+                                    <div class="criteria-card"><h4>Business Idea & Problem Fit</h4><p class="text-sm mt-1">Solves a high-value, real-world client problem.</p></div>
+                                    <div class="criteria-card"><h4>Potential ROI & Compelling Pitch</h4><p class="text-sm mt-1">The business impact is clear, quantifiable, and presented convincingly.</p></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 class="text-xl font-bold text-indigo-700">Category 2: Technical Innovation & Execution (Weight: 30%)</h3>
+                                <div class="criteria-grid mt-4">
+                                    <div class="criteria-card"><h4>Agentic Workflow Effectiveness</h4><p class="text-sm mt-1">Effective and innovative use of AI tools in an agentic development workflow.</p></div>
+                                    <div class="criteria-card"><h4>Development & Orchestration</h4><p class="text-sm mt-1">Coherent and logical architecture; the system is well-orchestrated.</p></div>
+                                    <div class="criteria-card"><h4>Overall Implementation</h4><p class="text-sm mt-1">The prototype is functional, stable, and demonstrates the core concept effectively.</p></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 class="text-xl font-bold text-indigo-700">Category 3: Enterprise Readiness & Delivery (Weight: 35%)</h3>
+                                <div class="criteria-grid mt-4">
+                                    <div class="criteria-card"><h4>Code & Repository Management</h4><p class="text-sm mt-1">Code is clean, well-structured, and managed in a Git repository.</p></div>
+                                    <div class="criteria-card"><h4>CI/CD & Automated Deployment</h4><p class="text-sm mt-1">A CI/CD pipeline automates deployment to at least one environment.</p></div>
+                                    <div class="criteria-card"><h4>Automated Testing</h4><p class="text-sm mt-1">Automated tests are present and integrated into the delivery pipeline.</p></div>
+                                    <div class="criteria-card"><h4>Security & Governance</h4><p class="text-sm mt-1">Considers security, data privacy, and compliance requirements.</p></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-xl font-bold text-indigo-700">Category 4: Maintainability & Path to Production (Weight: 10%)</h3>
+                                <div class="criteria-grid mt-4">
+                                    <div class="criteria-card"><h4>Documentation</h4><p class="text-sm mt-1">Comprehensive technical and functional documentation is available.</p></div>
+                                    <div class="criteria-card"><h4>Maintainability & Operability</h4><p class="text-sm mt-1">The solution is easy to debug, monitor, and operate.</p></div>
+                                    <div class="criteria-card"><h4>Clear Path to Production</h4><p class="text-sm mt-1">A clear and realistic roadmap for production is presented.</p></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="my-8 border-t border-gray-200"></div>
+
+                        <h3>Post-Hackathon Incubation & Capability Assessment</h3>
+                        <p>This event is a catalyst for capability building. Winning teams will receive <strong>leadership sponsorship and resources</strong> to develop their prototype further. We will also use this event to assess our collective skills, identifying strengths and gaps to create a clear pathway for scaling these AI-accelerated approaches in our client delivery work.</p>
+
+                    </div>
+                </div>
+
+                <!-- Agenda Content -->
+                <div id="agenda" class="tab-content">
+                     <div class="card p-6 md:p-8">
+                        <h2><i class="fas fa-calendar-alt mr-3 accent-text"></i>Streamlined Hackathon Agenda</h2>
+                        <p class="mb-6">This agenda is designed for maximum hacking time. We will minimize presentations to let you focus on building.</p>
+                        <div class="flex flex-col md:flex-row md:space-x-8">
+                            <!-- Day 1 -->
+                            <div class="md:w-1/2">
+                                <h3 class="text-xl font-bold mb-4">Day 1: Kickoff & Hacking (Oct 1st)</h3>
+                                <div class="space-y-4">
+                                    <div class="flex"><div class="w-32 font-semibold shrink-0">10:00 - 11:00</div><div>Welcome, Briefing & Final Team Alignments</div></div>
+                                    <div class="flex"><div class="w-32 font-semibold shrink-0">11:00</div><div><strong>Hacking Begins!</strong></div></div>
+                                    <div class="flex"><div class="w-32 font-semibold shrink-0">12:30 - 13:30</div><div>Working Lunch (Hacking continues)</div></div>
+                                    <div class="flex"><div class="w-32 font-semibold shrink-0">All Day</div><div>Mentor Office Hours (Technical & Business experts available)</div></div>
+                                    <div class="flex"><div class="w-32 font-semibold shrink-0">18:30</div><div>Dinner is Served (Hacking continues)</div></div>
+                                </div>
+                            </div>
+                            <!-- Day 2 -->
+                            <div class="md:w-1/2 mt-8 md:mt-0">
+                                <h3 class="text-xl font-bold mb-4">Day 2: Final Sprint & Demos (Oct 2nd)</h3>
+                                <div class="space-y-4">
+                                    <div class="flex"><div class="w-32 font-semibold shrink-0">09:00 - 12:00</div><div>Final Hacking Sprint</div></div>
+                                    <div class="flex"><div class="w-32 font-semibold shrink-0">12:00 - 13:00</div><div>Lunch & Presentation Prep</div></div>
+                                    <div class="flex"><div class="w-32 font-semibold shrink-0">13:00 - 14:00</div><div>Final Hacking Sprint Continues</div></div>
+                                    <div class="flex"><div class="w-32 font-semibold shrink-0">14:00</div><div><strong>Pencils Down! Code Freeze.</strong></div></div>
+                                    <div class="flex"><div class="w-32 font-semibold shrink-0">14:00 - 16:00</div><div>Project Demos & Jury Deliberation</div></div>
+                                    <div class="flex"><div class="w-32 font-semibold shrink-0">16:00 - 17:00</div><div>Awards Ceremony, Closing Remarks & Hackathon End</div></div>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+                 <!-- Logistics Content -->
+                <div id="logistics" class="tab-content">
+                    <div class="card p-6 md:p-8">
+                        <h2><i class="fas fa-map-location-dot mr-3 accent-text"></i>Logistics & Next Steps</h2>
+                        <p class="mb-6">Everything you need to know to be prepared for a great hackathon experience at Campus Kronberg.</p>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h3><i class="fas fa-map-pin mr-2 text-gray-500"></i>Venue Details</h3>
+                                <p class="font-semibold">Accenture Campus Kronberg</p>
+                                <p>Campus Allee 1<br>61476 Kronberg im Taunus, Germany</p>
+                                <p class="mt-2 text-sm text-gray-500">Check-in details will be provided closer to the event date.</p>
+                                <a href="https://www.google.com/maps/place/Accenture+Campus+Kronberg/" target="_blank" class="text-indigo-600 hover:underline mt-2 inline-block">View on Google Maps</a>
+
+                                <h3 class="mt-6"><i class="fas fa-utensils mr-2 text-gray-500"></i>Food & Refreshments</h3>
+                                <p>Lunch will be provided on both days, and dinner will be served on the evening of Day 1. Snacks, coffee, and drinks will be available throughout the event to keep you energized.</p>
+                                
+                                <h3 class="mt-6"><i class="fas fa-edit mr-2 text-gray-500"></i>Mandatory Registration</h3>
+                                <p>A myLearning link will be shared with all confirmed participants. Your sign-up via this link is **mandatory** to finalize your spot.</p>
+
+                            </div>
+                            <div>
+                                <h3><i class="fas fa-suitcase mr-2 text-gray-500"></i>What to Bring</h3>
+                                <ul class="list-disc list-inside space-y-2 mb-6">
+                                    <li><strong>Your Laptop & Charger:</strong> Essential for all your work.</li>
+                                    <li><strong>Any Required Peripherals:</strong> Mouse, keyboard, headphones, etc.</li>
+                                    <li><strong>Pre-installed Software:</strong> Have your preferred IDE (like VS Code), Git, and any other essential development tools installed and ready.</li>
+                                </ul>
+
+                                <h3><i class="fas fa-plane-departure mr-2 text-gray-500"></i>Travel & Expenses</h3>
+                                 <div class="bg-yellow-50 border-l-4 border-yellow-400 text-yellow-800 p-4 rounded-md">
+                                    <p class="font-bold">Important Travel Policy:</p>
+                                    <p class="text-sm">Participants are responsible for arranging their own travel. Expenses cannot be booked to the central training WBS. Regarding travel support, if you must participate but have no means of covering travel, please drop us a note and we will see how we can support.</p>
+                                </div>
+
+                                <h3 class="mt-6"><i class="fas fa-comments mr-2 text-gray-500"></i>Communication Channel</h3>
+                                <p>The Viva Engage community is our official channel for all announcements and questions. Make sure you have joined:</p>
+                                <a href="https://engage.cloud.microsoft/main/org/accenture.com/groups/eyJfdHlwZSI6Ikdyb3VwIiwiaWQiOiIyMzI4NDg1MjMyNjQifQ/all" target="_blank" class="text-indigo-600 hover:underline mt-2 inline-block">Official Engage Community Link</a>
+                            </div>
+                        </div>
+                        <div class="my-8 border-t border-gray-200"></div>
+                        <div class="bg-indigo-50 p-6 rounded-lg">
+                            <h3 class="mt-0"><i class="fas fa-bullseye mr-2"></i>Your Next Steps: Call to Action</h3>
+                            <p class="mb-4">Use the remaining time before the hackathon to get your team ready for success. Here are your key preparation tasks:</p>
+                            <ul class="list-disc list-inside space-y-3">
+                                <li><strong>Finalize Your Team:</strong> Use the Engage community to find members and solidify your team roster.</li>
+                                <li><strong>Select Your Tech Stack:</strong> Decide on your primary cloud platform (GCP, AWS, Azure) so we can ensure your team has the necessary infrastructure access.</li>
+                                <li><strong>Refine Your Idea:</strong> Sharpen your project scope and define a clear goal for your prototype. What is the core problem you are solving?</li>
+                                <li><strong>Prepare Your Local Setup:</strong> Make sure your laptop is ready. Install required software like Python, your IDE, and configure any necessary integrations (e.g., GitHub) to avoid delays on Day 1.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        function changeTab(tabId) {
+            // Deactivate all main tab buttons and hide content
+            document.querySelectorAll('.tab-btn').forEach(button => button.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.style.display = 'none');
+
+            // Activate the selected main tab
+            document.querySelector(`button[onclick="changeTab('${tabId}')"]`).classList.add('active');
+            document.getElementById(tabId).style.display = 'block';
+        }
+
+        function changeToolTab(tabId) {
+            // Deactivate all tool tab buttons and hide content
+            document.querySelectorAll('.tool-tab-btn').forEach(button => button.classList.remove('active'));
+            document.querySelectorAll('.tool-tab-content').forEach(content => content.style.display = 'none');
+
+            // Activate the selected tool tab
+            document.querySelector(`button[onclick="changeToolTab('${tabId}')"]`).classList.add('active');
+            document.getElementById(tabId).style.display = 'block';
+        }
+
+        const otherToolsData = [
+            { tool: "Cursor", website: "cursor.com", description: "An IDE built from the ground up for AI-powered development, allowing you to code with an agent.", freeTier: "14-day Pro trial, then 50 premium requests/month + unlimited basic models" },
+            { tool: "Lovable", website: "lovable.dev", description: "A generative AI that builds and hosts full-stack applications from a prompt.", freeTier: "5 messages/day (max 30/month), unlimited public projects, 20 collaborators" },
+            { tool: "Bolt.new", website: "bolt.new", description: "A rapid web app generator that creates interactive prototypes from simple descriptions.", freeTier: "Daily limit ~150K tokens (~6 queries/day), .bolt.host subdomains" },
+            { tool: "GitHub Copilot", website: "github.com/features/copilot", description: "An AI pair programmer that offers autocomplete-style suggestions as you code.", freeTier: "2,000 completions/month + 50 chat requests/month, Claude 3.5 & GPT-4.1 access" },
+            { tool: "Claude Code", website: "anthropic.com/claude", description: "Anthropic's powerful AI model with strong coding capabilities, available via API and chat.", freeTier: "Free access on some platforms (e.g. Poe), API has free credits for new users." },
+            { tool: "Codex Coding Agent", website: "openai.com/api", description: "An agent powered by OpenAI's latest models, designed to understand natural language and generate/edit code autonomously.", freeTier: "Free credits for new users, then pay-as-you-go. Functionality is part of core API models." },
+            { tool: "Cline (VS Code)", website: "marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev", description: "An open-source autonomous agent that lives in your VS Code editor to help with coding tasks.", freeTier: "Completely free open-source, bring your own API key" },
+            { tool: "Replit", website: "replit.com", description: "A browser-based IDE with collaborative features and built-in AI for coding, debugging, and deploying.", freeTier: "10 public Repls, 2GB storage, basic AI features" },
+            { tool: "OpenHands", website: "all-hands.dev", description: "An open-source AI agent that can execute complex software development tasks from start to finish.", freeTier: "$20 credits for new users, then pay-as-you-go" },
+            { tool: "Devin", website: "cognition.ai", description: "An autonomous AI software engineer designed to handle entire development projects.", freeTier: "Waitlist access only" },
+            { tool: "aider", website: "aider.chat", description: "A command-line tool that lets you pair program with GPT-4, editing code directly in your local git repo.", freeTier: "Free to use with your own OpenAI API key" },
+            { tool: "v0 by Vercel", website: "v0.dev", description: "A generative UI tool that creates React components and UI layouts from text and image prompts.", freeTier: "300 credits/month (~30 generations), public projects only" },
+            { tool: "Tabnine", website: "tabnine.com", description: "An AI code completion assistant that learns your coding patterns to provide personalized suggestions.", freeTier: "Basic code completions, limited advanced features" },
+            { tool: "ServiceNow Builder Agent", website: "servicenow.com/products/now-platform-app-engine.html", description: "A low-code tool for building enterprise applications and workflows on the ServiceNow platform.", freeTier: "Included in ServiceNow platform, free developer instance available" },
+            { tool: "Manus AI", website: "manus.ai", description: "An AI-native code editor that aims to streamline the development workflow with intelligent features.", freeTier: "Free while in beta, requires sign-up" },
+            { tool: "LangChain", website: "langchain.com", description: "A framework for developing applications powered by large language models, focusing on agentic workflows.", freeTier: "Open-source and free" },
+            { tool: "AutoGen", website: "microsoft.github.io/autogen/", description: "A framework from Microsoft for creating applications with multiple, collaborating LLM agents.", freeTier: "Open-source and free" },
+            { tool: "n8n", website: "n8n.io", description: "A workflow automation tool that helps you connect different services and APIs to build complex automations.", freeTier: "Cloud: 2.5k executions/month, 5 active workflows. Self-hosted: Unlimited." }
+        ];
+
+        function populateOtherTools() {
+            const tableBody = document.querySelector('#other tbody');
+            if (!tableBody) return;
+
+            tableBody.innerHTML = ''; // Clear existing rows
+
+            otherToolsData.forEach(toolData => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="text-sm font-medium text-gray-900"><a href="https://${toolData.website}" target="_blank" class="text-indigo-600 hover:text-indigo-900">${toolData.tool}</a></div>
+                    </td>
+                    <td class="px-6 py-4">
+                        <p class="text-sm text-gray-600">${toolData.description}</p>
+                    </td>
+                    <td class="px-6 py-4">
+                        <div class="text-sm text-gray-500">${toolData.freeTier}</div>
+                    </td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        }
+        
+        // Ensure the correct first tab is active on load
+        document.addEventListener('DOMContentLoaded', () => {
+             // Set the initial tab to be active
+            document.querySelectorAll('.tab-content').forEach(content => content.style.display = 'none');
+            document.getElementById('primer').style.display = 'block';
+            
+            // For the tools tab
+            changeToolTab('azure');
+            populateOtherTools();
+        });
+    </script>
+</body>
+</html>
+
