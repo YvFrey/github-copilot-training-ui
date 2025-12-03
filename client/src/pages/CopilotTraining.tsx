@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BookOpen, Terminal, GitBranch, ShieldCheck, Bot, LayoutTemplate } from "lucide-react";
+import { BookOpen, Terminal, GitBranch, ShieldCheck, Bot, LayoutTemplate, Info } from "lucide-react";
 import { ModulePrereq } from "@/components/training/ModulePrereq";
 import { ModulePlaceholder } from "@/components/training/ModulePlaceholder";
 import { motion, AnimatePresence } from "framer-motion";
@@ -59,6 +59,12 @@ const tabs: Tab[] = [
   },
 ];
 
+const difficultyColors = {
+  Beginner: "bg-emerald-400",
+  Intermediate: "bg-blue-400",
+  Advanced: "bg-purple-400",
+};
+
 export default function CopilotTraining() {
   const [activeTab, setActiveTab] = useState<TabId>("prereq");
 
@@ -67,34 +73,20 @@ export default function CopilotTraining() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const getDifficultyBadge = (difficulty?: string) => {
-    if (!difficulty) return null;
-    const colors = {
-      Beginner: "bg-green-100 text-green-700 border-green-200",
-      Intermediate: "bg-blue-100 text-blue-700 border-blue-200",
-      Advanced: "bg-purple-100 text-purple-700 border-purple-200",
-    };
-    return (
-      <span className={cn("text-xs px-2 py-0.5 rounded-full border ml-2", colors[difficulty as keyof typeof colors])}>
-        {difficulty}
-      </span>
-    );
-  };
-
   const renderContent = () => {
     switch (activeTab) {
       case "prereq":
         return <ModulePrereq onNext={() => handleNext("module1")} />;
       case "module1":
-        return <ModulePlaceholder title="Module I: Context & Control" subtitle="Precise Prompting and Workspace Awareness" icon={<BookOpen className="w-12 h-12 text-primary/20" />} difficulty="Beginner" />;
+        return <ModulePlaceholder title="Module I: Context & Control" subtitle="Precise Prompting and Workspace Awareness" icon={<BookOpen className="w-12 h-12 text-emerald-600" />} difficulty="Beginner" />;
       case "module2":
-        return <ModulePlaceholder title="Module II: Dynamic Interaction Modes" subtitle="Completions, Inline Chat, Chat Panel, Terminal" icon={<Terminal className="w-12 h-12 text-primary/20" />} difficulty="Intermediate" />;
+        return <ModulePlaceholder title="Module II: Dynamic Interaction Modes" subtitle="Completions, Inline Chat, Chat Panel, Terminal" icon={<Terminal className="w-12 h-12 text-blue-600" />} difficulty="Intermediate" />;
       case "module3":
-        return <ModulePlaceholder title="Module III: Version Control & Quality" subtitle="Git Workflow Integration" icon={<GitBranch className="w-12 h-12 text-primary/20" />} difficulty="Beginner" />;
+        return <ModulePlaceholder title="Module III: Version Control & Quality" subtitle="Git Workflow Integration" icon={<GitBranch className="w-12 h-12 text-emerald-600" />} difficulty="Beginner" />;
       case "module4":
-        return <ModulePlaceholder title="Module IV: Testing Framework" subtitle="Automating Tests and Policy Checks" icon={<ShieldCheck className="w-12 h-12 text-primary/20" />} difficulty="Intermediate" />;
+        return <ModulePlaceholder title="Module IV: Testing Framework" subtitle="Automating Tests and Policy Checks" icon={<ShieldCheck className="w-12 h-12 text-blue-600" />} difficulty="Intermediate" />;
       case "module5":
-        return <ModulePlaceholder title="Module V: Agentic Workflows" subtitle="Delegating and Supervising Autonomous Agents" icon={<Bot className="w-12 h-12 text-primary/20" />} difficulty="Advanced" />;
+        return <ModulePlaceholder title="Module V: Agentic Workflows" subtitle="Delegating and Supervising Autonomous Agents" icon={<Bot className="w-12 h-12 text-purple-600" />} difficulty="Advanced" />;
       default:
         return null;
     }
@@ -116,58 +108,76 @@ export default function CopilotTraining() {
           </p>
         </header>
 
-        {/* Navigation */}
-        <div className="mb-8 border-b border-gray-200 bg-white rounded-t-xl shadow-sm overflow-x-auto sticky top-0 z-10">
-          <nav className="flex w-full min-w-max px-2" aria-label="Tabs">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={cn(
-                  "group flex flex-col items-center justify-center py-3 px-4 border-b-2 font-medium text-sm transition-all duration-200 min-w-[120px]",
-                  activeTab === tab.id
-                    ? "border-indigo-600 text-indigo-600 bg-indigo-50/50"
-                    : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 hover:bg-gray-50"
-                )}
-              >
-                <div className="flex items-center mb-1">
-                  <span className={cn(
-                    "mr-2 transition-colors",
-                    activeTab === tab.id ? "text-indigo-600" : "text-gray-400 group-hover:text-gray-500"
-                  )}>
-                    {tab.icon}
-                  </span>
-                  {tab.label}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* Left Navigation Sidebar */}
+          <div className="lg:col-span-3 flex flex-col gap-6">
+             {/* Difficulty Legend */}
+             <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
+              <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Difficulty Levels</h3>
+              <div className="space-y-2">
+                <div className="flex items-center text-sm text-gray-600">
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 mr-2"></span>
+                  Beginner
                 </div>
-                {tab.difficulty && (
-                  <span className={cn(
-                    "text-[10px] px-1.5 py-0.5 rounded-full border",
-                    tab.difficulty === "Beginner" && "bg-green-50 text-green-600 border-green-100",
-                    tab.difficulty === "Intermediate" && "bg-blue-50 text-blue-600 border-blue-100",
-                    tab.difficulty === "Advanced" && "bg-purple-50 text-purple-600 border-purple-100"
-                  )}>
-                    {tab.difficulty}
-                  </span>
-                )}
-              </button>
-            ))}
-          </nav>
-        </div>
+                <div className="flex items-center text-sm text-gray-600">
+                  <span className="w-2.5 h-2.5 rounded-full bg-blue-400 mr-2"></span>
+                  Intermediate
+                </div>
+                <div className="flex items-center text-sm text-gray-600">
+                  <span className="w-2.5 h-2.5 rounded-full bg-purple-400 mr-2"></span>
+                  Advanced
+                </div>
+              </div>
+            </div>
 
-        {/* Content Area */}
-        <main>
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeTab}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.2 }}
-            >
-              {renderContent()}
-            </motion.div>
-          </AnimatePresence>
-        </main>
+            {/* Vertical Tabs */}
+            <nav className="flex flex-col space-y-1" aria-label="Tabs">
+              {tabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={cn(
+                    "group flex items-center justify-between py-3 px-4 rounded-lg font-medium text-sm transition-all duration-200 text-left",
+                    activeTab === tab.id
+                      ? "bg-white shadow-sm border border-indigo-100 text-indigo-600"
+                      : "text-gray-500 hover:bg-white/60 hover:text-gray-700"
+                  )}
+                >
+                  <div className="flex items-center">
+                    <span className={cn(
+                      "mr-3 transition-colors",
+                      activeTab === tab.id ? "text-indigo-600" : "text-gray-400 group-hover:text-gray-500"
+                    )}>
+                      {tab.icon}
+                    </span>
+                    {tab.label}
+                  </div>
+                  {tab.difficulty && (
+                    <span className={cn(
+                      "w-2 h-2 rounded-full ml-2",
+                      difficultyColors[tab.difficulty]
+                    )} title={tab.difficulty}></span>
+                  )}
+                </button>
+              ))}
+            </nav>
+          </div>
+
+          {/* Main Content Area */}
+          <main className="lg:col-span-9">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTab}
+                initial={{ opacity: 0, x: 10 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -10 }}
+                transition={{ duration: 0.2 }}
+              >
+                {renderContent()}
+              </motion.div>
+            </AnimatePresence>
+          </main>
+        </div>
       </div>
     </div>
   );
