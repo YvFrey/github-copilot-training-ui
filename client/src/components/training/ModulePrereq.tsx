@@ -50,7 +50,6 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
                   customRender: (
                     <div>
                       <span className="font-semibold text-gray-900 text-sm">GitHub Copilot License: </span>
-                      <span className="text-gray-600 text-sm">Copilot Pro or Business/Enterprise tied to your GitHub account</span>
                       <ul className="list-disc list-inside ml-2 mt-1 space-y-1">
                         <li className="text-gray-600 text-sm">
                           <strong>Use the 30-day free trial</strong> — <a href="https://github.com/github-copilot/pro" target="_blank" rel="noreferrer" className="text-indigo-600 hover:underline">Sign up for the 30-day free trial for GitHub Copilot Pro</a>
