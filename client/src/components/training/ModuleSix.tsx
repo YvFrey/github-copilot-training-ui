@@ -8,7 +8,7 @@ interface ModuleSixProps {
 export function ModuleSix({ onNext }: ModuleSixProps) {
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500 pb-12">
-      <div className="space-y-4">
+      <div className="space-y-4 border-b border-gray-200 pb-6">
         <h2 className="text-3xl font-bold text-gray-900">Module VI: Vibe Coding — The Integrated Exploration Challenge</h2>
       </div>
 
@@ -55,10 +55,10 @@ export function ModuleSix({ onNext }: ModuleSixProps) {
             detail: "Goal: Treat the AI like a mentor. Use the Debugging principle by providing the full error message and file context to guide the AI to an efficient self-correction."
           }
         ].map((card, i) => (
-          <div key={i} className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+          <div key={i} className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 flex flex-col">
             <div className="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-2">Phase {card.step}</div>
             <h4 className="font-bold text-gray-900 text-lg mb-3">{card.title}</h4>
-            <p className="text-gray-600 text-sm mb-4">{card.desc}</p>
+            <p className="text-gray-600 text-sm mb-4 flex-1">{card.desc}</p>
             <div className="text-xs text-gray-500 bg-gray-50 p-3 rounded border border-gray-100 italic">
               {card.detail}
             </div>
@@ -67,22 +67,24 @@ export function ModuleSix({ onNext }: ModuleSixProps) {
       </div>
 
       {/* Challenge Scenario */}
-      <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-8 text-white shadow-xl">
-         <div className="flex items-center gap-3 mb-6">
+      <div className="bg-gray-900 rounded-xl p-8 text-white shadow-xl relative overflow-hidden">
+         <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
+         
+         <div className="flex items-center gap-3 mb-8 relative z-10">
            <Target className="w-8 h-8 text-indigo-400" />
            <h3 className="text-2xl font-bold">The Challenge Scenario: Creative Exploration & New Tech</h3>
          </div>
          
-         <div className="space-y-6">
-           <div>
-             <h4 className="text-indigo-300 font-semibold mb-2 uppercase tracking-wide text-sm">Mission</h4>
+         <div className="grid md:grid-cols-2 gap-8 relative z-10">
+           <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+             <h4 className="text-indigo-300 font-semibold mb-3 uppercase tracking-wide text-sm">Mission</h4>
              <p className="text-gray-300 leading-relaxed">
                <strong>Be creative!</strong> Choose a simple, non-trivial problem to solve that <strong>could be business-related</strong> and implement the core functionality from scratch. This is your chance to <strong>dive into a new technology</strong> to truly feel the power of AI assistance.
              </p>
            </div>
            
-           <div>
-             <h4 className="text-indigo-300 font-semibold mb-2 uppercase tracking-wide text-sm">Tech Stack</h4>
+           <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+             <h4 className="text-indigo-300 font-semibold mb-3 uppercase tracking-wide text-sm">Tech Stack</h4>
              <p className="text-gray-300 leading-relaxed">
                You have <strong>full flexibility</strong>. Choose any language you want, or <strong>challenge yourself</strong> by picking one you are <strong>least familiar with</strong> to see the full benefit of Vibe Coding.
              </p>
@@ -97,7 +99,7 @@ export function ModuleSix({ onNext }: ModuleSixProps) {
           Exercises: The Integrated Workflow (Self-Directed)
         </h3>
         
-        <p className="text-gray-600 mb-6 text-lg">
+        <p className="text-gray-600 mb-8 text-lg">
           <strong>Your Task:</strong> Guide your chosen AI pair programmer through the entire software development lifecycle to implement your feature.
         </p>
         
@@ -107,8 +109,8 @@ export function ModuleSix({ onNext }: ModuleSixProps) {
             "Generate the code, tests, and documentation, ensuring you fuel the AI with context and rules.",
             "Finish by using the debugging principles to correct at least one intentional error and committing your final work."
           ].map((item, i) => (
-            <div key={i} className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg border border-gray-100">
-              <div className="w-8 h-8 rounded-full bg-white border-2 border-indigo-100 flex items-center justify-center text-indigo-600 font-bold shadow-sm">
+            <div key={i} className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl border border-gray-100 hover:border-indigo-100 transition-colors">
+              <div className="w-8 h-8 rounded-full bg-white border-2 border-indigo-100 flex items-center justify-center text-indigo-600 font-bold shadow-sm flex-shrink-0">
                 {i + 1}
               </div>
               <p className="text-gray-700 font-medium">{item}</p>
@@ -118,18 +120,19 @@ export function ModuleSix({ onNext }: ModuleSixProps) {
       </div>
 
       {/* Lesson Learned */}
-      <div className="bg-indigo-900 rounded-xl p-8 text-center">
-        <h3 className="text-2xl font-bold text-white mb-4">Lesson Learned: Developer Guidance is the Key</h3>
-        <p className="text-indigo-200 max-w-3xl mx-auto text-lg mb-8">
+      <div className="bg-indigo-900 rounded-xl p-8 text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+        <h3 className="text-2xl font-bold text-white mb-4 relative z-10">Lesson Learned: Developer Guidance is the Key</h3>
+        <p className="text-indigo-200 max-w-3xl mx-auto text-lg mb-8 relative z-10">
           Vibe Coding confirms that <strong>effective engineering thought</strong> is the key to maximizing AI productivity.
         </p>
         
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto text-left">
-          <div className="bg-white/10 rounded-lg p-6 backdrop-blur-sm border border-white/10">
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto text-left relative z-10">
+          <div className="bg-white/10 rounded-xl p-6 backdrop-blur-sm border border-white/10 hover:bg-white/15 transition-colors">
             <h4 className="font-bold text-white mb-2">Developer's Role</h4>
             <p className="text-indigo-100 text-sm">Your role is to provide constant <strong>guidance</strong>, not code. Be patient, point out the AI's mistakes with full error messages, and guide it to self-correct.</p>
           </div>
-           <div className="bg-white/10 rounded-lg p-6 backdrop-blur-sm border border-white/10">
+           <div className="bg-white/10 rounded-xl p-6 backdrop-blur-sm border border-white/10 hover:bg-white/15 transition-colors">
             <h4 className="font-bold text-white mb-2">Context is King</h4>
             <p className="text-indigo-100 text-sm">Always provide the full context because <strong>better input equals better output</strong>.</p>
           </div>
