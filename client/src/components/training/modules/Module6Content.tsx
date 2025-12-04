@@ -5,13 +5,13 @@ export function Module6Content() {
     <div className="prose prose-indigo max-w-none">
       <h3 className="text-xl font-bold text-gray-900 mb-4">📚 Goal: Implement a functional prototype feature based on a high-value, creative use case</h3>
       
-      <div className="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-r-lg mb-8">
-        <h3 className="text-xl font-bold text-indigo-900 mb-4 flex items-center">
+      <div className="bg-white border border-gray-200 p-6 rounded-lg mb-8 shadow-sm">
+        <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
           🧠 Vibe Coding Developer's Framework
         </h3>
-        <p className="text-indigo-800 mb-4">The Vibe Coding steps are your toolkit for maximizing AI productivity.</p>
+        <p className="text-gray-700 mb-4">The Vibe Coding steps are your toolkit for maximizing AI productivity.</p>
         
-        <ul className="list-disc list-inside space-y-3 text-indigo-800">
+        <ul className="list-disc list-inside space-y-3 text-gray-700">
           <li>
             <strong>Process Guardrails:</strong> You have <strong>full flexibility</strong> to adjust these steps or substitute them based on your own experimentation and experience, but <strong>you must ensure that you guard the process and clearly define milestones</strong> to maintain code quality and risk mitigation.
           </li>
@@ -71,14 +71,14 @@ export function Module6Content() {
         </div>
       </div>
 
-      <div className="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-r-lg">
-        <h3 className="text-xl font-bold text-indigo-900 mb-4 flex items-center">
+      <div className="bg-white border border-gray-200 p-6 rounded-lg shadow-sm">
+        <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
           🧠 Lesson Learned: Developer Guidance is the Key
         </h3>
-        <p className="text-indigo-800 mb-4">
+        <p className="text-gray-700 mb-4">
           Vibe Coding confirms that <strong>effective engineering thought</strong> is the key to maximizing AI productivity.
         </p>
-        <ul className="list-disc list-inside space-y-2 text-indigo-800">
+        <ul className="list-disc list-inside space-y-2 text-gray-700">
           <li><strong>Developer's Role:</strong> Your role is to provide constant <strong>guidance</strong>, not code. Be patient, point out the AI's mistakes with full error messages, and guide it to self-correct.</li>
           <li><strong>Context is King:</strong> Always provide the full context because <strong>better input equals better output</strong>.</li>
         </ul>

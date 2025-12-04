@@ -123,64 +123,64 @@ export function Module2Content() {
         <a href="https://docs.github.com/en/copilot/tutorials/customization-library/prompt-files/your-first-prompt-file" target="_blank" rel="noreferrer" className="text-indigo-600 hover:underline font-medium">GitHub Docs: Your First Prompt File</a>
       </div>
 
-      <div className="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-r-lg mt-8">
-        <h3 className="text-xl font-bold text-indigo-900 mb-4 flex items-center">
+      <div className="bg-white border border-gray-200 p-6 rounded-lg mt-8 shadow-sm">
+        <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
           🧠 Lesson Learned: Dynamic Interaction and Agent Capabilities
         </h3>
-        <p className="text-indigo-800 mb-4">
+        <p className="text-gray-700 mb-4">
           The most effective way to use Copilot is by <strong>choosing the right mode</strong> and understanding how to provide and switch context.<br/>
           <strong>Change the mode → change the context → change the result.</strong>
         </p>
 
-        <h4 className="text-lg font-bold text-indigo-900 mt-4 mb-2">💡 Core Thinking Modes</h4>
-        <p className="text-indigo-800 mb-2">All interactions fall into one of following modes, dictating the AI's response style:</p>
-        <ul className="list-disc list-inside space-y-1 text-indigo-800 mb-6">
+        <h4 className="text-lg font-bold text-gray-900 mt-4 mb-2">💡 Core Thinking Modes</h4>
+        <p className="text-gray-700 mb-2">All interactions fall into one of following modes, dictating the AI's response style:</p>
+        <ul className="list-disc list-inside space-y-1 text-gray-700 mb-6">
           <li><strong>ASK Mode</strong> → Reasoning, explanations, conceptual questions (e.g., asking <code>/explain</code>).</li>
           <li><strong>EDIT Mode</strong> → Rewriting, fixing, or refactoring existing, selected code (e.g., using <code>/fix</code>).</li>
           <li><strong>AGENT Mode</strong> → Multi-step workflows that coordinate actions or external tools.</li>
           <li><strong>Plan Mode</strong> → Helps you generate a step‑by‑step plan before coding. <a href="https://github.blog/changelog/2025-11-18-plan-mode-in-github-copilot-now-in-public-preview-in-jetbrains-eclipse-and-xcode/?utm_source=chatgpt.com" target="_blank" rel="noreferrer" className="underline">Plan Mode</a> is one of the latest features.</li>
         </ul>
 
-        <h4 className="text-lg font-bold text-indigo-900 mt-4 mb-2">⚡ Interaction Channels and Focus</h4>
-        <div className="overflow-x-auto bg-white rounded-lg border border-indigo-100">
-          <table className="min-w-full divide-y divide-indigo-100">
-            <thead className="bg-indigo-50">
+        <h4 className="text-lg font-bold text-gray-900 mt-4 mb-2">⚡ Interaction Channels and Focus</h4>
+        <div className="overflow-x-auto bg-white rounded-lg border border-gray-200">
+          <table className="min-w-full divide-y divide-gray-200">
+            <thead className="bg-gray-50">
               <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-indigo-800 uppercase tracking-wider">Channel</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-indigo-800 uppercase tracking-wider">Focus</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-indigo-800 uppercase tracking-wider">Key Use Case</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Channel</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Focus</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Key Use Case</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-indigo-100">
+            <tbody className="divide-y divide-gray-200">
               <tr>
-                <td className="px-6 py-3 text-sm font-medium text-indigo-900">Code Completions</td>
-                <td className="px-6 py-3 text-sm text-indigo-800 font-bold">Instant</td>
-                <td className="px-6 py-3 text-sm text-indigo-800">Quick scaffolding and small function generation.</td>
+                <td className="px-6 py-3 text-sm font-medium text-gray-900">Code Completions</td>
+                <td className="px-6 py-3 text-sm text-gray-700 font-bold">Instant</td>
+                <td className="px-6 py-3 text-sm text-gray-700">Quick scaffolding and small function generation.</td>
               </tr>
               <tr>
-                <td className="px-6 py-3 text-sm font-medium text-indigo-900">Inline Chat</td>
-                <td className="px-6 py-3 text-sm text-indigo-800 font-bold">Local Precision</td>
-                <td className="px-6 py-3 text-sm text-indigo-800">Small refactors, documentation (<code>/docs</code>), or quick fixes (<code>/fix</code>) on selected code.</td>
+                <td className="px-6 py-3 text-sm font-medium text-gray-900">Inline Chat</td>
+                <td className="px-6 py-3 text-sm text-gray-700 font-bold">Local Precision</td>
+                <td className="px-6 py-3 text-sm text-gray-700">Small refactors, documentation (<code>/docs</code>), or quick fixes (<code>/fix</code>) on selected code.</td>
               </tr>
               <tr>
-                <td className="px-6 py-3 text-sm font-medium text-indigo-900">Chat Panel</td>
-                <td className="px-6 py-3 text-sm text-indigo-800 font-bold">Global Reasoning</td>
-                <td className="px-6 py-3 text-sm text-indigo-800">Architectural questions, multi-file context, and complex explanations.</td>
+                <td className="px-6 py-3 text-sm font-medium text-gray-900">Chat Panel</td>
+                <td className="px-6 py-3 text-sm text-gray-700 font-bold">Global Reasoning</td>
+                <td className="px-6 py-3 text-sm text-gray-700">Architectural questions, multi-file context, and complex explanations.</td>
               </tr>
               <tr>
-                <td className="px-6 py-3 text-sm font-medium text-indigo-900">Terminal/CLI</td>
-                <td className="px-6 py-3 text-sm text-indigo-800 font-bold">Command Execution</td>
-                <td className="px-6 py-3 text-sm text-indigo-800">Generating and executing commands for Git, Docker, and shell utilities.</td>
+                <td className="px-6 py-3 text-sm font-medium text-gray-900">Terminal/CLI</td>
+                <td className="px-6 py-3 text-sm text-gray-700 font-bold">Command Execution</td>
+                <td className="px-6 py-3 text-sm text-gray-700">Generating and executing commands for Git, Docker, and shell utilities.</td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        <h4 className="text-lg font-bold text-indigo-900 mt-6 mb-2">⭐ Key Insight: Context = Results</h4>
-        <p className="text-indigo-800 font-medium mb-2">Change the mode → change the context → change the result.</p>
-        <p className="text-indigo-800 mb-4">The ultimate insight is that <strong>the input channel acts as the primary router</strong> for your query, dictating which specialized agent or tool handles the request. Copilot is engineered to be a powerful problem-solver, adept at handling complex tasks and quickly grasping the right context, but the human must guide the interaction.</p>
+        <h4 className="text-lg font-bold text-gray-900 mt-6 mb-2">⭐ Key Insight: Context = Results</h4>
+        <p className="text-gray-700 font-medium mb-2">Change the mode → change the context → change the result.</p>
+        <p className="text-gray-700 mb-4">The ultimate insight is that <strong>the input channel acts as the primary router</strong> for your query, dictating which specialized agent or tool handles the request. Copilot is engineered to be a powerful problem-solver, adept at handling complex tasks and quickly grasping the right context, but the human must guide the interaction.</p>
         
-        <ol className="list-decimal list-inside space-y-2 text-indigo-800">
+        <ol className="list-decimal list-inside space-y-2 text-gray-700">
           <li><strong>Channel is the Router:</strong> The channel you use (Inline Chat, Terminal, or Chat Panel) is the first factor that determines the AI's scope and focus.</li>
           <li><strong>Implicit Routing:</strong> The system automatically invokes the required agent based on context (e.g., <strong>Inline Chat inside the terminal automatically routes the request to the <code>@terminal</code> Agent</strong>). This means you don't always need to explicitly type the agent tag.</li>
           <li><strong>Efficiency:</strong> The most effective workflow combines these factors efficiently. The ultimate goal is to find the fastest way to get a reliable result. If you prefer typing commands over clicking UI elements, sticking to <strong>Slash Commands</strong> and <strong>Context Variables</strong> is a great strategy.</li>

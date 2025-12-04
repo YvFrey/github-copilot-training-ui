@@ -61,11 +61,11 @@ export function Module4Content() {
         </table>
       </div>
 
-      <div className="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-r-lg mt-8">
-        <h3 className="text-xl font-bold text-indigo-900 mb-4 flex items-center">
+      <div className="bg-white border border-gray-200 p-6 rounded-lg mt-8 shadow-sm">
+        <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
           🧠 Lesson Learned: Context-Driven Test Generation
         </h3>
-        <ul className="list-disc list-inside space-y-2 text-indigo-800">
+        <ul className="list-disc list-inside space-y-2 text-gray-700">
           <li>Copilot relies on <strong>instruction files</strong> to understand your project’s rules and structure.</li>
           <li><strong>Enhancing instructions</strong> ensures AI-generated tests are consistent, correctly placed, and follow naming conventions, fixtures, and framework standards.</li>
           <li><strong>Custom prompts</strong> let you automate repetitive workflows and enforce project-specific patterns.</li>

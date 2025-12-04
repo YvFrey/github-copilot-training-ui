@@ -101,14 +101,14 @@ export function Module1Content() {
         </table>
       </div>
 
-      <div className="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-r-lg mt-8">
-        <h3 className="text-xl font-bold text-indigo-900 mb-4 flex items-center">
+      <div className="bg-white border border-gray-200 p-6 rounded-lg mt-8 shadow-sm">
+        <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
           🧠 Lesson Learned: Context, Control & Autonomy
         </h3>
-        <p className="text-indigo-800 mb-4">
+        <p className="text-gray-700 mb-4">
           The most effective way to use Copilot is by <strong>defining context through agent specialization</strong>.
         </p>
-        <ul className="list-disc list-inside space-y-2 text-indigo-800">
+        <ul className="list-disc list-inside space-y-2 text-gray-700">
           <li>
             <strong>Global Constraints:</strong> 🛡️ Use the <strong><code>.github/copilot-instructions.md</code></strong> file for project-wide rules and architectural standards.
           </li>
