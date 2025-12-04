@@ -1,5 +1,5 @@
 import React from "react";
-import { CheckCircle2, AlertTriangle, Terminal, ExternalLink, Info, ArrowRight, Settings } from "lucide-react";
+import { CheckCircle2, AlertTriangle, Terminal, ExternalLink, Info, ArrowRight, Settings, LayoutTemplate } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface ModulePrereqProps {
@@ -13,7 +13,7 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
       <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 hover:shadow-md transition-shadow duration-300">
         <div className="flex items-center gap-3 mb-6">
           <div className="p-2 bg-indigo-100 rounded-lg">
-            <Info className="w-6 h-6 text-indigo-600" />
+            <LayoutTemplate className="w-6 h-6 text-indigo-600" />
           </div>
           <h2 className="text-2xl font-bold text-gray-900">Module 00: Prerequisites and Developer Responsibility</h2>
         </div>
