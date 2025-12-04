@@ -46,8 +46,8 @@ export function Module1Content() {
               <td className="px-6 py-4 text-sm text-gray-600">
                 1. Introduce a small syntax error in <code>app/main.py</code>.<br/>
                 2. <strong>Chat Panel: Ask:</strong> <Prompt>@vscode what problems are currently reported in this file?</Prompt><br/>
-                3. Ask: <Prompt>@vscode open the Problems panel.</Prompt><br/>
-                4. Ask: <Prompt>@vscode can you automatically fix this issue?</Prompt> Notice its limitations.
+                3. <strong>Chat Panel: Ask:</strong> <Prompt>@vscode open the Problems panel.</Prompt><br/>
+                4. <strong>Chat Panel: Ask:</strong> <Prompt>@vscode can you automatically fix this issue?</Prompt> Notice its limitations.
               </td>
             </tr>
             <tr>
@@ -93,7 +93,7 @@ export function Module1Content() {
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Context-Aware Code Completions</td>
               <td className="px-6 py-4 text-sm text-gray-600">
                 1. Open the newly created <strong><code>app/models.py</code></strong> file.<br/>
-                2. <strong>Type:</strong> <Prompt>class OrderResponse(BaseModel):</Prompt>.<br/>
+                2. <strong>Type:</strong> <Prompt>class OrderResponse(BaseModel):</Prompt><br/>
                 3. Let Copilot complete the class with appropriate fields. Observe how Copilot infers fields using repository-level context. Accept or refine its suggestion.
               </td>
             </tr>
