@@ -4,8 +4,6 @@ import { Prompt } from "../Prompt";
 export function Module5Content() {
   return (
     <div className="prose prose-indigo max-w-none">
-      <h3 className="text-xl font-bold text-gray-900 mb-4">📚 Goal: Master the creation of a Custom Agent and delegate autonomous, multi-step tasks using both the GitHub Issue and the Copilot Chat interface</h3>
-      
       <p className="text-gray-600 mb-4">
         <strong>Copilot Coding Agents</strong> 🤖 are <strong>autonomous</strong> AI assistants designed to perform <strong>multi-step, iterative coding tasks</strong> in an <strong>asynchronous</strong> manner. They are the <strong>only</strong> Copilot tools that can run, commit, and open PRs in a loop without human intervention. Agent workflows can be triggered in multiple ways via GitHub UI, CLI (<code>gh</code>) or Chat.
       </p>

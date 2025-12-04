@@ -32,6 +32,15 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
             We encourage you to discuss actively with your colleagues during the session, and <strong>manifest your new learned skills</strong> by continuing to practice the concepts outside of the classroom.
           </p>
         </div>
+
+        <div className="mt-8 pt-6 border-t border-gray-100">
+            <h3 className="text-lg font-bold text-gray-900 flex items-center gap-2">
+              <span className="text-xl">📚</span> Goal:
+            </h3>
+            <div className="mt-2 text-gray-700">
+              Prepare your environment and understand the core principles of AI-assisted development.
+            </div>
+        </div>
       </div>
 
       {/* Prerequisites Checklist Card - Compact Version */}

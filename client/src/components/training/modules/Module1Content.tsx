@@ -4,8 +4,6 @@ import { Prompt } from "../Prompt";
 export function Module1Content() {
   return (
     <div className="prose prose-indigo max-w-none">
-      <h3 className="text-xl font-bold text-gray-900 mb-4">📚 Goal: Understand how explicit context (instructions and chat variables) dictate the quality and scope of Copilot's suggestions</h3>
-      
       <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Exercises: Explicit Context-Awareness</h2>
       
       <div className="overflow-x-auto border rounded-lg">
