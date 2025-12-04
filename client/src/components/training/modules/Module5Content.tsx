@@ -1,4 +1,5 @@
 import React from "react";
+import { Prompt } from "../Prompt";
 
 export function Module5Content() {
   return (
@@ -37,7 +38,7 @@ export function Module5Content() {
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">5.2</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Delegation via GitHub Issue</td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                1. Go to your repository's <strong>Issues</strong> tab on GitHub and create a new issue. e.g. titled: <strong><code>@copilot Request: Fix All Outstanding Mypy Errors of the App</code></strong>.<br/>
+                1. Go to your repository's <strong>Issues</strong> tab on GitHub and create a new issue. e.g. titled: <Prompt>@copilot Request: Fix All Outstanding Mypy Errors of the App</Prompt>.<br/>
                 2. <strong>Assign</strong> this new issue to the <strong><code>@copilot</code></strong> agent.<br/>
                 3. Use the custom agent profile dropdown to select <strong><code>MypyFixer</code></strong>.
               </td>
@@ -60,7 +61,7 @@ export function Module5Content() {
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">5.5</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Optional: Delegation via GitHub CLI</td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                Make sure the GitHub CLI is installed. Delegate the task via the command line: <strong><code>gh issue create --title "@copilot Request: Refactor the /calculate endpoint" --assignee @copilot</code></strong>
+                Make sure the GitHub CLI is installed. Delegate the task via the command line: <Prompt>gh issue create --title "@copilot Request: Refactor the /calculate endpoint" --assignee @copilot</Prompt>
               </td>
             </tr>
             <tr>

@@ -1,6 +1,7 @@
 import React from "react";
 import { CheckCircle2, AlertTriangle, Terminal, ExternalLink, Info, ArrowRight, Settings, LayoutTemplate } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Prompt } from "@/components/training/Prompt";
 
 interface ModulePrereqProps {
   onNext?: () => void;
@@ -163,7 +164,7 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
             <h4 className="text-lg font-semibold text-gray-800 mb-3">2. Verify Copilot</h4>
             <p className="text-gray-700 text-sm">
               Verify Copilot: Open the Copilot Chat panel in VS Code and ask a project-aware question such as: 
-              <span className="font-medium italic text-gray-900"> "What is the main purpose of this repository?".</span> A coherent response indicates Copilot is active and has access to the workspace.
+              <Prompt>"What is the main purpose of this repository?".</Prompt> A coherent response indicates Copilot is active and has access to the workspace.
             </p>
           </div>
         </div>

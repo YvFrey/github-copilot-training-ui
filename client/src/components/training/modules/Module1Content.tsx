@@ -1,4 +1,5 @@
 import React from "react";
+import { Prompt } from "../Prompt";
 
 export function Module1Content() {
   return (
@@ -22,21 +23,21 @@ export function Module1Content() {
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Repository Instructions</td>
               <td className="px-6 py-4 text-sm text-gray-600">
                 1. <strong>Review:</strong> Open and read the <code>.github/copilot-instructions.md</code> file.<br/>
-                2. <strong>Chat Panel: Ask:</strong> <code>Which file must I create next to satisfy Mandatory Coding Guideline #4, and please provide the command to create it.</code> Execute the suggested command.
+                2. <strong>Chat Panel: Ask:</strong> <Prompt>Which file must I create next to satisfy Mandatory Coding Guideline #4, and please provide the command to create it.</Prompt> Execute the suggested command.
               </td>
             </tr>
             <tr>
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1.2</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Workspace Awareness (<code>@workspace</code> Agent)</td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                <strong>Copilot Chat: Ask:</strong> <code>@workspace what are the two main dependencies listed in pyproject.toml and what is the required Python version?</code>
+                <strong>Copilot Chat: Ask:</strong> <Prompt>@workspace what are the two main dependencies listed in pyproject.toml and what is the required Python version?</Prompt>
               </td>
             </tr>
             <tr>
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1.3</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Terminal Help (<code>@terminal</code> Agent)</td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                <strong>Chat Panel: Ask:</strong> <code>@terminal I need to create a new branch named 'feature/calc-fix'. Provide the exact git command for this.</code> Execute the suggested command.
+                <strong>Chat Panel: Ask:</strong> <Prompt>@terminal I need to create a new branch named 'feature/calc-fix'. Provide the exact git command for this.</Prompt> Execute the suggested command.
               </td>
             </tr>
             <tr>
@@ -44,9 +45,9 @@ export function Module1Content() {
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Editor Diagnostics (<code>@vscode</code> Agent)</td>
               <td className="px-6 py-4 text-sm text-gray-600">
                 1. Introduce a small syntax error in <code>app/main.py</code>.<br/>
-                2. <strong>Chat Panel: Ask:</strong> <code>@vscode what problems are currently reported in this file?</code><br/>
-                3. Ask: <code>@vscode open the Problems panel.</code><br/>
-                4. Ask: <code>@vscode can you automatically fix this issue?</code> Notice its limitations.
+                2. <strong>Chat Panel: Ask:</strong> <Prompt>@vscode what problems are currently reported in this file?</Prompt><br/>
+                3. Ask: <Prompt>@vscode open the Problems panel.</Prompt><br/>
+                4. Ask: <Prompt>@vscode can you automatically fix this issue?</Prompt> Notice its limitations.
               </td>
             </tr>
             <tr>
@@ -54,14 +55,14 @@ export function Module1Content() {
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Chat Variable (<code>#selection</code>)</td>
               <td className="px-6 py-4 text-sm text-gray-600">
                 1. Open <code>app/main.py</code>. <strong>Select</strong> only the <code>calculate_total</code> function.<br/>
-                2. <strong>Chat Panel: Ask:</strong> <code>What are the parameters and return type for #selection and is there a type hint error?</code>
+                2. <strong>Chat Panel: Ask:</strong> <Prompt>What are the parameters and return type for #selection and is there a type hint error?</Prompt>
               </td>
             </tr>
             <tr>
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1.6</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Chat Variable (<code>#file</code>)</td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                <strong>Chat Panel: Ask:</strong> <code>In the function defined in #file:app/main.py, what is the current logic error in the 'calculate_total' function?</code>
+                <strong>Chat Panel: Ask:</strong> <Prompt>In the function defined in #file:app/main.py, what is the current logic error in the 'calculate_total' function?</Prompt>
               </td>
             </tr>
           </tbody>
@@ -84,7 +85,7 @@ export function Module1Content() {
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1.7</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Context-Aware Chat</td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                <strong>Chat Panel: Ask:</strong> <code>Based on the repository's files, what is the required location for new Pydantic models and what is the rule for function signatures?</code>
+                <strong>Chat Panel: Ask:</strong> <Prompt>Based on the repository's files, what is the required location for new Pydantic models and what is the rule for function signatures?</Prompt>
               </td>
             </tr>
             <tr>
@@ -141,10 +142,10 @@ export function Module1Content() {
         </p>
         <ul className="list-disc list-inside space-y-2 text-gray-600 mb-4">
           <li><strong>Option 1: Command Palette (Recommended)</strong>: <code>Copilot: Generate Project Instructions</code></li>
-          <li><strong>Option 2: Chat Input (Codespaces/GitHub.dev)</strong>: <code>@workspace generate project instructions file</code></li>
+          <li><strong>Option 2: Chat Input (Codespaces/GitHub.dev)</strong>: <Prompt>@workspace generate project instructions file</Prompt></li>
         </ul>
         <p className="text-gray-600">
-          In both cases, Copilot analyzes the existing code and configuration files, creating a draft <code>.github/copilot-instructions.md</code> that you can then review and refine with your <strong>Mandatory Coding Guidelines</strong>. You can confirm the file is generated and active: <code>@workspace summarize the active workspace instructions.</code> Copilot will quote the main rules from that file if it’s being used correctly.
+          In both cases, Copilot analyzes the existing code and configuration files, creating a draft <code>.github/copilot-instructions.md</code> that you can then review and refine with your <strong>Mandatory Coding Guidelines</strong>. You can confirm the file is generated and active: <Prompt>@workspace summarize the active workspace instructions.</Prompt> Copilot will quote the main rules from that file if it’s being used correctly.
         </p>
       </div>
 
