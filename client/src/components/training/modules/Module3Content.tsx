@@ -7,13 +7,17 @@ interface Module3ContentProps {
   onNext?: () => void;
 }
 
+export const Module3Intro = (
+  <>
+    <h3 className="text-xl font-bold text-gray-900 mb-4">📚 Goal: Integrate Copilot's contextual features into Git workflows</h3>
+    
+    <p className="text-gray-600">Improve commit messages, code review, and branch documentation, while reinforcing the developer's ultimate responsibility for code integrity.</p>
+  </>
+);
+
 export function Module3Content({ onNext }: Module3ContentProps) {
   return (
     <div className="prose prose-indigo max-w-none">
-      <h3 className="text-xl font-bold text-gray-900 mb-4">📚 Goal: Integrate Copilot's contextual features into Git workflows</h3>
-      
-      <p className="text-gray-600 mb-6">Improve commit messages, code review, and branch documentation, while reinforcing the developer's ultimate responsibility for code integrity.</p>
-
       <h2 className="text-2xl font-bold text-gray-900 mb-4">Exercises</h2>
       
       <div className="overflow-x-auto border rounded-lg">

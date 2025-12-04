@@ -7,9 +7,10 @@ interface ModulePlaceholderProps {
   icon: React.ReactNode;
   difficulty?: "Beginner" | "Intermediate" | "Advanced";
   content?: React.ReactNode;
+  introContent?: React.ReactNode;
 }
 
-export function ModulePlaceholder({ title, subtitle, icon, difficulty, content }: ModulePlaceholderProps) {
+export function ModulePlaceholder({ title, subtitle, icon, difficulty, content, introContent }: ModulePlaceholderProps) {
   return (
     <div className="space-y-6">
       {/* Header Card */}
@@ -23,6 +24,11 @@ export function ModulePlaceholder({ title, subtitle, icon, difficulty, content }
             <p className="text-gray-500">{subtitle}</p>
           </div>
         </div>
+        {introContent && (
+          <div className="mt-6 border-t border-gray-100 pt-6">
+            {introContent}
+          </div>
+        )}
       </div>
 
       {/* Content Area */}

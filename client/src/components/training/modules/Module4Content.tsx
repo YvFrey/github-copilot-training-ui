@@ -7,19 +7,23 @@ interface Module4ContentProps {
   onNext?: () => void;
 }
 
+export const Module4Intro = (
+  <>
+    <h3 className="text-xl font-bold text-gray-900 mb-4">📚 Goal: Integrate Copilot into the end-to-end development loop</h3>
+    
+    <p className="text-gray-600 mb-4">
+      Generate tests, explore unit and integration coverage, and ensure code adheres to project standards.
+    </p>
+    
+    <p className="text-gray-600">
+      Copilot can leverage <strong>global instruction files</strong> and <strong>custom prompts</strong> to understand project structure, naming conventions, and preferred frameworks. By refining instructions and prompts, you make Copilot smarter and reduce manual corrections when generating tests.
+    </p>
+  </>
+);
+
 export function Module4Content({ onNext }: Module4ContentProps) {
   return (
     <div className="prose prose-indigo max-w-none">
-      <h3 className="text-xl font-bold text-gray-900 mb-4">📚 Goal: Integrate Copilot into the end-to-end development loop</h3>
-      
-      <p className="text-gray-600 mb-4">
-        Generate tests, explore unit and integration coverage, and ensure code adheres to project standards.
-      </p>
-      
-      <p className="text-gray-600 mb-6">
-        Copilot can leverage <strong>global instruction files</strong> and <strong>custom prompts</strong> to understand project structure, naming conventions, and preferred frameworks. By refining instructions and prompts, you make Copilot smarter and reduce manual corrections when generating tests.
-      </p>
-
       <h2 className="text-2xl font-bold text-gray-900 mb-4">Exercises</h2>
       
       <div className="overflow-x-auto border rounded-lg">

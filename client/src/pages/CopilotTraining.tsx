@@ -6,11 +6,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 // Import Module Content Components
-import { Module1Content } from "@/components/training/modules/Module1Content";
-import { Module2Content } from "@/components/training/modules/Module2Content";
-import { Module3Content } from "@/components/training/modules/Module3Content";
-import { Module4Content } from "@/components/training/modules/Module4Content";
-import { Module5Content } from "@/components/training/modules/Module5Content";
+import { Module1Content, Module1Intro } from "@/components/training/modules/Module1Content";
+import { Module2Content, Module2Intro } from "@/components/training/modules/Module2Content";
+import { Module3Content, Module3Intro } from "@/components/training/modules/Module3Content";
+import { Module4Content, Module4Intro } from "@/components/training/modules/Module4Content";
+import { Module5Content, Module5Intro } from "@/components/training/modules/Module5Content";
 import { Module6Content } from "@/components/training/modules/Module6Content";
 
 type TabId = "prereq" | "module1" | "module2" | "module3" | "module4" | "module5" | "module6";
@@ -100,6 +100,7 @@ export default function CopilotTraining() {
           subtitle="Precise Prompting and Workspace Awareness" 
           icon={<BookOpen className="w-8 h-8 text-indigo-600" />} 
           difficulty="Beginner"
+          introContent={Module1Intro}
           content={<Module1Content onNext={() => handleNext("module2")} />}
         />;
       case "module2":
@@ -108,6 +109,7 @@ export default function CopilotTraining() {
           subtitle="Completions, Inline Chat, Chat Panel, Terminal" 
           icon={<Terminal className="w-8 h-8 text-indigo-600" />} 
           difficulty="Intermediate"
+          introContent={Module2Intro}
           content={<Module2Content onNext={() => handleNext("module3")} />}
         />;
       case "module3":
@@ -116,6 +118,7 @@ export default function CopilotTraining() {
           subtitle="Git Workflow Integration" 
           icon={<GitBranch className="w-8 h-8 text-indigo-600" />} 
           difficulty="Beginner"
+          introContent={Module3Intro}
           content={<Module3Content onNext={() => handleNext("module4")} />}
         />;
       case "module4":
@@ -124,6 +127,7 @@ export default function CopilotTraining() {
           subtitle="Automating Tests and Policy Checks" 
           icon={<ShieldCheck className="w-8 h-8 text-indigo-600" />} 
           difficulty="Intermediate"
+          introContent={Module4Intro}
           content={<Module4Content onNext={() => handleNext("module5")} />}
         />;
       case "module5":
@@ -132,6 +136,7 @@ export default function CopilotTraining() {
           subtitle="Delegating and Supervising Autonomous Agents" 
           icon={<Bot className="w-8 h-8 text-indigo-600" />} 
           difficulty="Advanced"
+          introContent={Module5Intro}
           content={<Module5Content />}
         />;
       case "module6":

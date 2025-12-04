@@ -7,22 +7,26 @@ interface Module2ContentProps {
   onNext?: () => void;
 }
 
+export const Module2Intro = (
+  <>
+    <h3 className="text-xl font-bold text-gray-900 mb-4">📚 Goal: Learn to switch between Copilot’s interaction modes and channels to maximize developer productivity</h3>
+    
+    <p className="text-gray-600 mb-4">Copilot provides four primary interaction channels:</p>
+    
+    <ul className="list-disc list-inside space-y-2 text-gray-600 mb-6">
+      <li><strong>Code Completions</strong> → Quick scaffolding and filling in code as you type.</li>
+      <li><strong>Inline Chat (<code>Ctrl/Cmd + I</code>)</strong> → Focused, in-place edits and actions on selected code.</li>
+      <li><strong>Chat Panel</strong> → Global reasoning, architectural questions, and multi-file context.</li>
+      <li><strong>Copilot CLI</strong> → Shell/Terminal Interaction for generating and executing commands.</li>
+    </ul>
+    
+    <p className="text-gray-600">Switching modes and channels intentionally improves speed, accuracy, and clarity.</p>
+  </>
+);
+
 export function Module2Content({ onNext }: Module2ContentProps) {
   return (
     <div className="prose prose-indigo max-w-none">
-      <h3 className="text-xl font-bold text-gray-900 mb-4">📚 Goal: Learn to switch between Copilot’s interaction modes and channels to maximize developer productivity</h3>
-      
-      <p className="text-gray-600 mb-4">Copilot provides four primary interaction channels:</p>
-      
-      <ul className="list-disc list-inside space-y-2 text-gray-600 mb-6">
-        <li><strong>Code Completions</strong> → Quick scaffolding and filling in code as you type.</li>
-        <li><strong>Inline Chat (<code>Ctrl/Cmd + I</code>)</strong> → Focused, in-place edits and actions on selected code.</li>
-        <li><strong>Chat Panel</strong> → Global reasoning, architectural questions, and multi-file context.</li>
-        <li><strong>Copilot CLI</strong> → Shell/Terminal Interaction for generating and executing commands.</li>
-      </ul>
-      
-      <p className="text-gray-600 mb-8">Switching modes and channels intentionally improves speed, accuracy, and clarity.</p>
-
       <h2 className="text-2xl font-bold text-gray-900 mb-4">Exercises</h2>
       
       <div className="overflow-x-auto border rounded-lg">
