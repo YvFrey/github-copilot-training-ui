@@ -9,6 +9,22 @@ export const Module6Intro = (
 export function Module6Content() {
   return (
     <div className="prose prose-indigo max-w-none">
+      <div className="mb-8">
+        <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+          🧠 Vibe Coding Developer's Framework
+        </h3>
+        <p className="text-gray-700 mb-4">The Vibe Coding steps are your toolkit for maximizing AI productivity.</p>
+        
+        <ul className="list-disc list-inside space-y-3 text-gray-700">
+          <li>
+            <strong>Process Guardrails:</strong> You have <strong>full flexibility</strong> to adjust these steps or substitute them based on your own experimentation and experience, but <strong>you must ensure that you guard the process and clearly define milestones</strong> to maintain code quality and risk mitigation.
+          </li>
+          <li>
+            <strong>AI Tool Flexibility:</strong> While this training is designed to strengthen your expertise in <strong>GitHub Copilot</strong>, you have full flexibility on AI tools and pair programmers. Feel free to enhance your workflow by integrating other generative AI tools.
+          </li>
+        </ul>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 relative">
         {/* Connecting line for desktop */}
         <div className="hidden md:block absolute top-8 left-0 w-full h-0.5 bg-indigo-100 -z-10 transform translate-y-4"></div>
@@ -41,7 +57,7 @@ export function Module6Content() {
         </div>
       </div>
 
-      <div className="bg-gray-50 border border-gray-200 p-6 rounded-lg mb-8">
+      <div className="bg-white border border-gray-200 p-6 rounded-lg mb-8">
         <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
           🚀 The Challenge: The Integrated Workflow
         </h3>
