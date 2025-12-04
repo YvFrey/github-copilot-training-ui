@@ -61,7 +61,7 @@ export function Module2Content({ onNext }: Module2ContentProps) {
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Chat Panel (<code>/fix</code>)</td>
               <td className="px-6 py-4 text-sm text-gray-600">
                 1. <strong>Select</strong> the entire <strong><code>calculate_total</code></strong> function.<br/>
-                2. <strong>Chat Panel:</strong> <Prompt>/fix the bug of the function</Prompt>
+                2. <strong>Chat:</strong> <Prompt>/fix the bug of the function</Prompt>
               </td>
             </tr>
             <tr>
@@ -69,7 +69,7 @@ export function Module2Content({ onNext }: Module2ContentProps) {
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Chat Panel (<code>/explain</code>)</td>
               <td className="px-6 py-4 text-sm text-gray-600">
                 1. <strong>Select</strong> the <code>calculate_total</code> function.<br/>
-                2. <strong>Chat Panel: Ask:</strong> <Prompt>/explain this function to a junior developer. Focus on the math and correct return type, referencing its usage in the '/calculate' endpoint</Prompt>.
+                2. <strong>Chat: Ask:</strong> <Prompt>/explain this function to a junior developer. Focus on the math and correct return type, referencing its usage in the '/calculate' endpoint</Prompt>.
               </td>
             </tr>
             <tr>
@@ -85,7 +85,7 @@ export function Module2Content({ onNext }: Module2ContentProps) {
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Mode Comparison</td>
               <td className="px-6 py-4 text-sm text-gray-600">
                 1. <strong>Select</strong> the <strong>entire <code>calculate_total</code> function</strong> after changing the return type to int.<br/>
-                2. <strong>Chat Panel:</strong> Submit three times the exact same prompt: <Prompt>Change the return type of this function</Prompt> Switch between <strong>ASK Mode, EDIT Mode</strong> and <strong>AGENT Mode</strong> and observe the different behavior.
+                2. <strong>Chat:</strong> Submit three times the exact same prompt: <Prompt>Change the return type of this function</Prompt> Switch between <strong>ASK Mode, EDIT Mode</strong> and <strong>AGENT Mode</strong> and observe the different behavior.
               </td>
             </tr>
             <tr>

@@ -33,7 +33,7 @@ export function Module1Content({ onNext }: Module1ContentProps) {
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Repository Instructions</td>
               <td className="px-6 py-4 text-sm text-gray-600">
                 1. <strong>Review:</strong> Open and read the <code>.github/copilot-instructions.md</code> file.<br/>
-                2. <strong>Chat Panel: Ask:</strong> <Prompt>Which file must I create next to satisfy Mandatory Coding Guideline #4, and please provide the command to create it.</Prompt> Execute the suggested command.
+                2. <strong>Chat: Ask:</strong> <Prompt>Which file must I create next to satisfy Mandatory Coding Guideline #4, and please provide the command to create it.</Prompt> Execute the suggested command.
               </td>
             </tr>
             <tr>
@@ -47,7 +47,7 @@ export function Module1Content({ onNext }: Module1ContentProps) {
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1.3</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Terminal Help (<code>@terminal</code> Agent)</td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                <strong>Chat Panel: Ask:</strong> <Prompt>@terminal I need to create a new branch named 'feature/calc-fix'. Provide the exact git command for this.</Prompt> Execute the suggested command.
+                <strong>Chat: Ask:</strong> <Prompt>@terminal I need to create a new branch named 'feature/calc-fix'. Provide the exact git command for this.</Prompt> Execute the suggested command.
               </td>
             </tr>
             <tr>
@@ -55,9 +55,9 @@ export function Module1Content({ onNext }: Module1ContentProps) {
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Editor Diagnostics (<code>@vscode</code> Agent)</td>
               <td className="px-6 py-4 text-sm text-gray-600">
                 1. Introduce a small syntax error in <code>app/main.py</code>.<br/>
-                2. <strong>Chat Panel: Ask:</strong> <Prompt>@vscode what problems are currently reported in this file?</Prompt><br/>
-                3. <strong>Chat Panel: Ask:</strong> <Prompt>@vscode open the Problems panel.</Prompt><br/>
-                4. <strong>Chat Panel: Ask:</strong> <Prompt>@vscode can you automatically fix this issue?</Prompt> Notice its limitations.
+                2. <strong>Chat: Ask:</strong> <Prompt>@vscode what problems are currently reported in this file?</Prompt><br/>
+                3. <strong>Chat: Ask:</strong> <Prompt>@vscode open the Problems panel.</Prompt><br/>
+                4. <strong>Chat: Ask:</strong> <Prompt>@vscode can you automatically fix this issue?</Prompt> Notice its limitations.
               </td>
             </tr>
             <tr>
@@ -65,14 +65,14 @@ export function Module1Content({ onNext }: Module1ContentProps) {
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Chat Variable (<code>#selection</code>)</td>
               <td className="px-6 py-4 text-sm text-gray-600">
                 1. Open <code>app/main.py</code>. <strong>Select</strong> only the <code>calculate_total</code> function.<br/>
-                2. <strong>Chat Panel: Ask:</strong> <Prompt>What are the parameters and return type for #selection and is there a type hint error?</Prompt>
+                2. <strong>Chat: Ask:</strong> <Prompt>What are the parameters and return type for #selection and is there a type hint error?</Prompt>
               </td>
             </tr>
             <tr>
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1.6</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Chat Variable (<code>#file</code>)</td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                <strong>Chat Panel: Ask:</strong> <Prompt>In the function defined in #file:app/main.py, what is the current logic error in the 'calculate_total' function?</Prompt>
+                <strong>Chat: Ask:</strong> <Prompt>In the function defined in #file:app/main.py, what is the current logic error in the 'calculate_total' function?</Prompt>
               </td>
             </tr>
           </tbody>
@@ -95,7 +95,7 @@ export function Module1Content({ onNext }: Module1ContentProps) {
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1.7</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Context-Aware Chat</td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                <strong>Chat Panel: Ask:</strong> <Prompt>Based on the repository's files, what is the required location for new Pydantic models and what is the rule for function signatures?</Prompt>
+                <strong>Chat: Ask:</strong> <Prompt>Based on the repository's files, what is the required location for new Pydantic models and what is the rule for function signatures?</Prompt>
               </td>
             </tr>
             <tr>

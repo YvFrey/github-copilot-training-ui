@@ -57,7 +57,7 @@ export function Module5Content({ onNext }: Module5ContentProps) {
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">5.3</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Delegation via VS Code Chat</td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                <strong>Chat Panel: MyPyFixer:</strong> Create a simple prompt that initiates the <strong>autonomous workflow</strong> directly from your IDE using the selected agent, resulting in a new PR. Click the cloud icon next to the send button and select the <strong><code>GitHub Copilot Cloud Agent</code></strong>.
+                <strong>Chat: MyPyFixer:</strong> Create a simple prompt that initiates the <strong>autonomous workflow</strong> directly from your IDE using the selected agent, resulting in a new PR. Click the cloud icon next to the send button and select the <strong><code>GitHub Copilot Cloud Agent</code></strong>.
               </td>
             </tr>
             <tr>
@@ -85,7 +85,7 @@ export function Module5Content({ onNext }: Module5ContentProps) {
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">5.7</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Optional: Run Agent Locally</td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                <strong>Chat Panel:</strong> Create a simple prompt to assign a task to any of your defined agents. Click the cloud icon next to the send button and select the GitHub Copilot CLI Agent.
+                <strong>Chat:</strong> Create a simple prompt to assign a task to any of your defined agents. Click the cloud icon next to the send button and select the GitHub Copilot CLI Agent.
               </td>
             </tr>
           </tbody>
