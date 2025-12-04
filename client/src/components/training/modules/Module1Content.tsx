@@ -22,9 +22,9 @@ export function Module1Content({ onNext }: Module1ContentProps) {
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
             <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Step</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Feature</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Instructions</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-[10%]">Step</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-[25%]">Feature</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-[65%]">Instructions</th>
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
@@ -38,21 +38,30 @@ export function Module1Content({ onNext }: Module1ContentProps) {
             </tr>
             <tr>
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1.2</td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Workspace Awareness (<code>@workspace</code> Agent)</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">
+                Workspace Awareness<br/>
+                <span className="text-gray-500 font-normal">(<code>@workspace</code> Agent)</span>
+              </td>
               <td className="px-6 py-4 text-sm text-gray-600">
                 <strong>Chat: Ask:</strong> <Prompt>@workspace what are the two main dependencies listed in pyproject.toml and what is the required Python version?</Prompt>
               </td>
             </tr>
             <tr>
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1.3</td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Terminal Help (<code>@terminal</code> Agent)</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">
+                Terminal Help<br/>
+                <span className="text-gray-500 font-normal">(<code>@terminal</code> Agent)</span>
+              </td>
               <td className="px-6 py-4 text-sm text-gray-600">
                 <strong>Chat: Ask:</strong> <Prompt>@terminal I need to create a new branch named 'feature/calc-fix'. Provide the exact git command for this.</Prompt> Execute the suggested command.
               </td>
             </tr>
             <tr>
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1.4</td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Editor Diagnostics (<code>@vscode</code> Agent)</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">
+                Editor Diagnostics<br/>
+                <span className="text-gray-500 font-normal">(<code>@vscode</code> Agent)</span>
+              </td>
               <td className="px-6 py-4 text-sm text-gray-600">
                 1. Introduce a small syntax error in <code>app/main.py</code>.<br/>
                 2. <strong>Chat: Ask:</strong> <Prompt>@vscode what problems are currently reported in this file?</Prompt><br/>
@@ -62,7 +71,10 @@ export function Module1Content({ onNext }: Module1ContentProps) {
             </tr>
             <tr>
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1.5</td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Chat Variable (<code>#selection</code>)</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">
+                Chat Variable<br/>
+                <span className="text-gray-500 font-normal">(<code>#selection</code>)</span>
+              </td>
               <td className="px-6 py-4 text-sm text-gray-600">
                 1. Open <code>app/main.py</code>. <strong>Select</strong> only the <code>calculate_total</code> function.<br/>
                 2. <strong>Chat: Ask:</strong> <Prompt>What are the parameters and return type for #selection and is there a type hint error?</Prompt>
@@ -70,7 +82,10 @@ export function Module1Content({ onNext }: Module1ContentProps) {
             </tr>
             <tr>
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1.6</td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Chat Variable (<code>#file</code>)</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">
+                Chat Variable<br/>
+                <span className="text-gray-500 font-normal">(<code>#file</code>)</span>
+              </td>
               <td className="px-6 py-4 text-sm text-gray-600">
                 <strong>Chat: Ask:</strong> <Prompt>In the function defined in #file:app/main.py, what is the current logic error in the 'calculate_total' function?</Prompt>
               </td>
@@ -85,9 +100,9 @@ export function Module1Content({ onNext }: Module1ContentProps) {
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
             <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Step</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Feature</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Instructions</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-[10%]">Step</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-[25%]">Feature</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-[65%]">Instructions</th>
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
