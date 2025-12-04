@@ -5,11 +5,13 @@ export function Module6Content() {
     <div className="prose prose-indigo max-w-none">
       <h3 className="text-xl font-bold text-gray-900 mb-4">📚 Goal: Implement a functional prototype feature based on a high-value, creative use case</h3>
       
-      <div className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-6 rounded-lg shadow-lg mb-8">
-        <h3 className="text-xl font-bold text-white mb-2">🧠 Vibe Coding Developer's Framework</h3>
-        <p className="text-indigo-100 mb-4">The Vibe Coding steps are your toolkit for maximizing AI productivity.</p>
+      <div className="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-r-lg mb-8">
+        <h3 className="text-xl font-bold text-indigo-900 mb-4 flex items-center">
+          🧠 Vibe Coding Developer's Framework
+        </h3>
+        <p className="text-indigo-800 mb-4">The Vibe Coding steps are your toolkit for maximizing AI productivity.</p>
         
-        <ul className="list-disc list-inside space-y-3 text-indigo-50">
+        <ul className="list-disc list-inside space-y-3 text-indigo-800">
           <li>
             <strong>Process Guardrails:</strong> You have <strong>full flexibility</strong> to adjust these steps or substitute them based on your own experimentation and experience, but <strong>you must ensure that you guard the process and clearly define milestones</strong> to maintain code quality and risk mitigation.
           </li>
