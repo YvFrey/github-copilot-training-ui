@@ -22,22 +22,28 @@ export function Module6Content() {
       </div>
 
       <div className="space-y-8 mb-12">
-        <div className="border-l-4 border-indigo-500 pl-6 py-2">
-          <h4 className="text-xl font-bold text-indigo-700 mb-2">Step I: Vision & Context Architecture</h4>
+        <div>
+          <h4 className="text-xl font-bold text-indigo-700 mb-2">I: Vision & Context Architecture</h4>
           <p className="text-gray-600 mb-3">This phase requires <strong>structured thinking</strong> to define the Product Requirements and <strong>Context</strong> to preemptively set standards.</p>
-          <p className="text-gray-900"><strong>Goal:</strong> Never start coding until the vision is clear. Break the problem down into the four thinking levels (<strong>Logical, Analytical, Computational, Procedural</strong>). Always provide the AI with the most detail.</p>
+          <ul className="list-disc list-inside space-y-2 text-gray-900">
+            <li><strong>Goal:</strong> Never start coding until the vision is clear. Break the problem down into the four thinking levels (<strong>Logical, Analytical, Computational, Procedural</strong>). Always provide the AI with the most detail.</li>
+          </ul>
         </div>
         
-        <div className="border-l-4 border-indigo-500 pl-6 py-2">
-          <h4 className="text-xl font-bold text-indigo-700 mb-2">Step II: Standards & Quality Execution</h4>
+        <div>
+          <h4 className="text-xl font-bold text-indigo-700 mb-2">II: Standards & Quality Execution</h4>
           <p className="text-gray-600 mb-3">This phase integrates the actual building of the code with risk mitigation.</p>
-          <p className="text-gray-900"><strong>Goal:</strong> <strong>Enforce standards</strong> by explicitly instructing the AI on the required <strong>Frameworks</strong> and language standards. <strong>Create a checkpoint</strong> (commit) whenever a major function or test passes, allowing for a quick rollback.</p>
+          <ul className="list-disc list-inside space-y-2 text-gray-900">
+            <li><strong>Goal:</strong> <strong>Enforce standards</strong> by explicitly instructing the AI on the required <strong>Frameworks</strong> and language standards. <strong>Create a checkpoint</strong> (commit) whenever a major function or test passes, allowing for a quick rollback.</li>
+          </ul>
         </div>
         
-        <div className="border-l-4 border-indigo-500 pl-6 py-2">
-          <h4 className="text-xl font-bold text-indigo-700 mb-2">Step III: Iteration & Self-Correction Loop</h4>
+        <div>
+          <h4 className="text-xl font-bold text-indigo-700 mb-2">III: Iteration & Self-Correction Loop</h4>
           <p className="text-gray-600 mb-3">This phase is where systematic engineering skills are applied through continuous validation and refinement.</p>
-          <p className="text-gray-900"><strong>Goal:</strong> Treat the AI like a mentor. Use the <strong>Debugging</strong> principle by providing the <strong>full error message</strong> and file context to guide the AI to an efficient self-correction.</p>
+          <ul className="list-disc list-inside space-y-2 text-gray-900">
+            <li><strong>Goal:</strong> Treat the AI like a mentor. Use the <strong>Debugging</strong> principle by providing the <strong>full error message</strong> and file context to guide the AI to an efficient self-correction.</li>
+          </ul>
         </div>
       </div>
 
