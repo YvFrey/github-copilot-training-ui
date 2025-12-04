@@ -74,7 +74,7 @@ const tabs: Tab[] = [
   },
   { 
     id: "module6", 
-    label: "Module VI", 
+    label: "Module VI (Optional)", 
     topic: "Vibe Coding",
     icon: <Sparkles className="w-4 h-4" />,
     title: "Module VI: Vibe Coding",
