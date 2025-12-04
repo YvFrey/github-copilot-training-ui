@@ -143,11 +143,18 @@ export function Module1Content({ onNext }: Module1ContentProps) {
               <li><code>@workspace</code> — query project structure, inspect files, and read configuration.</li>
               <li><code>@terminal</code> — provide exact CLI commands and command-line assistance.</li>
               <li><code>@vscode</code> — report editor/IDE diagnostics and help troubleshoot workspace-specific issues.</li>
+              <li>These built-in agents connect the AI to your development environment and enable context-aware, actionable suggestions.</li>
             </ul>
-            <span className="block ml-6 mt-1 italic text-sm">These built-in agents connect the AI to your development environment and enable context-aware, actionable suggestions.</span>
           </li>
           <li>
             <strong>Context Control:</strong> 🎯 For local, precise questions, use <strong>Chat Variables</strong> (<code>#selection</code> and <code>#file</code>) to enforce focus on precise code blocks or files.
+          </li>
+          <li>
+            <strong>Dynamic Model Selection:</strong> The model you choose affects the quality, speed, and relevance of Copilot's responses. Use the right tool for the job.
+            <ul className="list-disc list-inside ml-6 mt-1">
+              <li><strong>Velocity:</strong> ⚡ Prioritize Speed (Low-Latency) for quick tasks like generating comments or snippets, e.g. GPT-4.1, GPT-4o, Claude Haiku 4.5.</li>
+              <li><strong>Reasoning:</strong> 🧠 Prioritize Accuracy (Deep Reasoning) for complex tasks like multi-file refactoring or critical debugging, e.g. GPT-5, Claude Opus 4.5.</li>
+            </ul>
           </li>
           <li>
             <strong>Autonomy Boundaries:</strong> 🚦 The agents in the IDE remain <strong>contextual collaborators</strong> who <strong>execute code modifications by proposing changes</strong>. The change is <strong>staged</strong> but requires the human developer's <strong>explicit final approval</strong> to be written to the active file. The <strong>autonomous, iterative workflow</strong> is reserved for tasks delegated via GitHub Issues (as seen in Module V).
