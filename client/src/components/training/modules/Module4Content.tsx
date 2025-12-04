@@ -4,7 +4,7 @@ import { Prompt } from "../Prompt";
 export function Module4Content() {
   return (
     <div className="prose prose-indigo max-w-none">
-      <h3 className="text-xl font-bold text-gray-900 mb-4">Goal: Integrate Copilot into the end-to-end development loop</h3>
+      <h3 className="text-xl font-bold text-gray-900 mb-4">📚 Goal: Integrate Copilot into the end-to-end development loop</h3>
       
       <p className="text-gray-600 mb-4">
         Generate tests, explore unit and integration coverage, and ensure code adheres to project standards.

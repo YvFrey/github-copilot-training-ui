@@ -4,7 +4,7 @@ import { Prompt } from "../Prompt";
 export function Module2Content() {
   return (
     <div className="prose prose-indigo max-w-none">
-      <h3 className="text-xl font-bold text-gray-900 mb-4">Goal: Learn to switch between Copilot’s interaction modes and channels to maximize developer productivity</h3>
+      <h3 className="text-xl font-bold text-gray-900 mb-4">📚 Goal: Learn to switch between Copilot’s interaction modes and channels to maximize developer productivity</h3>
       
       <p className="text-gray-600 mb-4">Copilot provides four primary interaction channels:</p>
       

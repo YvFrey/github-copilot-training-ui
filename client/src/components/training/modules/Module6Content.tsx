@@ -3,7 +3,7 @@ import React from "react";
 export function Module6Content() {
   return (
     <div className="prose prose-indigo max-w-none">
-      <h3 className="text-xl font-bold text-gray-900 mb-4">Goal: Implement a functional prototype feature based on a high-value, creative use case</h3>
+      <h3 className="text-xl font-bold text-gray-900 mb-4">📚 Goal: Implement a functional prototype feature based on a high-value, creative use case</h3>
       
       <div className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-6 rounded-lg shadow-lg mb-8">
         <h3 className="text-xl font-bold text-white mb-2">🧠 Vibe Coding Developer's Framework</h3>
@@ -41,17 +41,17 @@ export function Module6Content() {
 
       <div className="bg-gray-50 border border-gray-200 p-6 rounded-lg mb-8">
         <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-          🚀 The Challenge Scenario: Creative Exploration & New Tech
+          🚀 The Challenge Scenario: Creative Exploration
         </h3>
         <p className="text-gray-600 mb-4">
-          <strong>Mission:</strong> <strong>Be creative!</strong> Choose a simple, non-trivial problem to solve that <strong>could be business-related</strong> and implement the core functionality from scratch. This is your chance to <strong>dive into a new technology</strong> to truly feel the power of AI assistance.
+          <strong>Mission:</strong> <strong>Be creative!</strong> Choose a simple, non-trivial problem to solve that <strong>could be business-related</strong> and implement the core functionality from scratch.
         </p>
         <p className="text-gray-600">
-          <strong>Tech Stack:</strong> You have <strong>full flexibility</strong>. Choose any language you want, or <strong>challenge yourself</strong> by picking one you are <strong>least familiar with</strong> to see the full benefit of Vibe Coding.
+          <strong>Tech Stack:</strong> You have <strong>full flexibility</strong>. Choose any language you want.
         </p>
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-900 mb-4">Exercises: The Integrated Workflow (Self-Directed)</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mb-4">Exercises: The Integrated Workflow</h2>
       <p className="text-gray-600 mb-4"><strong>Your Task:</strong> Guide your chosen AI pair programmer through the entire software development lifecycle to implement your feature.</p>
       
       <div className="flex flex-col md:flex-row gap-4 mb-8">
