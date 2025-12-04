@@ -46,10 +46,21 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
               {[
                 {
                   title: "GitHub Copilot License",
-                  desc: "Copilot Pro or Business/Enterprise tied to your GitHub account",
-                  link: "https://github.com/github-copilot/pro",
-                  linkText: "Sign up for the 30-day free trial for GitHub Copilot Pro",
-                  extra: "Already used the trial? — Contact us so we can find a solution."
+                  desc: "",
+                  customRender: (
+                    <div>
+                      <span className="font-semibold text-gray-900 text-sm">GitHub Copilot License: </span>
+                      <span className="text-gray-600 text-sm">Copilot Pro or Business/Enterprise tied to your GitHub account</span>
+                      <ul className="list-disc list-inside ml-2 mt-1 space-y-1">
+                        <li className="text-gray-600 text-sm">
+                          <strong>Use the 30-day free trial</strong> — <a href="https://github.com/github-copilot/pro" target="_blank" rel="noreferrer" className="text-indigo-600 hover:underline">Sign up for the 30-day free trial for GitHub Copilot Pro</a>
+                        </li>
+                        <li className="text-gray-600 text-sm">
+                          <strong>Already used the trial?</strong> — Contact us so we can find a solution.
+                        </li>
+                      </ul>
+                    </div>
+                  )
                 },
                 {
                   title: "Visual Studio Code",
@@ -81,17 +92,23 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
                      </div>
                   </div>
                   <div className="flex-1 flex flex-col gap-1">
-                    <div className="flex items-center flex-wrap gap-2">
-                      <span className="font-semibold text-gray-900 text-sm">{item.title}: </span>
-                      <span className="text-gray-600 text-sm">
-                        {item.desc}
-                        {item.extra && <span className="block mt-1 text-indigo-600 italic">{item.extra}</span>}
-                      </span>
-                    </div>
-                    {item.link && (
-                      <a href={item.link} target="_blank" rel="noreferrer" className="inline-flex items-center text-indigo-600 hover:text-indigo-700 text-xs font-medium mt-1 hover:underline">
-                        {item.linkText} <ExternalLink className="w-3 h-3 ml-1" />
-                      </a>
+                    {item.customRender ? (
+                      item.customRender
+                    ) : (
+                      <>
+                        <div className="flex items-center flex-wrap gap-2">
+                          <span className="font-semibold text-gray-900 text-sm">{item.title}: </span>
+                          <span className="text-gray-600 text-sm">
+                            {item.desc}
+                            {item.extra && <span className="block mt-1 text-indigo-600 italic">{item.extra}</span>}
+                          </span>
+                        </div>
+                        {item.link && (
+                          <a href={item.link} target="_blank" rel="noreferrer" className="inline-flex items-center text-indigo-600 hover:text-indigo-700 text-xs font-medium mt-1 hover:underline">
+                            {item.linkText} <ExternalLink className="w-3 h-3 ml-1" />
+                          </a>
+                        )}
+                      </>
                     )}
                   </div>
                 </div>
