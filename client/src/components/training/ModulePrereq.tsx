@@ -35,69 +35,69 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
       </div>
 
       {/* Prerequisites Checklist Card - Compact Version */}
-      <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 hover:shadow-md transition-shadow duration-300">
-        <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-          <CheckCircle2 className="w-6 h-6 text-green-500 mr-2" />
-          Prerequisites Checklist
-        </h3>
-        <p className="text-gray-600 mb-4">To ensure a smooth session, please ensure the following items are verified <em>before</em> the start of the hands-on session:</p>
-        
-        <div className="grid gap-2">
-          {[
-            {
-              title: "GitHub Copilot License",
-              desc: "Copilot Pro or Business/Enterprise tied to your GitHub account.",
-              link: "https://github.com/github-copilot/pro",
-              linkText: "Sign up"
-            },
-            {
-              title: "Visual Studio Code",
-              desc: "Latest stable VS Code for agent/chat features."
-            },
-            {
-              title: "Required Extensions",
-              desc: "Install GitHub Copilot and GitHub Pull Requests & Issues.",
-              link: "https://marketplace.visualstudio.com/items?itemName=GitHub.copilot",
-              linkText: "View"
-            },
-            {
-              title: "uv Package Manager",
-              desc: "Required for environment management.",
-              link: "https://docs.astral.sh/uv/getting-started/installation/",
-              linkText: "Install"
-            },
-            {
-              title: "Git Configuration",
-              desc: "Local git configured with correct user/email."
-            },
-            {
-              title: "Code Base",
-              desc: "Fork and clone the course repository.",
-              link: "https://github.com/YvFrey/training-github-copilot/tree/main",
-              linkText: "Repo"
-            }
-          ].map((item, idx) => (
-            <div key={idx} className="flex items-center p-2.5 bg-gray-50/50 rounded-lg border border-gray-100 hover:bg-gray-50 transition-colors">
-              <div className="min-w-6 mr-3">
-                 <div className="w-5 h-5 rounded-full border border-indigo-200 bg-white flex items-center justify-center text-[10px] font-bold text-indigo-600">
-                    {idx + 1}
-                 </div>
-              </div>
-              <div className="flex-1 flex items-center justify-between flex-wrap gap-2">
-                <div className="flex-1 min-w-[200px]">
-                  <span className="font-semibold text-gray-900 text-sm">{item.title}: </span>
-                  <span className="text-gray-600 text-sm">{item.desc}</span>
+          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 hover:shadow-md transition-shadow duration-300">
+            <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+              <CheckCircle2 className="w-6 h-6 text-green-500 mr-2" />
+              Prerequisites Checklist
+            </h3>
+            <p className="text-gray-600 mb-4">To ensure a smooth session, please ensure the following items are verified <em>before</em> the start of the hands-on session:</p>
+            
+            <div className="grid gap-2">
+              {[
+                {
+                  title: "GitHub Copilot License",
+                  desc: "Copilot Pro or Business/Enterprise tied to your GitHub account",
+                  link: "https://github.com/github-copilot/pro",
+                  linkText: "Sign up for the 30-day free trial for GitHub Copilot Pro",
+                  extra: "Already used the trial? — Contact us so we can find a solution."
+                },
+                {
+                  title: "Visual Studio Code",
+                  desc: "Recommended to use latest stable VS Code to ensure agent/chat features are available"
+                },
+                {
+                  title: "Required Extensions",
+                  desc: "Install the GitHub Copilot and GitHub Pull Requests & Issues extensions in VS Code",
+                  link: "https://marketplace.visualstudio.com/items?itemName=GitHub.copilot",
+                  linkText: "Install"
+                },
+                {
+                  title: "uv Package Manager",
+                  desc: "The uv utility is required for fast environment and dependency management: uv Installation Guide",
+                  link: "https://docs.astral.sh/uv/getting-started/installation/",
+                  linkText: "uv Installation Guide"
+                },
+                {
+                  title: "Code Base",
+                  desc: "Fork the course repository to your own GitHub account (use the \"Fork\" button on GitHub). Clone your project locally. This setup ensures you have all necessary permissions.",
+                  link: "https://github.com/YvFrey/training-github-copilot/tree/main",
+                  linkText: "course repository"
+                }
+              ].map((item, idx) => (
+                <div key={idx} className="flex items-start p-2.5 bg-gray-50/50 rounded-lg border border-gray-100 hover:bg-gray-50 transition-colors">
+                  <div className="min-w-6 mr-3 mt-1">
+                     <div className="w-5 h-5 rounded-full border border-indigo-200 bg-white flex items-center justify-center text-[10px] font-bold text-indigo-600">
+                        {idx + 1}
+                     </div>
+                  </div>
+                  <div className="flex-1 flex flex-col gap-1">
+                    <div className="flex items-center flex-wrap gap-2">
+                      <span className="font-semibold text-gray-900 text-sm">{item.title}: </span>
+                      <span className="text-gray-600 text-sm">
+                        {item.desc}
+                        {item.extra && <span className="block mt-1 text-indigo-600 italic">{item.extra}</span>}
+                      </span>
+                    </div>
+                    {item.link && (
+                      <a href={item.link} target="_blank" rel="noreferrer" className="inline-flex items-center text-indigo-600 hover:text-indigo-700 text-xs font-medium mt-1 hover:underline">
+                        {item.linkText} <ExternalLink className="w-3 h-3 ml-1" />
+                      </a>
+                    )}
+                  </div>
                 </div>
-                {item.link && (
-                  <a href={item.link} target="_blank" rel="noreferrer" className="inline-flex items-center text-indigo-600 hover:text-indigo-700 text-xs font-medium px-2 py-1 bg-indigo-50 rounded hover:bg-indigo-100 transition-colors whitespace-nowrap">
-                    {item.linkText} <ExternalLink className="w-3 h-3 ml-1" />
-                  </a>
-                )}
-              </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
+          </div>
 
       {/* Feature Alignment Card */}
       <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 hover:shadow-md transition-shadow duration-300">
