@@ -38,7 +38,7 @@ export function Module5Content() {
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">5.2</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Delegation via GitHub Issue</td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                1. Go to your repository's <strong>Issues</strong> tab on GitHub and create a new issue. e.g. titled: <Prompt>@copilot Request: Fix All Outstanding Mypy Errors of the App</Prompt>.<br/>
+                1. Go to your repository's <strong>Issues</strong> tab on GitHub and create a new issue. e.g. titled: <Prompt>@copilot Request: Fix All Outstanding Mypy Errors of the App</Prompt><br/>
                 2. <strong>Assign</strong> this new issue to the <strong><code>@copilot</code></strong> agent.<br/>
                 3. Use the custom agent profile dropdown to select <strong><code>MypyFixer</code></strong>.
               </td>

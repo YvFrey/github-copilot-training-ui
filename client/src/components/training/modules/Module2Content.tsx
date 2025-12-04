@@ -33,7 +33,7 @@ export function Module2Content() {
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2.1</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Code Completions</td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                1. In <code>app/main.py</code> above the <code>/status</code> route <strong>type:</strong> <Prompt># Add a new POST route /item/create that accepts the existing 'Item' Pydantic model. The route handler should immediately return the received item as JSON</Prompt>.<br/>
+                1. In <code>app/main.py</code> above the <code>/status</code> route <strong>type:</strong> <Prompt># Add a new POST route /item/create that accepts the existing 'Item' Pydantic model. The route handler should immediately return the received item as JSON</Prompt><br/>
                 2. Open <code>Copilot: Open Completions Panel</code> and iterate through suggestions. Once accepted ensure the comment is deleted.<br/>
                 <strong>Hint:</strong> If you don't know how to open the right tool use <code>@vscode</code> agent.
               </td>
@@ -43,7 +43,7 @@ export function Module2Content() {
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Inline Chat (<code>/fix</code>)</td>
               <td className="px-6 py-4 text-sm text-gray-600">
                 1. <strong>Select</strong> the <code>post_calculate_order</code> function.<br/>
-                2. <strong>Inline Chat</strong>: <Prompt>/fix this route to validate and return the calculated total using the 'OrderResponse' Pydantic model</Prompt>.
+                2. <strong>Inline Chat</strong>: <Prompt>/fix this route to validate and return the calculated total using the 'OrderResponse' Pydantic model</Prompt>
               </td>
             </tr>
             <tr>
@@ -75,7 +75,7 @@ export function Module2Content() {
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Mode Comparison</td>
               <td className="px-6 py-4 text-sm text-gray-600">
                 1. <strong>Select</strong> the <strong>entire <code>calculate_total</code> function</strong> after changing the return type to int.<br/>
-                2. <strong>Chat Panel:</strong> Submit three times the exact same prompt: <Prompt>Change the return type of this function</Prompt>. Switch between <strong>ASK Mode, EDIT Mode</strong> and <strong>AGENT Mode</strong> and observe the different behavior.
+                2. <strong>Chat Panel:</strong> Submit three times the exact same prompt: <Prompt>Change the return type of this function</Prompt> Switch between <strong>ASK Mode, EDIT Mode</strong> and <strong>AGENT Mode</strong> and observe the different behavior.
               </td>
             </tr>
             <tr>
@@ -83,7 +83,7 @@ export function Module2Content() {
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Inline Chat (<code>/docs</code>)</td>
               <td className="px-6 py-4 text-sm text-gray-600">
                 1. <strong>Select</strong> the body of <code>get_status</code>.<br/>
-                2. <strong>Inline Chat</strong>: <Prompt>/docs add a Google-style docstring explaining the function’s purpose and return value</Prompt>.
+                2. <strong>Inline Chat</strong>: <Prompt>/docs add a Google-style docstring explaining the function’s purpose and return value</Prompt>
               </td>
             </tr>
             <tr>
@@ -91,7 +91,7 @@ export function Module2Content() {
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Inline Terminal (<code>@terminal</code>)</td>
               <td className="px-6 py-4 text-sm text-gray-600">
                 1. <strong>Open your terminal</strong> and press <strong><code>Command/Ctrl + I</code></strong> to launch the inline chat.<br/>
-                2. <strong>Inline Chat:</strong> <Prompt>I need to run my FastAPI application using uvicorn with hot-reloading</Prompt>. Observe how it picks up the terminal agent natively.
+                2. <strong>Inline Chat:</strong> <Prompt>I need to run my FastAPI application using uvicorn with hot-reloading</Prompt> Observe how it picks up the terminal agent natively.
               </td>
             </tr>
             <tr>
