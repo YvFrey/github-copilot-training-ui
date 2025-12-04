@@ -1,5 +1,11 @@
 import React from "react";
 import { Prompt } from "../Prompt";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+
+interface Module5ContentProps {
+  onNext?: () => void;
+}
 
 export const Module5Intro = (
   <>
@@ -15,7 +21,7 @@ export const Module5Intro = (
   </>
 );
 
-export function Module5Content() {
+export function Module5Content({ onNext }: Module5ContentProps) {
   return (
     <div className="prose prose-indigo max-w-none">
       <h2 className="text-2xl font-bold text-gray-900 mb-4">Exercises</h2>
@@ -107,6 +113,17 @@ export function Module5Content() {
           <li><a href="https://code.visualstudio.com/docs/copilot/copilot-coding-agent#_method-2-delegate-from-chat" target="_blank" rel="noreferrer" className="hover:underline">Delegate from Copilot Chat (VS Code)</a></li>
         </ul>
       </div>
+
+      {onNext && (
+        <div className="flex justify-end pt-4 mt-8">
+          <Button 
+            onClick={onNext}
+            className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all rounded-xl flex items-center gap-2"
+          >
+            Go to Module VI <ArrowRight className="w-5 h-5" />
+          </Button>
+        </div>
+      )}
     </div>
   );
 }

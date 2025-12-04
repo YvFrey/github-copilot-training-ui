@@ -1,10 +1,14 @@
 import React from "react";
 
+export const Module6Intro = (
+  <>
+    <h3 className="text-xl font-bold text-gray-900 mb-4">📚 Goal: Implement a functional prototype feature based on a high-value, creative use case</h3>
+  </>
+);
+
 export function Module6Content() {
   return (
     <div className="prose prose-indigo max-w-none">
-      <h3 className="text-xl font-bold text-gray-900 mb-4">📚 Goal: Implement a functional prototype feature based on a high-value, creative use case</h3>
-      
       <div className="bg-white border border-gray-200 p-6 rounded-lg mb-8 shadow-sm">
         <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
           🧠 Vibe Coding Developer's Framework
@@ -23,26 +27,26 @@ export function Module6Content() {
 
       <div className="space-y-8 mb-12">
         <div>
-          <h4 className="text-xl font-bold text-indigo-700 mb-2">I: Vision & Context Architecture</h4>
+          <h4 className="text-xl font-bold text-indigo-700 mb-2">#### I: Vision & Context Architecture</h4>
           <p className="text-gray-600 mb-3">This phase requires <strong>structured thinking</strong> to define the Product Requirements and <strong>Context</strong> to preemptively set standards.</p>
           <ul className="list-disc list-inside space-y-2 text-gray-900">
-            <li><strong>Goal:</strong> Never start coding until the vision is clear. Break the problem down into the four thinking levels (<strong>Logical, Analytical, Computational, Procedural</strong>). Always provide the AI with the most detail.</li>
+            <li>Never start coding until the vision is clear. Break the problem down into the four thinking levels (<strong>Logical, Analytical, Computational, Procedural</strong>). Always provide the AI with the most detail.</li>
           </ul>
         </div>
         
         <div>
-          <h4 className="text-xl font-bold text-indigo-700 mb-2">II: Standards & Quality Execution</h4>
+          <h4 className="text-xl font-bold text-indigo-700 mb-2">#### II: Standards & Quality Execution</h4>
           <p className="text-gray-600 mb-3">This phase integrates the actual building of the code with risk mitigation.</p>
           <ul className="list-disc list-inside space-y-2 text-gray-900">
-            <li><strong>Goal:</strong> <strong>Enforce standards</strong> by explicitly instructing the AI on the required <strong>Frameworks</strong> and language standards. <strong>Create a checkpoint</strong> (commit) whenever a major function or test passes, allowing for a quick rollback.</li>
+            <li><strong>Enforce standards</strong> by explicitly instructing the AI on the required <strong>Frameworks</strong> and language standards. <strong>Create a checkpoint</strong> (commit) whenever a major function or test passes, allowing for a quick rollback.</li>
           </ul>
         </div>
         
         <div>
-          <h4 className="text-xl font-bold text-indigo-700 mb-2">III: Iteration & Self-Correction Loop</h4>
+          <h4 className="text-xl font-bold text-indigo-700 mb-2">#### III: Iteration & Self-Correction Loop</h4>
           <p className="text-gray-600 mb-3">This phase is where systematic engineering skills are applied through continuous validation and refinement.</p>
           <ul className="list-disc list-inside space-y-2 text-gray-900">
-            <li><strong>Goal:</strong> Treat the AI like a mentor. Use the <strong>Debugging</strong> principle by providing the <strong>full error message</strong> and file context to guide the AI to an efficient self-correction.</li>
+            <li>Treat the AI like a mentor. Use the <strong>Debugging</strong> principle by providing the <strong>full error message</strong> and file context to guide the AI to an efficient self-correction.</li>
           </ul>
         </div>
       </div>

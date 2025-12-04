@@ -11,7 +11,7 @@ import { Module2Content, Module2Intro } from "@/components/training/modules/Modu
 import { Module3Content, Module3Intro } from "@/components/training/modules/Module3Content";
 import { Module4Content, Module4Intro } from "@/components/training/modules/Module4Content";
 import { Module5Content, Module5Intro } from "@/components/training/modules/Module5Content";
-import { Module6Content } from "@/components/training/modules/Module6Content";
+import { Module6Content, Module6Intro } from "@/components/training/modules/Module6Content";
 
 type TabId = "prereq" | "module1" | "module2" | "module3" | "module4" | "module5" | "module6";
 
@@ -137,7 +137,7 @@ export default function CopilotTraining() {
           icon={<Bot className="w-8 h-8 text-indigo-600" />} 
           difficulty="Advanced"
           introContent={Module5Intro}
-          content={<Module5Content />}
+          content={<Module5Content onNext={() => handleNext("module6")} />}
         />;
       case "module6":
         return <ModulePlaceholder 
@@ -145,6 +145,7 @@ export default function CopilotTraining() {
           subtitle="The Integrated Exploration Challenge" 
           icon={<Sparkles className="w-8 h-8 text-indigo-600" />} 
           difficulty="Advanced"
+          introContent={Module6Intro}
           content={<Module6Content />}
         />;
       default:
