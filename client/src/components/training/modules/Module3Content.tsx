@@ -4,6 +4,8 @@ import { Prompt } from "../Prompt";
 export function Module3Content() {
   return (
     <div className="prose prose-indigo max-w-none">
+      <h3 className="text-xl font-bold text-gray-900 mb-4">📚 Goal: Integrate Copilot's contextual features into Git workflows</h3>
+      
       <p className="text-gray-600 mb-6">Improve commit messages, code review, and branch documentation, while reinforcing the developer's ultimate responsibility for code integrity.</p>
 
       <h2 className="text-2xl font-bold text-gray-900 mb-4">Exercises</h2>

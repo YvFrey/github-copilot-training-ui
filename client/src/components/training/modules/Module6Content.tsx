@@ -3,6 +3,8 @@ import React from "react";
 export function Module6Content() {
   return (
     <div className="prose prose-indigo max-w-none">
+      <h3 className="text-xl font-bold text-gray-900 mb-4">📚 Goal: Implement a functional prototype feature based on a high-value, creative use case</h3>
+      
       <div className="bg-white border border-gray-200 p-6 rounded-lg mb-8 shadow-sm">
         <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
           🧠 Vibe Coding Developer's Framework

@@ -101,9 +101,6 @@ export default function CopilotTraining() {
           icon={<BookOpen className="w-8 h-8 text-indigo-600" />} 
           difficulty="Beginner"
           content={<Module1Content />}
-          goal="Understand how explicit context (instructions and chat variables) dictate the quality and scope of Copilot's suggestions"
-          onNext={() => handleNext("module2")}
-          nextModuleTitle="Go to Module II"
         />;
       case "module2":
         return <ModulePlaceholder 
@@ -112,9 +109,6 @@ export default function CopilotTraining() {
           icon={<Terminal className="w-8 h-8 text-indigo-600" />} 
           difficulty="Intermediate"
           content={<Module2Content />}
-          goal="Learn to switch between Copilot’s interaction modes and channels to maximize developer productivity"
-          onNext={() => handleNext("module3")}
-          nextModuleTitle="Go to Module III"
         />;
       case "module3":
         return <ModulePlaceholder 
@@ -123,9 +117,6 @@ export default function CopilotTraining() {
           icon={<GitBranch className="w-8 h-8 text-indigo-600" />} 
           difficulty="Beginner"
           content={<Module3Content />}
-          goal="Integrate Copilot's contextual features into Git workflows"
-          onNext={() => handleNext("module4")}
-          nextModuleTitle="Go to Module IV"
         />;
       case "module4":
         return <ModulePlaceholder 
@@ -134,9 +125,6 @@ export default function CopilotTraining() {
           icon={<ShieldCheck className="w-8 h-8 text-indigo-600" />} 
           difficulty="Intermediate"
           content={<Module4Content />}
-          goal="Integrate Copilot into the end-to-end development loop"
-          onNext={() => handleNext("module5")}
-          nextModuleTitle="Go to Module V"
         />;
       case "module5":
         return <ModulePlaceholder 
@@ -145,9 +133,6 @@ export default function CopilotTraining() {
           icon={<Bot className="w-8 h-8 text-indigo-600" />} 
           difficulty="Advanced"
           content={<Module5Content />}
-          goal="Master the creation of a Custom Agent and delegate autonomous, multi-step tasks using both the GitHub Issue and the Copilot Chat interface"
-          onNext={() => handleNext("module6")}
-          nextModuleTitle="Go to Module VI"
         />;
       case "module6":
         return <ModulePlaceholder 
@@ -156,7 +141,6 @@ export default function CopilotTraining() {
           icon={<Sparkles className="w-8 h-8 text-indigo-600" />} 
           difficulty="Advanced"
           content={<Module6Content />}
-          goal="Implement a functional prototype feature based on a high-value, creative use case"
         />;
       default:
         return null;
