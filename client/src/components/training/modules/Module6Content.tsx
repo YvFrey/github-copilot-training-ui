@@ -21,54 +21,42 @@ export function Module6Content() {
         </ul>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        <div className="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
-          <h4 className="text-lg font-bold text-indigo-700 mb-2">I: Vision & Context Architecture</h4>
-          <p className="text-sm text-gray-600 mb-3">This phase requires <strong>structured thinking</strong> to define the Product Requirements and <strong>Context</strong> to preemptively set standards.</p>
-          <p className="text-sm font-medium text-gray-900"><strong>Goal:</strong> Never start coding until the vision is clear. Break the problem down into the four thinking levels (<strong>Logical, Analytical, Computational, Procedural</strong>). Always provide the AI with the most detail.</p>
+      <div className="space-y-8 mb-12">
+        <div className="border-l-4 border-indigo-500 pl-6 py-2">
+          <h4 className="text-xl font-bold text-indigo-700 mb-2">Step I: Vision & Context Architecture</h4>
+          <p className="text-gray-600 mb-3">This phase requires <strong>structured thinking</strong> to define the Product Requirements and <strong>Context</strong> to preemptively set standards.</p>
+          <p className="text-gray-900"><strong>Goal:</strong> Never start coding until the vision is clear. Break the problem down into the four thinking levels (<strong>Logical, Analytical, Computational, Procedural</strong>). Always provide the AI with the most detail.</p>
         </div>
         
-        <div className="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
-          <h4 className="text-lg font-bold text-indigo-700 mb-2">II: Standards & Quality Execution</h4>
-          <p className="text-sm text-gray-600 mb-3">This phase integrates the actual building of the code with risk mitigation.</p>
-          <p className="text-sm font-medium text-gray-900"><strong>Goal:</strong> <strong>Enforce standards</strong> by explicitly instructing the AI on the required <strong>Frameworks</strong> and language standards. <strong>Create a checkpoint</strong> (commit) whenever a major function or test passes, allowing for a quick rollback.</p>
+        <div className="border-l-4 border-indigo-500 pl-6 py-2">
+          <h4 className="text-xl font-bold text-indigo-700 mb-2">Step II: Standards & Quality Execution</h4>
+          <p className="text-gray-600 mb-3">This phase integrates the actual building of the code with risk mitigation.</p>
+          <p className="text-gray-900"><strong>Goal:</strong> <strong>Enforce standards</strong> by explicitly instructing the AI on the required <strong>Frameworks</strong> and language standards. <strong>Create a checkpoint</strong> (commit) whenever a major function or test passes, allowing for a quick rollback.</p>
         </div>
         
-        <div className="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
-          <h4 className="text-lg font-bold text-indigo-700 mb-2">III: Iteration & Self-Correction Loop</h4>
-          <p className="text-sm text-gray-600 mb-3">This phase is where systematic engineering skills are applied through continuous validation and refinement.</p>
-          <p className="text-sm font-medium text-gray-900"><strong>Goal:</strong> Treat the AI like a mentor. Use the <strong>Debugging</strong> principle by providing the <strong>full error message</strong> and file context to guide the AI to an efficient self-correction.</p>
+        <div className="border-l-4 border-indigo-500 pl-6 py-2">
+          <h4 className="text-xl font-bold text-indigo-700 mb-2">Step III: Iteration & Self-Correction Loop</h4>
+          <p className="text-gray-600 mb-3">This phase is where systematic engineering skills are applied through continuous validation and refinement.</p>
+          <p className="text-gray-900"><strong>Goal:</strong> Treat the AI like a mentor. Use the <strong>Debugging</strong> principle by providing the <strong>full error message</strong> and file context to guide the AI to an efficient self-correction.</p>
         </div>
       </div>
 
       <div className="bg-gray-50 border border-gray-200 p-6 rounded-lg mb-8">
         <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-          🚀 The Challenge Scenario: Creative Exploration
+          🚀 The Challenge: The Integrated Workflow
         </h3>
         <p className="text-gray-600 mb-4">
-          <strong>Mission:</strong> <strong>Be creative!</strong> Choose a simple, non-trivial problem to solve that <strong>could be business-related</strong> and implement the core functionality from scratch.
+          <strong>Mission:</strong> <strong>Be creative!</strong> Choose a simple, non-trivial problem to solve that <strong>could be business-related</strong> and implement the core functionality. This is your chance to <strong>dive into a new technology</strong> to truly feel the power of AI assistance.
         </p>
-        <p className="text-gray-600">
-          <strong>Tech Stack:</strong> You have <strong>full flexibility</strong>. Choose any language you want.
+        <p className="text-gray-600 mb-6">
+          <strong>Your Task:</strong> Guide your chosen AI pair programmer through the entire software development lifecycle to implement your feature.
         </p>
-      </div>
-
-      <h2 className="text-2xl font-bold text-gray-900 mb-4">Exercises: The Integrated Workflow</h2>
-      <p className="text-gray-600 mb-4"><strong>Your Task:</strong> Guide your chosen AI pair programmer through the entire software development lifecycle to implement your feature.</p>
-      
-      <div className="flex flex-col md:flex-row gap-4 mb-8">
-        <div className="flex-1 bg-white p-4 rounded-lg border border-gray-200 shadow-sm flex items-start">
-          <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 font-bold mr-3">1</span>
-          <p className="text-gray-700 pt-1"><strong>Start</strong> by defining and structuring your vision.</p>
-        </div>
-        <div className="flex-1 bg-white p-4 rounded-lg border border-gray-200 shadow-sm flex items-start">
-          <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 font-bold mr-3">2</span>
-          <p className="text-gray-700 pt-1"><strong>Generate</strong> the code, tests, and documentation, ensuring you fuel the AI with context and rules.</p>
-        </div>
-        <div className="flex-1 bg-white p-4 rounded-lg border border-gray-200 shadow-sm flex items-start">
-          <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 font-bold mr-3">3</span>
-          <p className="text-gray-700 pt-1"><strong>Finish</strong> by using the debugging principles to correct at least one intentional error and committing your final work.</p>
-        </div>
+        
+        <ul className="list-disc list-inside space-y-2 text-gray-600">
+          <li><strong>Start</strong> by defining and structuring your vision.</li>
+          <li><strong>Generate</strong> the code, tests, and documentation, ensuring you fuel the AI with context and rules.</li>
+          <li><strong>Finish</strong> by using the debugging principles to correct at least one intentional error and committing your final work.</li>
+        </ul>
       </div>
 
       <div className="bg-white border border-gray-200 p-6 rounded-lg shadow-sm">

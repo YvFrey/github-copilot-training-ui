@@ -24,8 +24,8 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
             This hands-on training helps engineers move beyond basic code completion by teaching practical use of GitHub Copilot for contextual guidance, agentic workflows, and safe automation to accelerate delivery and improve code quality.
           </p>
           
-          <div className="bg-white border border-gray-200 p-6 rounded-lg mb-8 shadow-sm">
-            <h3 className="font-bold text-gray-900 mb-2 flex items-center">
+          <div className="mt-8 mb-8">
+            <h3 className="font-bold text-gray-900 mb-2 flex items-center text-lg">
               <span className="mr-2">📚</span> Goal
             </h3>
             <p className="text-gray-700">
