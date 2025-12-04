@@ -1,7 +1,13 @@
 import React from "react";
 import { Prompt } from "../Prompt";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
-export function Module3Content() {
+interface Module3ContentProps {
+  onNext?: () => void;
+}
+
+export function Module3Content({ onNext }: Module3ContentProps) {
   return (
     <div className="prose prose-indigo max-w-none">
       <h3 className="text-xl font-bold text-gray-900 mb-4">📚 Goal: Integrate Copilot's contextual features into Git workflows</h3>
@@ -64,6 +70,17 @@ export function Module3Content() {
           <li><strong>Senseful Code:</strong> ✅ Ensure you commit <strong>correct and senseful</strong> code. Copilot accelerates the writing process, but <strong>human validation and testing</strong> is the non-negotiable final step.</li>
         </ul>
       </div>
+
+      {onNext && (
+        <div className="flex justify-end pt-4 mt-8">
+          <Button 
+            onClick={onNext}
+            className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all rounded-xl flex items-center gap-2"
+          >
+            Go to Module IV <ArrowRight className="w-5 h-5" />
+          </Button>
+        </div>
+      )}
     </div>
   );
 }

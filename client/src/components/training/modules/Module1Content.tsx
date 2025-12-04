@@ -1,7 +1,13 @@
 import React from "react";
 import { Prompt } from "../Prompt";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
-export function Module1Content() {
+interface Module1ContentProps {
+  onNext?: () => void;
+}
+
+export function Module1Content({ onNext }: Module1ContentProps) {
   return (
     <div className="prose prose-indigo max-w-none">
       <h3 className="text-xl font-bold text-gray-900 mb-4">📚 Goal: Understand how explicit context (instructions and chat variables) dictate the quality and scope of Copilot's suggestions</h3>
@@ -155,6 +161,17 @@ export function Module1Content() {
           <li><a href="https://docs.github.com/en/enterprise-cloud@latest/copilot/how-tos/configure-custom-instructions/add-repository-instructions?tool=webui" target="_blank" rel="noreferrer" className="hover:underline">GitHub Copilot: Repository Instructions</a></li>
         </ul>
       </div>
+
+      {onNext && (
+        <div className="flex justify-end pt-4 mt-8">
+          <Button 
+            onClick={onNext}
+            className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all rounded-xl flex items-center gap-2"
+          >
+            Go to Module II <ArrowRight className="w-5 h-5" />
+          </Button>
+        </div>
+      )}
     </div>
   );
 }

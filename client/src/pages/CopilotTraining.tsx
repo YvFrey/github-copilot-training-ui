@@ -100,7 +100,7 @@ export default function CopilotTraining() {
           subtitle="Precise Prompting and Workspace Awareness" 
           icon={<BookOpen className="w-8 h-8 text-indigo-600" />} 
           difficulty="Beginner"
-          content={<Module1Content />}
+          content={<Module1Content onNext={() => handleNext("module2")} />}
         />;
       case "module2":
         return <ModulePlaceholder 
@@ -108,7 +108,7 @@ export default function CopilotTraining() {
           subtitle="Completions, Inline Chat, Chat Panel, Terminal" 
           icon={<Terminal className="w-8 h-8 text-indigo-600" />} 
           difficulty="Intermediate"
-          content={<Module2Content />}
+          content={<Module2Content onNext={() => handleNext("module3")} />}
         />;
       case "module3":
         return <ModulePlaceholder 
@@ -116,7 +116,7 @@ export default function CopilotTraining() {
           subtitle="Git Workflow Integration" 
           icon={<GitBranch className="w-8 h-8 text-indigo-600" />} 
           difficulty="Beginner"
-          content={<Module3Content />}
+          content={<Module3Content onNext={() => handleNext("module4")} />}
         />;
       case "module4":
         return <ModulePlaceholder 
@@ -124,7 +124,7 @@ export default function CopilotTraining() {
           subtitle="Automating Tests and Policy Checks" 
           icon={<ShieldCheck className="w-8 h-8 text-indigo-600" />} 
           difficulty="Intermediate"
-          content={<Module4Content />}
+          content={<Module4Content onNext={() => handleNext("module5")} />}
         />;
       case "module5":
         return <ModulePlaceholder 

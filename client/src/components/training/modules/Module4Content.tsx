@@ -1,7 +1,13 @@
 import React from "react";
 import { Prompt } from "../Prompt";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
-export function Module4Content() {
+interface Module4ContentProps {
+  onNext?: () => void;
+}
+
+export function Module4Content({ onNext }: Module4ContentProps) {
   return (
     <div className="prose prose-indigo max-w-none">
       <h3 className="text-xl font-bold text-gray-900 mb-4">📚 Goal: Integrate Copilot into the end-to-end development loop</h3>
@@ -72,6 +78,17 @@ export function Module4Content() {
           <li><strong>Prompt precision matters:</strong> Even with instruction files, carefully worded prompts avoid scope creep or unintended outputs.</li>
         </ul>
       </div>
+
+      {onNext && (
+        <div className="flex justify-end pt-4 mt-8">
+          <Button 
+            onClick={onNext}
+            className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all rounded-xl flex items-center gap-2"
+          >
+            Go to Module V <ArrowRight className="w-5 h-5" />
+          </Button>
+        </div>
+      )}
     </div>
   );
 }

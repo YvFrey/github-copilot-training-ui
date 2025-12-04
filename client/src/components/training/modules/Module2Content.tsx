@@ -1,7 +1,13 @@
 import React from "react";
 import { Prompt } from "../Prompt";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
-export function Module2Content() {
+interface Module2ContentProps {
+  onNext?: () => void;
+}
+
+export function Module2Content({ onNext }: Module2ContentProps) {
   return (
     <div className="prose prose-indigo max-w-none">
       <h3 className="text-xl font-bold text-gray-900 mb-4">📚 Goal: Learn to switch between Copilot’s interaction modes and channels to maximize developer productivity</h3>
@@ -187,6 +193,17 @@ export function Module2Content() {
           <li><strong>Personal Preference:</strong> Remember that finding the 'best' interaction channel is ultimately a matter of <strong>personal workflow preference</strong>; it's perfectly fine and even recommended to stick with the methods and settings that you find most efficient.</li>
         </ol>
       </div>
+
+      {onNext && (
+        <div className="flex justify-end pt-4 mt-8">
+          <Button 
+            onClick={onNext}
+            className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all rounded-xl flex items-center gap-2"
+          >
+            Go to Module III <ArrowRight className="w-5 h-5" />
+          </Button>
+        </div>
+      )}
     </div>
   );
 }
