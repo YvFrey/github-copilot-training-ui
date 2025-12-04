@@ -1,11 +1,19 @@
 import React, { useState } from "react";
-import { BookOpen, Terminal, GitBranch, ShieldCheck, Bot, LayoutTemplate } from "lucide-react";
+import { BookOpen, Terminal, GitBranch, ShieldCheck, Bot, LayoutTemplate, Sparkles } from "lucide-react";
 import { ModulePrereq } from "@/components/training/ModulePrereq";
 import { ModulePlaceholder } from "@/components/training/ModulePlaceholder";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-type TabId = "prereq" | "module1" | "module2" | "module3" | "module4" | "module5";
+// Import Module Content Components
+import { Module1Content } from "@/components/training/modules/Module1Content";
+import { Module2Content } from "@/components/training/modules/Module2Content";
+import { Module3Content } from "@/components/training/modules/Module3Content";
+import { Module4Content } from "@/components/training/modules/Module4Content";
+import { Module5Content } from "@/components/training/modules/Module5Content";
+import { Module6Content } from "@/components/training/modules/Module6Content";
+
+type TabId = "prereq" | "module1" | "module2" | "module3" | "module4" | "module5" | "module6";
 
 interface Tab {
   id: TabId;
@@ -64,6 +72,14 @@ const tabs: Tab[] = [
     title: "Module V: Agentic Workflows",
     difficulty: "Advanced"
   },
+  { 
+    id: "module6", 
+    label: "Module VI", 
+    topic: "Vibe Coding",
+    icon: <Sparkles className="w-4 h-4" />,
+    title: "Module VI: Vibe Coding",
+    difficulty: "Advanced"
+  },
 ];
 
 export default function CopilotTraining() {
@@ -74,34 +90,58 @@ export default function CopilotTraining() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const getDifficultyBadge = (difficulty?: string) => {
-    if (!difficulty) return null;
-    const colors = {
-      Beginner: "bg-green-100 text-green-700 border-green-200",
-      Intermediate: "bg-blue-100 text-blue-700 border-blue-200",
-      Advanced: "bg-purple-100 text-purple-700 border-purple-200",
-    };
-    return (
-      <span className={cn("text-xs px-2 py-0.5 rounded-full border ml-2", colors[difficulty as keyof typeof colors])}>
-        {difficulty}
-      </span>
-    );
-  };
-
   const renderContent = () => {
     switch (activeTab) {
       case "prereq":
         return <ModulePrereq onNext={() => handleNext("module1")} />;
       case "module1":
-        return <ModulePlaceholder title="Module I: Context & Control" subtitle="Precise Prompting and Workspace Awareness" icon={<BookOpen className="w-12 h-12 text-primary/20" />} difficulty="Beginner" />;
+        return <ModulePlaceholder 
+          title="Module I: Context & Control" 
+          subtitle="Precise Prompting and Workspace Awareness" 
+          icon={<BookOpen className="w-8 h-8 text-indigo-600" />} 
+          difficulty="Beginner"
+          content={<Module1Content />}
+        />;
       case "module2":
-        return <ModulePlaceholder title="Module II: Dynamic Interaction Modes" subtitle="Completions, Inline Chat, Chat Panel, Terminal" icon={<Terminal className="w-12 h-12 text-primary/20" />} difficulty="Intermediate" />;
+        return <ModulePlaceholder 
+          title="Module II: Dynamic Interaction Modes" 
+          subtitle="Completions, Inline Chat, Chat Panel, Terminal" 
+          icon={<Terminal className="w-8 h-8 text-indigo-600" />} 
+          difficulty="Intermediate"
+          content={<Module2Content />}
+        />;
       case "module3":
-        return <ModulePlaceholder title="Module III: Version Control & Quality" subtitle="Git Workflow Integration" icon={<GitBranch className="w-12 h-12 text-primary/20" />} difficulty="Beginner" />;
+        return <ModulePlaceholder 
+          title="Module III: Version Control & Quality" 
+          subtitle="Git Workflow Integration" 
+          icon={<GitBranch className="w-8 h-8 text-indigo-600" />} 
+          difficulty="Beginner"
+          content={<Module3Content />}
+        />;
       case "module4":
-        return <ModulePlaceholder title="Module IV: Testing Framework" subtitle="Automating Tests and Policy Checks" icon={<ShieldCheck className="w-12 h-12 text-primary/20" />} difficulty="Intermediate" />;
+        return <ModulePlaceholder 
+          title="Module IV: Testing Framework" 
+          subtitle="Automating Tests and Policy Checks" 
+          icon={<ShieldCheck className="w-8 h-8 text-indigo-600" />} 
+          difficulty="Intermediate"
+          content={<Module4Content />}
+        />;
       case "module5":
-        return <ModulePlaceholder title="Module V: Agentic Workflows" subtitle="Delegating and Supervising Autonomous Agents" icon={<Bot className="w-12 h-12 text-primary/20" />} difficulty="Advanced" />;
+        return <ModulePlaceholder 
+          title="Module V: Agentic Workflows" 
+          subtitle="Delegating and Supervising Autonomous Agents" 
+          icon={<Bot className="w-8 h-8 text-indigo-600" />} 
+          difficulty="Advanced"
+          content={<Module5Content />}
+        />;
+      case "module6":
+        return <ModulePlaceholder 
+          title="Module VI: Vibe Coding" 
+          subtitle="The Integrated Exploration Challenge" 
+          icon={<Sparkles className="w-8 h-8 text-indigo-600" />} 
+          difficulty="Advanced"
+          content={<Module6Content />}
+        />;
       default:
         return null;
     }
@@ -175,7 +215,6 @@ export default function CopilotTraining() {
         </div>
 
         {/* Content Area */}
-
         <main>
           <AnimatePresence mode="wait">
             <motion.div

@@ -1,53 +1,33 @@
 import React from "react";
-import { Lock, Clock, ArrowRight } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { BookOpen, Terminal, GitBranch, ShieldCheck, Bot, Sparkles } from "lucide-react";
 
 interface ModulePlaceholderProps {
   title: string;
   subtitle: string;
   icon: React.ReactNode;
   difficulty?: "Beginner" | "Intermediate" | "Advanced";
+  content?: React.ReactNode;
 }
 
-export function ModulePlaceholder({ title, subtitle, icon, difficulty }: ModulePlaceholderProps) {
+export function ModulePlaceholder({ title, subtitle, icon, difficulty, content }: ModulePlaceholderProps) {
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 md:p-12 text-center">
-      <div className="inline-flex items-center justify-center p-6 bg-gray-50 rounded-full mb-6">
-        {icon}
-      </div>
-      
-      <div className="flex items-center justify-center gap-3 mb-3">
-        <h2 className="text-3xl font-bold text-gray-900">{title}</h2>
-        {difficulty && (
-          <span className={cn(
-            "text-sm px-3 py-1 rounded-full border font-medium",
-            difficulty === "Beginner" && "bg-green-100 text-green-700 border-green-200",
-            difficulty === "Intermediate" && "bg-blue-100 text-blue-700 border-blue-200",
-            difficulty === "Advanced" && "bg-purple-100 text-purple-700 border-purple-200"
-          )}>
-            {difficulty}
-          </span>
-        )}
-      </div>
-      
-      <p className="text-xl text-gray-500 mb-8">{subtitle}</p>
-      
-      <div className="max-w-md mx-auto bg-indigo-50 rounded-xl p-6 border border-indigo-100">
-        <div className="flex items-center justify-center gap-2 text-indigo-800 font-semibold mb-2">
-          <Clock className="w-5 h-5" />
-          <span>Coming Soon</span>
+    <div className="space-y-6">
+      {/* Header Card */}
+      <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8">
+        <div className="flex items-center gap-4 mb-4">
+          <div className="p-3 bg-indigo-50 rounded-xl">
+            {icon}
+          </div>
+          <div>
+            <h2 className="text-2xl font-bold text-gray-900">{title}</h2>
+            <p className="text-gray-500">{subtitle}</p>
+          </div>
         </div>
-        <p className="text-indigo-600 mb-6">This module content is being prepared. Please ensure you have completed the prerequisites.</p>
-        
-        <button className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 shadow-sm hover:shadow transition-all duration-200">
-          Start Module <ArrowRight className="ml-2 w-4 h-4" />
-        </button>
       </div>
 
-      <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-        {[1, 2, 3].map((i) => (
-          <div key={i} className="h-32 bg-gray-50 rounded-lg animate-pulse"></div>
-        ))}
+      {/* Content Area */}
+      <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8">
+        {content}
       </div>
     </div>
   );
