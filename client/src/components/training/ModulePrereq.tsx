@@ -24,17 +24,13 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
             This hands-on training helps engineers move beyond basic code completion by teaching practical use of GitHub Copilot for contextual guidance, agentic workflows, and safe automation to accelerate delivery and improve code quality.
           </p>
           
-          <div className="mt-8 mb-8">
-            <h3 className="font-bold text-gray-900 mb-2 flex items-center text-lg">
-              <span className="mr-2">📚</span> Goal
-            </h3>
-            <p className="text-gray-700">
-              The training is based on a <strong>simple FastAPI application</strong>, manageable by any engineer familiar with foundational programming concepts. We expect everyone to <strong>explore the capabilities and limitations of GitHub Copilot</strong>. You'll learn how to prompt effectively, use agentic features safely, and validate generated code.
-            </p>
-            <p className="text-gray-700 mt-4">
-              We encourage you to discuss actively with your colleagues during the session, and <strong>manifest your new learned skills</strong> by continuing to practice the concepts outside of the classroom.
-            </p>
-          </div>
+          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+            The training is based on a <strong>simple FastAPI application</strong>, manageable by any engineer familiar with foundational programming concepts. We expect everyone to <strong>explore the capabilities and limitations of GitHub Copilot</strong>. You'll learn how to prompt effectively, use agentic features safely, and validate generated code.
+          </p>
+
+          <p className="text-gray-600 text-lg leading-relaxed">
+            We encourage you to discuss actively with your colleagues during the session, and <strong>manifest your new learned skills</strong> by continuing to practice the concepts outside of the classroom.
+          </p>
         </div>
       </div>
 
