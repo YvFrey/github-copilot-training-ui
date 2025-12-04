@@ -100,8 +100,8 @@ export function Module5Content({ onNext }: Module5ContentProps) {
           Delegating tasks to the autonomous Coding Agent transforms technical debt into an automated, scalable workflow, allowing developers to focus their time on complex feature development.
         </p>
         <ul className="list-disc list-inside space-y-2 text-gray-700">
-          <li><strong>Autonomy is Key:</strong> ☁️ The <strong>Coding Agent</strong> (triggered via <strong><code>@copilot</code></strong> or the local Chat interface) is the only Copilot functionality that runs <strong>asynchronously</strong>, commits changes, and opens a Pull Request <em>autonomously</em>. This is the definition of the <strong>Agentic Workflow</strong>.</li>
-          <li><strong>Scalability:</strong> 🚀 The system supports concurrent task execution, allowing multiple colleagues to assign fix-it tasks simultaneously.</li>
+          <li><strong>Autonomy is Key:</strong> ☁️ The <strong>Coding Agent</strong> is the only Copilot functionality that runs <strong>asynchronously</strong>, commits changes, and opens a Pull Request autonomously. This is the definition of the <strong>Agentic Workflow</strong>.</li>
+          <li><strong>Scalability:</strong> 🚀 The system supports concurrent task execution, allowing multiple colleagues to assign tasks simultaneously.</li>
         </ul>
       </div>
 

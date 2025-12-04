@@ -76,9 +76,7 @@ export function Module4Content({ onNext }: Module4ContentProps) {
           🧠 Lesson Learned: Context-Driven Test Generation
         </h3>
         <ul className="list-disc list-inside space-y-2 text-gray-700">
-          <li>Copilot relies on <strong>instruction files</strong> to understand your project’s rules and structure.</li>
           <li><strong>Enhancing instructions</strong> ensures AI-generated tests are consistent, correctly placed, and follow naming conventions, fixtures, and framework standards.</li>
-          <li><strong>Custom prompts</strong> let you automate repetitive workflows and enforce project-specific patterns.</li>
           <li><strong>Prompt precision matters:</strong> Even with instruction files, carefully worded prompts avoid scope creep or unintended outputs.</li>
         </ul>
       </div>
