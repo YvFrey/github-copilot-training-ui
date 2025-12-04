@@ -93,7 +93,7 @@ export function Module1Content() {
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Context-Aware Code Completions</td>
               <td className="px-6 py-4 text-sm text-gray-600">
                 1. Open the newly created <strong><code>app/models.py</code></strong> file.<br/>
-                2. <strong>Type:</strong> <code>class OrderResponse(BaseModel):</code>.<br/>
+                2. <strong>Type:</strong> <Prompt>class OrderResponse(BaseModel):</Prompt>.<br/>
                 3. Let Copilot complete the class with appropriate fields. Observe how Copilot infers fields using repository-level context. Accept or refine its suggestion.
               </td>
             </tr>
