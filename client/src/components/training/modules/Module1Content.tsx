@@ -40,7 +40,7 @@ export function Module1Content({ onNext }: Module1ContentProps) {
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1.2</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Workspace Awareness (<code>@workspace</code> Agent)</td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                <strong>Copilot Chat: Ask:</strong> <Prompt>@workspace what are the two main dependencies listed in pyproject.toml and what is the required Python version?</Prompt>
+                <strong>Chat: Ask:</strong> <Prompt>@workspace what are the two main dependencies listed in pyproject.toml and what is the required Python version?</Prompt>
               </td>
             </tr>
             <tr>
