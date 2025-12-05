@@ -164,6 +164,33 @@ export function Module6Content() {
           </li>
         </ul>
       </div>
+      <div className="bg-gray-50 border border-gray-200 p-4 rounded-lg mt-8">
+        <h3 className="text-lg font-bold text-gray-900 mb-2">
+          💡 References & Further Reading
+        </h3>
+        <ul className="list-disc list-inside text-indigo-600">
+          <li>
+            <a
+              href="https://replit.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:underline"
+            >
+              Replit
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.blog/ai-and-ml/github-copilot/a-guide-to-deciding-what-ai-model-to-use-in-github-copilot/"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:underline"
+            >
+              A guide to deciding what AI model to use in GitHub Copilot
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }

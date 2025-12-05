@@ -235,37 +235,73 @@ export function Module1Content({ onNext }: Module1ContentProps) {
         <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
           🧠 Lesson Learned: Context, Control & Autonomy
         </h3>
-        <p className="text-gray-700 mb-4">
-          The most effective way to use Copilot is by <strong>defining context through agent specialization</strong>.
-        </p>
-        <ul className="list-disc pl-6 space-y-2 text-gray-700">
+        <ul className="list-disc list-inside space-y-2 text-gray-700">
           <li>
-            <strong>Global Constraints:</strong> 🛡️ Use the <strong><code>.github/copilot-instructions.md</code></strong> file for project-wide rules and architectural standards.
+            <strong>Global Constraints: 🛡️ </strong> Use the{" "}
+            <strong>
+              <code>.github/copilot-instructions.md</code>
+            </strong>{" "}
+            file for project-wide rules and architectural standards.
           </li>
           <li>
             <strong>External Tool Agents:</strong> 🤖
-            <ul className="list-disc pl-6 mt-1 space-y-1">
-              <li><code>@workspace</code> — query project structure, inspect files, and read configuration.</li>
-              <li><code>@terminal</code> — provide exact CLI commands and command-line assistance.</li>
-              <li><code>@vscode</code> — report editor/IDE diagnostics and help troubleshoot workspace-specific issues.</li>
-              <li>These built-in agents connect the AI to your development environment and enable context-aware, actionable suggestions.</li>
+            <ul className="list-disc list-inside ml-6 mt-1">
+              <li>
+                <code>@workspace</code> — query project structure, inspect
+                files, and read configuration.
+              </li>
+              <li>
+                <code>@terminal</code> — provide exact CLI commands and
+                command-line assistance.
+              </li>
+              <li>
+                <code>@vscode</code> — report editor/IDE diagnostics and help
+                troubleshoot workspace-specific issues.
+              </li>
             </ul>
           </li>
           <li>
-            <strong>Context Control:</strong> 🎯 For local, precise questions, use <strong>Chat Variables</strong> (<code>#selection</code> and <code>#file</code>) to enforce focus on precise code blocks or files.
+            <strong>Context Control:</strong> 🎯 <br />
+            For local, precise questions, use <strong>Chat Variables</strong> (
+            <code>#selection</code> and <code>#file</code>) to enforce focus on
+            precise code blocks or files.
           </li>
           <li>
-            <strong>Dynamic Model Selection:</strong> The model you choose affects the quality, speed, and relevance of Copilot's responses. Use the right tool for the job.
-            <ul className="list-disc pl-6 mt-1 space-y-1">
-              <li><strong>Velocity:</strong> ⚡ Prioritize Speed (Low-Latency) for quick tasks like generating comments or snippets, e.g. GPT-4.1, GPT-4o, Claude Haiku 4.5.</li>
-              <li><strong>Reasoning:</strong> 🧠 Prioritize Accuracy (Deep Reasoning) for complex tasks like multi-file refactoring or critical debugging, e.g. GPT-5, Claude Opus 4.5.</li>
+            <strong>Dynamic Model Selection:</strong> ⚡ <br />
+            The model you choose affects the quality, speed, and relevance of
+            Copilot's responses. Use the right tool for the job.
+            <ul className="list-disc list-inside ml-6 mt-1">
+              <li>
+                <strong>Velocity:</strong> Prioritize speed for quick tasks like
+                generating comments or snippets, e.g. GPT-4.1, GPT-4o, Claude
+                Haiku 4.5.
+              </li>
+              <li>
+                <strong>Reasoning:</strong> Prioritize accuracy for complex
+                tasks like multi-file refactoring or critical debugging, e.g.
+                GPT-5, Claude Opus 4.5.
+              </li>
             </ul>
           </li>
           <li>
-            <strong>Autonomy Boundaries:</strong> 🚦 The agents in the IDE remain <strong>contextual collaborators</strong> who <strong>execute code modifications by proposing changes</strong>. The change is <strong>staged</strong> but requires the human developer's <strong>explicit final approval</strong> to be written to the active file. The <strong>autonomous, iterative workflow</strong> is reserved for tasks delegated via GitHub Issues (as seen in Module V).
+            <strong>Autonomy Boundaries:</strong> 🚦
+            <br />
+            The agents in the IDE remain{" "}
+            <strong>contextual collaborators</strong> who{" "}
+            <strong>execute code modifications by proposing changes</strong>.
+            The change is <strong>staged</strong> but requires the human
+            developer's <strong>explicit final approval</strong> to be written
+            to the active file. The{" "}
+            <strong>autonomous, iterative workflow</strong> is reserved for
+            tasks delegated via GitHub Issues (as seen in Module V).
           </li>
           <li>
-            <strong>Inference is Strong:</strong> 🧠 Often AI is intelligent enough to ground its response in the project's configuration files even when you don't use a specific agent. This high degree of inference works particularly well with simple, small repositories like our training app.
+            <strong>Inference is Strong:</strong> 🧠
+            <br />
+            Often AI is intelligent enough to ground its response in the
+            project's configuration files even when you don't use a specific
+            agent. This high degree of inference works particularly well with
+            simple, small repositories like our training app.
           </li>
         </ul>
       </div>
@@ -319,6 +355,16 @@ export function Module1Content({ onNext }: Module1ContentProps) {
               className="hover:underline"
             >
               GitHub Copilot: Repository Instructions
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.blog/ai-and-ml/github-copilot/a-guide-to-deciding-what-ai-model-to-use-in-github-copilot/"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:underline"
+            >
+              A guide to deciding what AI model to use in GitHub Copilot
             </a>
           </li>
         </ul>
