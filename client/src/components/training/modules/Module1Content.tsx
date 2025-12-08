@@ -11,7 +11,7 @@ export const Module1Intro = (
   <>
     <h3 className="text-xl font-bold text-gray-900 mb-4">
       📚 Goal: Understand how explicit context (instructions and chat variables)
-      dictate the quality and scope of Copilot's suggestions
+      dictate the quality and scope of Copilot's suggestions.
     </h3>
   </>
 );
@@ -53,7 +53,7 @@ export function Module1Content({ onNext }: Module1ContentProps) {
                 2. <strong>Chat: Ask:</strong>{" "}
                 <Prompt>
                   Which file must I create next to satisfy Mandatory Coding
-                  Guidelines, and please provide the command to create it.
+                  Guidelines. Please provide the command to create it.
                 </Prompt>{" "}
                 Execute the suggested command.
               </td>
@@ -66,7 +66,7 @@ export function Module1Content({ onNext }: Module1ContentProps) {
                 Workspace Awareness
                 <br />
                 <span className="text-gray-500 font-normal">
-                  (<code>@workspace</code> Agent)
+                  (<code>@workspace</code>)
                 </span>
               </td>
               <td className="px-6 py-4 text-sm text-gray-600">
@@ -85,7 +85,7 @@ export function Module1Content({ onNext }: Module1ContentProps) {
                 Terminal Help
                 <br />
                 <span className="text-gray-500 font-normal">
-                  (<code>@terminal</code> Agent)
+                  (<code>@terminal</code>)
                 </span>
               </td>
               <td className="px-6 py-4 text-sm text-gray-600">
@@ -104,22 +104,24 @@ export function Module1Content({ onNext }: Module1ContentProps) {
                 Editor Diagnostics
                 <br />
                 <span className="text-gray-500 font-normal">
-                  (<code>@vscode</code> Agent)
+                  (<code>@vscode</code>)
                 </span>
               </td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                1. Validate you are on branch <code>'bug/diagnostics-error'</code> and open the file <code>app/main.py</code>.
+                1. Validate you are on branch{" "}
+                <code>'bug/diagnostics-error'</code> and open the file{" "}
+                <code>app/main.py</code>.
                 <br />
                 2. <strong>Chat: Ask:</strong>{" "}
                 <Prompt>
-                  @vscode what problems are currently reported in this file??
+                  @vscode what problems are currently reported in this file?
                 </Prompt>
                 <br />
-                3. Ask:{" "}
-                <Prompt>@vscode open the Problems panel.</Prompt>
+                3. Ask: <Prompt>@vscode open the Problems panel.</Prompt>
                 <br />
-                4. Ask:{" "}
-                <Prompt>@vscode can you please fix this issue?</Prompt>{" "}
+                4. Ask: <Prompt>
+                  @vscode can you please fix this issue?
+                </Prompt>{" "}
                 Notice its limitations.
               </td>
             </tr>
@@ -139,9 +141,7 @@ export function Module1Content({ onNext }: Module1ContentProps) {
                 the <code>log_task</code> function.
                 <br />
                 2. <strong>Chat: Ask:</strong>{" "}
-                <Prompt>
-                  What is the issue with #selection?
-                </Prompt>
+                <Prompt>What is the issue with #selection?</Prompt>
               </td>
             </tr>
             <tr>
@@ -168,11 +168,7 @@ export function Module1Content({ onNext }: Module1ContentProps) {
                 Context-Aware Code Completions
               </td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                1. Open the newly created{" "}
-                <strong>
-                  <code>app/models.py</code>
-                </strong>{" "}
-                file.
+                1. Open the newly created <code>app/models.py</code> file.
                 <br />
                 2. <strong>Type:</strong>{" "}
                 <Prompt>class TaskCompletionMetrics(BaseModel):</Prompt>
@@ -190,11 +186,13 @@ export function Module1Content({ onNext }: Module1ContentProps) {
                 Challenge: Let Copilot fix your code
               </td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                1. Move all Pydantic models out of <code>app/main.py</code> into <code>app/models.py</code>.
+                1. Move all Pydantic models out of <code>app/main.py</code> into{" "}
+                <code>app/models.py</code>.
                 <br />
                 2. Correct <code>log_task</code> in <code>app/main.py</code>.
                 <br />
-                3. Ensure that the repository's guidelines are beeing followed and no violations remain.
+                3. Ensure that the repository's guidelines are being followed
+                and no violations remain.
               </td>
             </tr>
           </tbody>
@@ -214,7 +212,7 @@ export function Module1Content({ onNext }: Module1ContentProps) {
             file for project-wide rules and architectural standards.
           </li>
           <li>
-            <strong>External Tool Agents:</strong> 🤖
+            <strong>Chat Participants:</strong> 💬
             <ul className="list-disc list-inside ml-6 mt-1">
               <li>
                 <code>@workspace</code> — query project structure, inspect
@@ -231,15 +229,15 @@ export function Module1Content({ onNext }: Module1ContentProps) {
             </ul>
           </li>
           <li>
-            <strong>Context Control:</strong> 🎯 <br />
-            For local, precise questions, use <strong>Chat Variables</strong> (
-            <code>#selection</code> and <code>#file</code>) to enforce focus on
-            precise code blocks or files.
+            <strong>Context Control:</strong> 🎯 For local, precise questions,
+            use <strong>Chat Variables</strong> (<code>#selection</code> and{" "}
+            <code>#file</code>) to enforce focus on precise code blocks or
+            files.
           </li>
           <li>
-            <strong>Dynamic Model Selection:</strong> ⚡ <br />
-            The model you choose affects the quality, speed, and relevance of
-            Copilot's responses. Use the right tool for the job.
+            <strong>Dynamic Model Selection:</strong> ⚡ The model you choose
+            affects the quality, speed, and relevance of Copilot's responses.
+            Use the right tool for the job.
             <ul className="list-disc list-inside ml-6 mt-1">
               <li>
                 <strong>Velocity:</strong> Prioritize speed for quick tasks like
@@ -254,23 +252,18 @@ export function Module1Content({ onNext }: Module1ContentProps) {
             </ul>
           </li>
           <li>
-            <strong>Autonomy Boundaries:</strong> 🚦
-            <br />
-            The agents in the IDE remain{" "}
-            <strong>contextual collaborators</strong> who{" "}
-            <strong>execute code modifications by proposing changes</strong>.
-            The change is <strong>staged</strong> but requires the human
-            developer's <strong>explicit final approval</strong> to be written
-            to the active file. The{" "}
-            <strong>autonomous, iterative workflow</strong> is reserved for
-            tasks delegated via GitHub Issues (as seen in Module V).
+            <strong>Autonomy Boundaries:</strong> 🚦 The chat participants in the IDE
+            remain contextual collaborators who execute code modifications by
+            proposing changes. The change is staged but requires the human
+            developer's explicit final approval to be written to the active
+            file. The autonomous, iterative workflow is reserved for tasks
+            delegated via GitHub Issues (as seen in Module V).
           </li>
           <li>
-            <strong>Automatic Context Retrieval:</strong> 🧠
-            <br />
-            Often AI is intelligent enough to ground its response in the
-            project's configuration files even when you don't use the specific
-            <code>@workspace</code> agent. This seamless context retrieval works
+            <strong>Automatic Context Retrieval:</strong> 🧠 Often AI is
+            intelligent enough to ground its response in the project's
+            configuration files even when you don't use the specific{" "}
+            <code>@workspace</code> assistant. This seamless context retrieval works
             particularly well with simple, small repositories like our training
             app.
           </li>

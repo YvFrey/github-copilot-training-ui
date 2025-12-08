@@ -9,7 +9,7 @@ interface Module3ContentProps {
 
 export const Module3Intro = (
   <>
-    <h3 className="text-xl font-bold text-gray-900 mb-4">📚 Goal: Integrate Copilot's contextual features into Git workflows</h3>
+    <h3 className="text-xl font-bold text-gray-900 mb-4">📚 Goal: Integrate Copilot's contextual features into Git workflows.</h3>
     
     <p className="text-gray-600">Improve commit messages, code review, and branch documentation, while reinforcing the developer's ultimate responsibility for code integrity.</p>
   </>
@@ -44,7 +44,7 @@ export function Module3Content({ onNext }: Module3ContentProps) {
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Commit Message</td>
               <td className="px-6 py-4 text-sm text-gray-600">
                 1. In the <strong>Source Control</strong> panel, click the <strong>Copilot Icon</strong> next to the commit message box. Ensure you have staged changes.<br/>
-                2. Observe the quality of the commit message and understand the <a href="https://docs.github.com/en/copilot/responsible-use/copilot-commit-message-generation" target="_blank" rel="noreferrer" className="text-indigo-600 hover:underline">limitations of the feature</a>.
+                2. Observe the quality of the commit message and understand the <a href="https://docs.github.com/en/copilot/responsible-use/copilot-commit-message-generation" target="_blank" rel="noreferrer" className="text-indigo-600 hover:underline">limitations of this feature</a>.
               </td>
             </tr>
             <tr>
@@ -52,7 +52,7 @@ export function Module3Content({ onNext }: Module3ContentProps) {
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Challenge: PR Summary</td>
               <td className="px-6 py-4 text-sm text-gray-600">
                 Leverage your knowledge from the previous chapters and create a concise summary for a Pull Request, avoiding the issue of getting an overly broad history.<br/>
-                <strong>HINT:</strong> You can craft a precise prompt and use the <strong><code>@workspace</code> agent</strong> that forces Copilot to summarize <em>only</em> the specific changes for this PR (which likely involves the last few commits). You can use <strong>Git references</strong> (like commit hashes) or restrict the summary by file path to get the exact result you want. Feel free to research and apply any other approach.
+                <strong>HINT:</strong> You can craft a precise prompt and use the <strong><code>@workspace</code> assistant</strong> that forces Copilot to summarize only the specific changes for this PR (which likely involves the last few commits). You can use <strong>Git references</strong> (like commit hashes) or restrict the summary by file path to get the exact result you want. Feel free to research and apply any other approach.
               </td>
             </tr>
           </tbody>
@@ -64,7 +64,7 @@ export function Module3Content({ onNext }: Module3ContentProps) {
           🧠 Lesson Learned: Git Workflow and Developer Responsibility
         </h3>
         <p className="text-gray-700 mb-4">
-          You can <strong>embed GitHub Copilot directly into your Git workflow</strong> to ensure cleaner branch history and detect issues ahead of your colleagues review. Remember that <strong>developers are responsible for the code quality and integrity</strong>.
+          You can <strong>embed GitHub Copilot directly into your Git workflow</strong> to ensure cleaner branch history and detect issues ahead of your colleagues' review. Remember that <strong>developers are responsible for the code quality and integrity</strong>.
         </p>
 
         <h4 className="text-lg font-bold text-gray-900 mt-4 mb-2">🛡️ Responsibility Boundaries</h4>

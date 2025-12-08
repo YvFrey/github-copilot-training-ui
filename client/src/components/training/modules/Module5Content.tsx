@@ -9,14 +9,14 @@ interface Module5ContentProps {
 
 export const Module5Intro = (
   <>
-    <h3 className="text-xl font-bold text-gray-900 mb-4">📚 Goal: Master the creation of a Custom Agent and delegate autonomous, multi-step tasks using both the GitHub Issue and the Copilot Chat interface</h3>
+    <h3 className="text-xl font-bold text-gray-900 mb-4">📚 Goal: Master the creation of a Custom Agent and delegate autonomous, multi-step tasks using both the GitHub Issue and the Copilot Chat interface.</h3>
     
     <p className="text-gray-600 mb-4">
-      <strong>Copilot Coding Agents</strong> 🤖 are <strong>autonomous</strong> AI assistants designed to perform <strong>multi-step, iterative coding tasks</strong> in an <strong>asynchronous</strong> manner. They are the <strong>only</strong> Copilot tools that can run, commit, and open PRs in a loop without human intervention. Agent workflows can be triggered in multiple ways via GitHub UI, GitHub CLI or Chat.
+      <strong>Copilot Coding Agents 🤖 are autonomous AI assistants</strong> designed to perform multi-step, iterative coding tasks in an <strong>asynchronous</strong> manner. They are the only Copilot tools that can run, commit, and open PRs in a loop without human intervention. Agent workflows can be triggered in multiple ways via GitHub UI, GitHub CLI or Chat.
     </p>
     
     <p className="text-gray-600">
-      <strong>Custom Agents</strong> are <strong>user-defined agent profiles</strong> that encapsulate a specific workflow or rule set, ensuring specialized, consistent task execution.
+      <strong>Custom Agents 🤖 are user-defined agent profiles</strong> that encapsulate a specific workflow or rule set, ensuring specialized, consistent task execution.
     </p>
   </>
 );
@@ -69,20 +69,13 @@ export function Module5Content({ onNext }: Module5ContentProps) {
             </tr>
             <tr>
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">5.5</td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Optional: Delegation via GitHub CLI</td>
-              <td className="px-6 py-4 text-sm text-gray-600">
-                Make sure the GitHub CLI is installed. Delegate the task via the command line: <Prompt>gh issue create --title "@copilot Request: ...your Task..." --assignee @copilot</Prompt>
-              </td>
-            </tr>
-            <tr>
-              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">5.6</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Challenge: Design Your Own Agent</td>
               <td className="px-6 py-4 text-sm text-gray-600">
                 Design and create a new custom agent profile: <strong><code>.github/agents/YourAgentName.md</code></strong>. Delegate a new task to this Agent while you can focus on the next feature development.
               </td>
             </tr>
             <tr>
-              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">5.7</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">5.6</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Optional: Run Agent Locally</td>
               <td className="px-6 py-4 text-sm text-gray-600">
                 <strong>Chat:</strong> Create a simple prompt to assign a task to any of your defined agents. Click the cloud icon next to the send button and select the GitHub Copilot CLI Agent.

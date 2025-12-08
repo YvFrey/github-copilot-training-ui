@@ -11,11 +11,11 @@ export const Module2Intro = (
   <>
     <h3 className="text-xl font-bold text-gray-900 mb-4">
       📚 Goal: Learn to switch between Copilot’s interaction modes and channels
-      to maximize developer productivity
+      to maximize developer productivity.
     </h3>
 
     <p className="text-gray-600 mb-4">
-      Copilot provides four primary interaction channels:
+      Copilot provides several distinct interaction channels:
     </p>
 
     <ul className="list-disc list-inside space-y-2 text-gray-600 mb-6">
@@ -24,10 +24,8 @@ export const Module2Intro = (
         code as you type.
       </li>
       <li>
-        <strong>
-          Inline Chat (<code>Ctrl/Cmd + I</code>)
-        </strong>{" "}
-        → Focused, in-place edits and actions on selected code.
+        <strong>Inline Chat</strong> → Focused, in-place edits and actions on
+        selected code.
       </li>
       <li>
         <strong>Chat Panel</strong> → Global reasoning, architectural questions,
@@ -78,9 +76,10 @@ export function Module2Content({ onNext }: Module2ContentProps) {
                 Code Completions
               </td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                1. In <code>app/main.py</code> **type:**{" "}
+                1. <strong>Type</strong> in <code>app/main.py</code>:
                 <Prompt>
-                  # Add a new GET route /task/1/status that accepts a task_id path parameter and returns the status of that task
+                  # Add a new GET route /task/1/status that accepts a task_id
+                  path parameter and returns the status of that task
                 </Prompt>
                 <br />
                 2. Open <code>Copilot: Open Completions Panel</code> and iterate
@@ -88,7 +87,7 @@ export function Module2Content({ onNext }: Module2ContentProps) {
                 deleted.
                 <br />
                 <strong>Hint:</strong> If you don't know how to open the right
-                tool use <code>@vscode</code> agent.
+                tool use <code>@vscode</code>.
               </td>
             </tr>
             <tr>
@@ -102,17 +101,17 @@ export function Module2Content({ onNext }: Module2ContentProps) {
                 </span>
               </td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                You notice that something seems to be off with the calculation of the <code>generate_productivity_report</code>.
+                You notice that something seems to be off with the calculation
+                of the <code>generate_productivity_report</code>.
                 <br />
-                1. <strong>Select</strong> the entire <code>generate_productivity_report</code>{" "}
-                function.
+                1. <strong>Select</strong> the entire{" "}
+                <code>generate_productivity_report</code> function.
                 <br />
                 2. <strong>Inline Chat</strong>:{" "}
-                <Prompt>
-                  /fix calculation
-                </Prompt>
+                <Prompt>/fix calculation</Prompt>
                 <br />
-                3. Evaluate the proposed fix. The function's name and internal docstring provide critical context.
+                3. Evaluate the proposed fix. The function's name and internal
+                docstring provide critical context.
               </td>
             </tr>
             <tr>
@@ -123,12 +122,12 @@ export function Module2Content({ onNext }: Module2ContentProps) {
                 Chat Panel
                 <br />
                 <span className="text-gray-500 font-normal">
-                  (<code>//fix</code>)
+                  (<code>/fix</code>)
                 </span>
               </td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                1. <strong>Select</strong> the <code>generate_productivity_report</code>{" "}
-                function.
+                1. <strong>Select</strong> the{" "}
+                <code>generate_productivity_report</code> function.
                 <br />
                 2. <strong>Chat: Ask:</strong>{" "}
                 <Prompt>/explain the steps of the function</Prompt>
@@ -146,8 +145,8 @@ export function Module2Content({ onNext }: Module2ContentProps) {
                 </span>
               </td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                1. <strong>Select</strong> the <code>generate_productivity_report</code>{" "}
-                function.
+                1. <strong>Select</strong> the{" "}
+                <code>generate_productivity_report</code> function.
                 <br />
                 2. <strong>Inline Chat</strong>:{" "}
                 <Prompt>Explain this code in a single sentence.</Prompt> Observe
@@ -166,14 +165,13 @@ export function Module2Content({ onNext }: Module2ContentProps) {
                 </span>
               </td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                1. <strong>Select</strong> in <code>app/main.py</code> the function <code>log_task</code>.
+                1. <strong>Select</strong> in <code>app/main.py</code> the
+                function <code>log_task</code>.
                 <br />
-                2. <strong>Inline Chat</strong>:{" "}
-                <Prompt>
-                  /doc
-                </Prompt>
+                2. <strong>Inline Chat</strong>: <Prompt>/doc</Prompt>
                 <br />
-                3. You can enhance the internal prompt in case you want a specific format.
+                3. You can enhance the internal prompt in case you want a
+                specific format.
               </td>
             </tr>
             <tr>
@@ -183,7 +181,7 @@ export function Module2Content({ onNext }: Module2ContentProps) {
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">
                 Inline Terminal <br />
                 <span className="text-gray-500 font-normal">
-                  (<code>@terminal</code> Agent)
+                  (<code>@terminal</code>)
                 </span>
               </td>
               <td className="px-6 py-4 text-sm text-gray-600">
@@ -198,7 +196,7 @@ export function Module2Content({ onNext }: Module2ContentProps) {
                   I need to run my FastAPI application using uvicorn with
                   hot-reloading
                 </Prompt>{" "}
-                Observe how it picks up the terminal agent natively.
+                Observe how it picks up the terminal assistant natively.
               </td>
             </tr>
             <tr>
@@ -210,10 +208,11 @@ export function Module2Content({ onNext }: Module2ContentProps) {
               </td>
               <td className="px-6 py-4 text-sm text-gray-600">
                 1. <strong>Review</strong> <code>security-audit.prompt.md</code>
-                . <strong>Select</strong> <code>get_all_tasks</code> in{" "}
+                <br />
+                2. <strong>Select</strong> <code>get_all_tasks</code> in{" "}
                 <code>app/main.py</code> and run the prompt:{" "}
                 <code>/security-audit</code>.<br />
-                2. <strong>Create</strong> your own prompt.
+                3. <strong>Create</strong> your own prompt.
               </td>
             </tr>
             <tr>
@@ -224,7 +223,10 @@ export function Module2Content({ onNext }: Module2ContentProps) {
                 Challenge: Custom Prompt
               </td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                Think about a repetitive task in your daily coding; choose a prompting framework to craft a reusable prompt and integrate it seamlessly into your workflow, then validate the output and refine the prompt as needed.
+                Think about a repetitive task in your daily coding; choose a
+                prompting framework to craft a reusable prompt and integrate it
+                seamlessly into your workflow, then validate the output and
+                refine the prompt as needed.
               </td>
             </tr>
           </tbody>
@@ -236,10 +238,10 @@ export function Module2Content({ onNext }: Module2ContentProps) {
           📚 Inspiration: Designing Custom Prompt Files
         </h3>
         <p className="text-gray-600 mb-4">
-          Prompt Files are how you turn repetitive workflow tasks into standard,
-          reusable commands. This prevents lengthy, complex instructions from
-          being typed repeatedly and ensures standardization for tasks like
-          documentation or custom code audits across the entire codebase.
+          Prompt files enable you to standardize and reuse repetitive workflow
+          tasks. This prevents lengthy, complex instructions from being typed
+          repeatedly and ensures standardization for tasks like documentation or
+          custom code audits across the entire codebase.
         </p>
         <a
           href="https://docs.github.com/en/copilot/tutorials/customization-library/prompt-files/your-first-prompt-file"
@@ -264,7 +266,6 @@ export function Module2Content({ onNext }: Module2ContentProps) {
             Change the mode → change the context → change the result.
           </strong>
         </p>
-
         <h4 className="text-lg font-bold text-gray-900 mt-4 mb-2">
           💡 Core Thinking Modes
         </h4>
@@ -274,19 +275,19 @@ export function Module2Content({ onNext }: Module2ContentProps) {
         </p>
         <ul className="list-disc list-inside space-y-1 text-gray-700 mb-6">
           <li>
-            <strong>ASK Mode</strong> → Reasoning, explanations, conceptual
+            <strong>Ask Mode</strong> → Reasoning, explanations, conceptual
             questions (e.g., asking <code>/explain</code>).
           </li>
           <li>
-            <strong>EDIT Mode</strong> → Rewriting, fixing, or refactoring
+            <strong>Edit Mode</strong> → Rewriting, fixing, or refactoring
             existing, selected code (e.g., using <code>/fix</code>).
           </li>
           <li>
-            <strong>AGENT Mode</strong> → Multi-step workflows that coordinate
+            <strong>Agent Mode</strong> → Multi-step workflows that coordinate
             actions or external tools.
           </li>
           <li>
-            <strong>PLAN Mode</strong> → Helps you generate a step‑by‑step plan
+            <strong>Plan Mode</strong> → Helps you generate a step‑by‑step plan
             before coding.{" "}
             <a
               href="https://github.blog/changelog/2025-11-18-plan-mode-in-github-copilot-now-in-public-preview-in-jetbrains-eclipse-and-xcode/?utm_source=chatgpt.com"
@@ -299,92 +300,23 @@ export function Module2Content({ onNext }: Module2ContentProps) {
             is one of the latest features.
           </li>
         </ul>
-
         <h4 className="text-lg font-bold text-gray-900 mt-4 mb-2">
           ⚡ Interaction Channels and Focus
         </h4>
-        <div className="overflow-x-auto bg-white rounded-lg border border-gray-200">
-          <table className="min-w-full divide-y divide-gray-200">
-            <thead className="bg-gray-50">
-              <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Channel
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Focus
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Key Use Case
-                </th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-200">
-              <tr>
-                <td className="px-6 py-3 text-sm font-medium text-gray-900">
-                  Code Completions
-                </td>
-                <td className="px-6 py-3 text-sm text-gray-700 font-bold">
-                  Instant
-                </td>
-                <td className="px-6 py-3 text-sm text-gray-700">
-                  Quick scaffolding and small function generation.
-                </td>
-              </tr>
-              <tr>
-                <td className="px-6 py-3 text-sm font-medium text-gray-900">
-                  Inline Chat
-                </td>
-                <td className="px-6 py-3 text-sm text-gray-700 font-bold">
-                  Local Precision
-                </td>
-                <td className="px-6 py-3 text-sm text-gray-700">
-                  Small refactors, documentation (<code>/docs</code>), or quick
-                  fixes (<code>/fix</code>) on selected code.
-                </td>
-              </tr>
-              <tr>
-                <td className="px-6 py-3 text-sm font-medium text-gray-900">
-                  Chat Panel
-                </td>
-                <td className="px-6 py-3 text-sm text-gray-700 font-bold">
-                  Global Reasoning
-                </td>
-                <td className="px-6 py-3 text-sm text-gray-700">
-                  Architectural questions, multi-file context, and complex
-                  explanations.
-                </td>
-              </tr>
-              <tr>
-                <td className="px-6 py-3 text-sm font-medium text-gray-900">
-                  Terminal/CLI
-                </td>
-                <td className="px-6 py-3 text-sm text-gray-700 font-bold">
-                  Command Execution
-                </td>
-                <td className="px-6 py-3 text-sm text-gray-700">
-                  Generating and executing commands for Git, Docker, and shell
-                  utilities.
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
+        Always choose the interaction channel that best fits your immediate need
+        to ensure maximum velocity and the highest level of contextual
+        awareness.
         <h4 className="text-lg font-bold text-gray-900 mt-6 mb-2">
           ⭐ Key Insight: Context = Results
         </h4>
-        <p className="text-gray-700 font-medium mb-2">
-          Change the mode → change the context → change the result.
-        </p>
         <p className="text-gray-700 mb-4">
           The ultimate insight is that{" "}
           <strong>the input channel acts as the primary router</strong> for your
-          query, dictating which specialized agent or tool handles the request.
-          Copilot is engineered to be a powerful problem-solver, adept at
-          handling complex tasks and quickly grasping the right context, but the
-          human must guide the interaction.
+          query, dictating which specialized tool handles the request. Copilot
+          is engineered to be a powerful problem-solver, adept at handling
+          complex tasks and quickly grasping the right context, but the human
+          must guide the interaction.
         </p>
-
         <ol className="list-decimal list-inside space-y-2 text-gray-700">
           <li>
             <strong>Channel is the Router:</strong> The channel you use (Inline
@@ -393,10 +325,10 @@ export function Module2Content({ onNext }: Module2ContentProps) {
           </li>
           <li>
             <strong>Implicit Routing:</strong> The system automatically invokes
-            the required agent based on context (e.g., Inline Chat inside the
+            the required tool based on context (e.g., Inline Chat inside the
             terminal automatically routes the request to the{" "}
-            <code>@terminal</code> Agent). This means you don't always need to
-            explicitly type the agent tag.
+            <code>@terminal</code> assistant). This means you don't always need
+            to explicitly type the tag.
           </li>
           <li>
             <strong>Efficiency:</strong> The most effective workflow combines
@@ -427,7 +359,17 @@ export function Module2Content({ onNext }: Module2ContentProps) {
               rel="noreferrer"
               className="hover:underline"
             >
-              GitHub Copilot: Chat Sheet Cheat
+              GitHub Copilot: Cheat Sheet
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://code.visualstudio.com/docs/copilot/chat/copilot-chat"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:underline"
+            >
+              VS Code: Copilot Chat
             </a>
           </li>
         </ul>

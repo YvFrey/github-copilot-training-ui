@@ -3,7 +3,8 @@ import React from "react";
 export const Module6Intro = (
   <>
     <h3 className="text-xl font-bold text-gray-900 mb-4">
-      📚 Goal: Implement a functional prototype feature using your AI Coding Assistants to accelerate the entire development cycle.
+      📚 Goal: Implement a functional prototype feature using your AI Coding
+      Assistants to accelerate the entire development cycle.
     </h3>
   </>
 );
@@ -34,8 +35,8 @@ export function Module6Content() {
             <strong>AI Tool Flexibility:</strong> While this training is
             designed to strengthen your expertise in{" "}
             <strong>GitHub Copilot</strong>, you have full flexibility on AI
-            tools. Feel free to enhance your workflow by integrating
-            other generative AI tools.
+            tools. Feel free to enhance your workflow by integrating other
+            generative AI tools.
           </li>
         </ul>
       </div>
@@ -53,13 +54,13 @@ export function Module6Content() {
           </h4>
           <p className="text-gray-600 text-sm mb-3">
             This phase requires <strong>structured thinking</strong> to define
-            the Product Requirements and <strong>Context</strong> to
-            preemptively set standards.
+            the Product Requirements and Context to preemptively set standards.
           </p>
           <ul className="list-disc list-inside space-y-2 text-gray-900 text-sm">
             <li>Do not start coding until the vision is clear.</li>
             <li>
-              Break the problem down into the four thinking levels: Logical, Analytical, Computational, Procedural.
+              Break the problem down into the four thinking levels: Logical,
+              Analytical, Computational, Procedural.
             </li>
             <li>Always provide the AI with the most detail.</li>
           </ul>
@@ -102,8 +103,8 @@ export function Module6Content() {
           <ul className="list-disc list-inside space-y-2 text-gray-900 text-sm">
             <li>Treat the AI like a mentor.</li>
             <li>
-              Use the Debugging principle by providing the full error message and file context to guide the
-              AI to an efficient self-correction.
+              Use the Debugging principle by providing the full error message
+              and file context to guide the AI to an efficient self-correction.
             </li>
           </ul>
         </div>
@@ -118,13 +119,8 @@ export function Module6Content() {
           business-related problem to solve and implement the core
           functionality. This is your chance to{" "}
           <strong>dive into a new technology</strong> to truly feel the power of
-          AI assistance. Guide your chosen AI pair programmer through the
-          entire software development lifecycle to implement your feature.
-        </p>
-        <p className="text-gray-600 mb-6">
-          <strong>Your Task:</strong> Guide your chosen AI pair programmer
-          through the entire software development lifecycle to implement your
-          feature.
+          AI assistance. Guide your chosen AI pair programmer through the entire
+          software development lifecycle to implement your feature.
         </p>
 
         <ul className="list-disc list-inside space-y-2 text-gray-600">
@@ -165,7 +161,7 @@ export function Module6Content() {
       </div>
       <div className="bg-gray-50 border border-gray-200 p-4 rounded-lg mt-8">
         <h3 className="text-lg font-bold text-gray-900 mb-2">
-          💡 References & Further Reading
+          💡 References & Tools
         </h3>
         <ul className="list-disc list-inside text-indigo-600">
           <li>
@@ -180,12 +176,42 @@ export function Module6Content() {
           </li>
           <li>
             <a
-              href="https://github.blog/ai-and-ml/github-copilot/a-guide-to-deciding-what-ai-model-to-use-in-github-copilot/"
+              href="https://cursor.com/"
               target="_blank"
               rel="noreferrer"
               className="hover:underline"
             >
-              A guide to deciding what AI model to use in GitHub Copilot
+              Cursor
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://lovable.dev/"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:underline"
+            >
+              Lovable
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://claude.com/product/overview/"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:underline"
+            >
+              Claude
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://bolt.new/"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:underline"
+            >
+              Bolt.new
             </a>
           </li>
         </ul>
