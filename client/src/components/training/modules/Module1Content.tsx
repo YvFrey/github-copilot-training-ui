@@ -53,7 +53,7 @@ export function Module1Content({ onNext }: Module1ContentProps) {
                 2. <strong>Chat: Ask:</strong>{" "}
                 <Prompt>
                   Which file must I create next to satisfy Mandatory Coding
-                  Guideline #4, and please provide the command to create it.
+                  Guidelines, and please provide the command to create it.
                 </Prompt>{" "}
                 Execute the suggested command.
               </td>
@@ -91,8 +91,7 @@ export function Module1Content({ onNext }: Module1ContentProps) {
               <td className="px-6 py-4 text-sm text-gray-600">
                 <strong>Chat: Ask:</strong>{" "}
                 <Prompt>
-                  @terminal I need to create a new branch named
-                  'feature/calc-fix'. Provide the exact git command for this.
+                  @terminal checkout branch 'bug/diagnostics-error'.
                 </Prompt>{" "}
                 Execute the suggested command.
               </td>
@@ -109,18 +108,18 @@ export function Module1Content({ onNext }: Module1ContentProps) {
                 </span>
               </td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                1. Introduce a small syntax error in <code>app/main.py</code>.
+                1. Validate you are on branch <code>'bug/diagnostics-error'</code> and open the file <code>app/main.py</code>.
                 <br />
                 2. <strong>Chat: Ask:</strong>{" "}
                 <Prompt>
-                  @vscode what problems are currently reported in this file?
+                  @vscode what problems are currently reported in this file??
                 </Prompt>
                 <br />
-                3. <strong>Chat: Ask:</strong>{" "}
+                3. Ask:{" "}
                 <Prompt>@vscode open the Problems panel.</Prompt>
                 <br />
-                4. <strong>Chat: Ask:</strong>{" "}
-                <Prompt>@vscode can you automatically fix this issue?</Prompt>{" "}
+                4. Ask:{" "}
+                <Prompt>@vscode can you please fix this issue?</Prompt>{" "}
                 Notice its limitations.
               </td>
             </tr>
@@ -137,61 +136,17 @@ export function Module1Content({ onNext }: Module1ContentProps) {
               </td>
               <td className="px-6 py-4 text-sm text-gray-600">
                 1. Open <code>app/main.py</code>. <strong>Select</strong> only
-                the <code>calculate_total</code> function.
+                the <code>log_task</code> function.
                 <br />
                 2. <strong>Chat: Ask:</strong>{" "}
                 <Prompt>
-                  What are the parameters and return type for #selection and is
-                  there a type hint error?
+                  What is the issue with #selection?
                 </Prompt>
               </td>
             </tr>
             <tr>
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                 1.6
-              </td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">
-                Chat Variable
-                <br />
-                <span className="text-gray-500 font-normal">
-                  (<code>#file</code>)
-                </span>
-              </td>
-              <td className="px-6 py-4 text-sm text-gray-600">
-                <strong>Chat: Ask:</strong>{" "}
-                <Prompt>
-                  In the function defined in #file:app/main.py, what is the
-                  current logic error in the 'calculate_total' function?
-                </Prompt>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
-        Exercises: Implicit Context-Awareness
-      </h2>
-
-      <div className="overflow-x-auto border rounded-lg">
-        <table className="min-w-full divide-y divide-gray-200">
-          <thead className="bg-gray-50">
-            <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-[10%]">
-                Step
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-[25%]">
-                Feature
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-[65%]">
-                Instructions
-              </th>
-            </tr>
-          </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
-            <tr>
-              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                1.7
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">
                 Context-Aware Chat
@@ -207,7 +162,7 @@ export function Module1Content({ onNext }: Module1ContentProps) {
             </tr>
             <tr>
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                1.8
+                1.7
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">
                 Context-Aware Code Completions
@@ -220,11 +175,26 @@ export function Module1Content({ onNext }: Module1ContentProps) {
                 file.
                 <br />
                 2. <strong>Type:</strong>{" "}
-                <Prompt>class OrderResponse(BaseModel):</Prompt>
+                <Prompt>class TaskCompletionMetrics(BaseModel):</Prompt>
                 <br />
                 3. Let Copilot complete the class with appropriate fields.
                 Observe how Copilot infers fields using repository-level
                 context. Accept or refine its suggestion.
+              </td>
+            </tr>
+            <tr>
+              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                1.8
+              </td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">
+                Challenge: Let Copilot fix your code
+              </td>
+              <td className="px-6 py-4 text-sm text-gray-600">
+                1. Move all Pydantic models out of <code>app/main.py</code> into <code>app/models.py</code>.
+                <br />
+                2. Correct <code>log_task</code> in <code>app/main.py</code>.
+                <br />
+                3. Ensure that the repository's guidelines are beeing followed and no violations remain.
               </td>
             </tr>
           </tbody>
@@ -296,12 +266,13 @@ export function Module1Content({ onNext }: Module1ContentProps) {
             tasks delegated via GitHub Issues (as seen in Module V).
           </li>
           <li>
-            <strong>Inference is Strong:</strong> 🧠
+            <strong>Automatic Context Retrieval:</strong> 🧠
             <br />
             Often AI is intelligent enough to ground its response in the
-            project's configuration files even when you don't use a specific
-            agent. This high degree of inference works particularly well with
-            simple, small repositories like our training app.
+            project's configuration files even when you don't use the specific
+            <code>@workspace</code> agent. This seamless context retrieval works
+            particularly well with simple, small repositories like our training
+            app.
           </li>
         </ul>
       </div>

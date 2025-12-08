@@ -12,7 +12,7 @@ export const Module5Intro = (
     <h3 className="text-xl font-bold text-gray-900 mb-4">📚 Goal: Master the creation of a Custom Agent and delegate autonomous, multi-step tasks using both the GitHub Issue and the Copilot Chat interface</h3>
     
     <p className="text-gray-600 mb-4">
-      <strong>Copilot Coding Agents</strong> 🤖 are <strong>autonomous</strong> AI assistants designed to perform <strong>multi-step, iterative coding tasks</strong> in an <strong>asynchronous</strong> manner. They are the <strong>only</strong> Copilot tools that can run, commit, and open PRs in a loop without human intervention. Agent workflows can be triggered in multiple ways via GitHub UI, CLI (<code>gh</code>) or Chat.
+      <strong>Copilot Coding Agents</strong> 🤖 are <strong>autonomous</strong> AI assistants designed to perform <strong>multi-step, iterative coding tasks</strong> in an <strong>asynchronous</strong> manner. They are the <strong>only</strong> Copilot tools that can run, commit, and open PRs in a loop without human intervention. Agent workflows can be triggered in multiple ways via GitHub UI, GitHub CLI or Chat.
     </p>
     
     <p className="text-gray-600">
@@ -71,7 +71,7 @@ export function Module5Content({ onNext }: Module5ContentProps) {
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">5.5</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Optional: Delegation via GitHub CLI</td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                Make sure the GitHub CLI is installed. Delegate the task via the command line: <Prompt>gh issue create --title "@copilot Request: Refactor the /calculate endpoint" --assignee @copilot</Prompt>
+                Make sure the GitHub CLI is installed. Delegate the task via the command line: <Prompt>gh issue create --title "@copilot Request: ...your Task..." --assignee @copilot</Prompt>
               </td>
             </tr>
             <tr>

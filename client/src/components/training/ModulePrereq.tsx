@@ -16,7 +16,7 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
           <div className="p-2 bg-indigo-100 rounded-lg">
             <LayoutTemplate className="w-6 h-6 text-indigo-600" />
           </div>
-          <h2 className="text-2xl font-bold text-gray-900">Module 00: Prerequisites and Developer Responsibility</h2>
+          <h2 className="text-2xl font-bold text-gray-900">Prerequisites and Developer Responsibility</h2>
         </div>
         
         <div className="prose prose-indigo max-w-none">
@@ -25,7 +25,7 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
           </p>
           
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            The training is based on a <strong>simple FastAPI application</strong>, manageable by any engineer familiar with foundational programming concepts. We expect everyone to <strong>explore the capabilities and limitations of GitHub Copilot</strong>. You'll learn how to prompt effectively, use agentic features safely, and validate generated code.
+            The training is based on a <strong>FastAPI application</strong>, manageable by any engineer familiar with foundational programming concepts. We expect everyone to <strong>explore the capabilities and limitations of GitHub Copilot</strong>. You'll learn how to prompt effectively, use agentic features safely, and validate generated code.
           </p>
 
           <p className="text-gray-600 text-lg leading-relaxed">
@@ -79,8 +79,8 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
                 },
                 {
                   title: "Code Base",
-                  desc: "Fork the course repository to your own GitHub account (use the \"Fork\" button on GitHub). Clone your project locally. This setup ensures you have all necessary permissions.",
-                  link: "https://github.com/YvFrey/training-github-copilot/tree/main",
+                  desc: "Fork the course repository to your own GitHub account. Clone **your project** locally. This setup ensures you have all necessary permissions in Github when running your custom agents.",
+                  link: "https://github.com/YvFrey/github-copilot-training.git",
                   linkText: "course repository"
                 }
               ].map((item, idx) => (
@@ -99,7 +99,6 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
                           <span className="font-semibold text-gray-900 text-sm">{item.title}: </span>
                           <span className="text-gray-600 text-sm">
                             {item.desc}
-                            {item.extra && <span className="block mt-1 text-indigo-600 italic">{item.extra}</span>}
                           </span>
                         </div>
                         {item.link && (
@@ -122,7 +121,18 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
           Important: Feature Alignment and Version Check
         </h3>
         <p className="text-gray-600 mb-4">
-          Copilot features evolve <strong>rapidly</strong>, with changes and new features often released on a <strong>weekly basis</strong>. Please excuse if a specific task is not fully up to date or available in your version. This training was tested on the following stable environment. If you encounter errors, verify your version alignment or report the discrepancy to the trainer.
+          Due to the rapid pace of AI feature development, specific Copilot functionality may have changed or moved since this training was finalized.
+        </p>
+        <ul className="list-disc list-inside space-y-2 text-gray-600 mb-4 ml-2">
+            <li>
+                <strong>Embrace Discrepancies:</strong> If a task behaves differently, view it as a learning opportunity. Verify your version, read the latest docs, or report the change to the trainer.
+            </li>
+            <li>
+                <strong>Challenge the Ask:</strong> Always feel free to move beyond the explicit ask if you discover a newly released feature or a better, more efficient workflow.
+            </li>
+        </ul>
+        <p className="text-gray-600 mb-4">
+          This training was developed on the following versions:
         </p>
         <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
           <ul className="space-y-2 text-sm text-gray-700 font-mono">

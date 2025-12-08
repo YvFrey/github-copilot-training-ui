@@ -3,8 +3,7 @@ import React from "react";
 export const Module6Intro = (
   <>
     <h3 className="text-xl font-bold text-gray-900 mb-4">
-      📚 Goal: Implement a functional prototype feature based on a high-value,
-      creative use case
+      📚 Goal: Implement a functional prototype feature using your AI Coding Assistants to accelerate the entire development cycle.
     </h3>
   </>
 );
@@ -22,7 +21,7 @@ export function Module6Content() {
 
         <ul className="list-disc list-inside space-y-3 text-gray-700">
           <li>
-            <strong>Process Guardrails:</strong> YYou can adjust these steps or
+            <strong>Process Guardrails:</strong> You can adjust these steps or
             substitute them based on your own experimentation and experience,
             but{" "}
             <strong>
@@ -35,7 +34,7 @@ export function Module6Content() {
             <strong>AI Tool Flexibility:</strong> While this training is
             designed to strengthen your expertise in{" "}
             <strong>GitHub Copilot</strong>, you have full flexibility on AI
-            vibe coding tools. Feel free to enhance your workflow by integrating
+            tools. Feel free to enhance your workflow by integrating
             other generative AI tools.
           </li>
         </ul>
@@ -116,11 +115,11 @@ export function Module6Content() {
         </h3>
         <p className="text-gray-600 mb-4">
           <strong>Mission:</strong> <strong>Be creative!</strong> Choose a
-          simple, non-trivial problem to solve that{" "}
-          <strong>could be business-related</strong> and implement the core
+          business-related problem to solve and implement the core
           functionality. This is your chance to{" "}
           <strong>dive into a new technology</strong> to truly feel the power of
-          AI assistance.
+          AI assistance. Guide your chosen AI pair programmer through the
+          entire software development lifecycle to implement your feature.
         </p>
         <p className="text-gray-600 mb-6">
           <strong>Your Task:</strong> Guide your chosen AI pair programmer

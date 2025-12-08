@@ -34,6 +34,9 @@ export const Module2Intro = (
         and multi-file context.
       </li>
       <li>
+        <strong>Quick Chat</strong> → Transient questions and brief inquiries.
+      </li>
+      <li>
         <strong>Copilot CLI</strong> → Shell/Terminal Interaction for generating
         and executing commands.
       </li>
@@ -75,12 +78,9 @@ export function Module2Content({ onNext }: Module2ContentProps) {
                 Code Completions
               </td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                1. In <code>app/main.py</code> above the <code>/status</code>{" "}
-                route <strong>type:</strong>{" "}
+                1. In <code>app/main.py</code> **type:**{" "}
                 <Prompt>
-                  # Add a new POST route /item/create that accepts the existing
-                  'Item' Pydantic model. The route handler should immediately
-                  return the received item as JSON
+                  # Add a new GET route /task/1/status that accepts a task_id path parameter and returns the status of that task
                 </Prompt>
                 <br />
                 2. Open <code>Copilot: Open Completions Panel</code> and iterate
@@ -102,14 +102,17 @@ export function Module2Content({ onNext }: Module2ContentProps) {
                 </span>
               </td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                1. <strong>Select</strong> the <code>post_calculate_order</code>{" "}
+                You notice that something seems to be off with the calculation of the <code>generate_productivity_report</code>.
+                <br />
+                1. <strong>Select</strong> the entire <code>generate_productivity_report</code>{" "}
                 function.
                 <br />
                 2. <strong>Inline Chat</strong>:{" "}
                 <Prompt>
-                  /fix this route to validate and return the calculated total
-                  using the 'OrderResponse' Pydantic model
+                  /fix calculation
                 </Prompt>
+                <br />
+                3. Evaluate the proposed fix. The function's name and internal docstring provide critical context.
               </td>
             </tr>
             <tr>
@@ -124,14 +127,11 @@ export function Module2Content({ onNext }: Module2ContentProps) {
                 </span>
               </td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                1. <strong>Select</strong> the entire{" "}
-                <strong>
-                  <code>calculate_total</code>
-                </strong>{" "}
+                1. <strong>Select</strong> the <code>generate_productivity_report</code>{" "}
                 function.
                 <br />
-                2. <strong>Chat:</strong>{" "}
-                <Prompt>/fix the bug of the function</Prompt>
+                2. <strong>Chat: Ask:</strong>{" "}
+                <Prompt>/explain the steps of the function</Prompt>
               </td>
             </tr>
             <tr>
@@ -139,23 +139,19 @@ export function Module2Content({ onNext }: Module2ContentProps) {
                 2.4
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">
-                Chat Panel
+                Inline Chat
                 <br />
                 <span className="text-gray-500 font-normal">
-                  (<code>/explain</code>)
+                  (<code>Selection</code>)
                 </span>
               </td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                1. <strong>Select</strong> the <code>calculate_total</code>{" "}
+                1. <strong>Select</strong> the <code>generate_productivity_report</code>{" "}
                 function.
                 <br />
-                2. <strong>Chat: Ask:</strong>{" "}
-                <Prompt>
-                  /explain this function to a junior developer. Focus on the
-                  math and correct return type, referencing its usage in the
-                  '/calculate' endpoint
-                </Prompt>
-                .
+                2. <strong>Inline Chat</strong>:{" "}
+                <Prompt>Explain this code in a single sentence.</Prompt> Observe
+                how it provides an in-place, focused explanation.
               </td>
             </tr>
             <tr>
@@ -166,61 +162,23 @@ export function Module2Content({ onNext }: Module2ContentProps) {
                 Inline Chat
                 <br />
                 <span className="text-gray-500 font-normal">
-                  (<code>Selection</code>)
+                  (<code>/doc</code>)
                 </span>
               </td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                1. <strong>Select</strong> the <code>create_item</code>{" "}
-                function.
+                1. <strong>Select</strong> in <code>app/main.py</code> the function <code>log_task</code>.
                 <br />
                 2. <strong>Inline Chat</strong>:{" "}
-                <Prompt>Explain this code in a single sentence.</Prompt> Observe
-                how it provides an in-place, focused explanation.
+                <Prompt>
+                  /doc
+                </Prompt>
+                <br />
+                3. You can enhance the internal prompt in case you want a specific format.
               </td>
             </tr>
             <tr>
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                 2.6
-              </td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">
-                Mode Comparison
-              </td>
-              <td className="px-6 py-4 text-sm text-gray-600">
-                1. <strong>Select</strong> the{" "}
-                <strong>
-                  entire <code>calculate_total</code> function
-                </strong>{" "}
-                after changing the return type to int.
-                <br />
-                2. <strong>Chat:</strong> Submit three times the exact same
-                prompt: <Prompt>Change the return type of this function</Prompt>{" "}
-                Switch between <strong>ASK Mode, EDIT Mode</strong> and{" "}
-                <strong>AGENT Mode</strong> and observe the different behavior.
-              </td>
-            </tr>
-            <tr>
-              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                2.7
-              </td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">
-                Inline Chat <br />
-                <span className="text-gray-500 font-normal">
-                  (<code>/docs</code>)
-                </span>
-              </td>
-              <td className="px-6 py-4 text-sm text-gray-600">
-                1. <strong>Select</strong> the body of <code>get_status</code>.
-                <br />
-                2. <strong>Inline Chat</strong>:{" "}
-                <Prompt>
-                  /docs add a Google-style docstring explaining the function’s
-                  purpose and return value
-                </Prompt>
-              </td>
-            </tr>
-            <tr>
-              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                2.8
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">
                 Inline Terminal <br />
@@ -245,31 +203,28 @@ export function Module2Content({ onNext }: Module2ContentProps) {
             </tr>
             <tr>
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                2.9
+                2.7
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">
                 Custom Prompt
               </td>
               <td className="px-6 py-4 text-sm text-gray-600">
                 1. <strong>Review</strong> <code>security-audit.prompt.md</code>
-                . <strong>Select</strong> <code>create_item</code> in{" "}
+                . <strong>Select</strong> <code>get_all_tasks</code> in{" "}
                 <code>app/main.py</code> and run the prompt:{" "}
                 <code>/security-audit</code>.<br />
-                2. <strong>Create</strong> your own prompt (
-                <code>my-use-case.prompt.md</code>).
+                2. <strong>Create</strong> your own prompt.
               </td>
             </tr>
             <tr>
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                2.10
+                2.8
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">
                 Challenge: Custom Prompt
               </td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                Think about a repetitive task/prompt during your daily coding.
-                Leverage a prompting framework of your choice. Validate the
-                output and potentially refine the prompt.
+                Think about a repetitive task in your daily coding; choose a prompting framework to craft a reusable prompt and integrate it seamlessly into your workflow, then validate the output and refine the prompt as needed.
               </td>
             </tr>
           </tbody>

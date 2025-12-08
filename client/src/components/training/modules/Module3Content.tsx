@@ -52,7 +52,7 @@ export function Module3Content({ onNext }: Module3ContentProps) {
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Challenge: PR Summary</td>
               <td className="px-6 py-4 text-sm text-gray-600">
                 Leverage your knowledge from the previous chapters and create a concise summary for a Pull Request, avoiding the issue of getting an overly broad history.<br/>
-                <strong>HINT:</strong> You can craft a precise prompt and use the <strong><code>@workspace</code> agent</strong> that forces Copilot to summarize <em>only</em> the specific changes for this PR (which likely involves the last few commits). You can use <strong>Git references</strong> (like commit hashes) or restrict the summary by file path.
+                <strong>HINT:</strong> You can craft a precise prompt and use the <strong><code>@workspace</code> agent</strong> that forces Copilot to summarize <em>only</em> the specific changes for this PR (which likely involves the last few commits). You can use <strong>Git references</strong> (like commit hashes) or restrict the summary by file path to get the exact result you want. Feel free to research and apply any other approach.
               </td>
             </tr>
           </tbody>
@@ -71,7 +71,7 @@ export function Module3Content({ onNext }: Module3ContentProps) {
         <ul className="list-disc list-inside space-y-2 text-gray-700">
           <li><strong>You are the Guardian:</strong> 🧑‍💻 You are still fully responsible for the quality, correctness, and security of the code you commit. Copilot is an acceleration tool, not a replacement for human judgment.</li>
           <li><strong>Verification is Mandatory:</strong> 🔬 Always review the output from Copilot's SCM review and manually test any changes it suggests before committing.</li>
-          <li><strong>Senseful Code:</strong> ✅ Ensure you commit <strong>correct and senseful</strong> code. Copilot accelerates the writing process, but <strong>human validation and testing</strong> is the non-negotiable final step.</li>
+          <li><strong>Meaningful Code:</strong> ✅ Ensure you commit <strong>correct and logical</strong> code. Copilot accelerates the writing process, but <strong>human validation and testing</strong> is the non-negotiable final step.</li>
         </ul>
       </div>
 
