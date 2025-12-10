@@ -8,7 +8,6 @@ import {
   ArrowRight,
   Settings,
   LayoutTemplate,
-  Map,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Prompt } from "@/components/training/Prompt";
@@ -169,29 +168,6 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
         </div>
       </div>
 
-      {/* Learning Path Card */}
-      <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 hover:shadow-md transition-shadow duration-300">
-        <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-          <Map className="w-6 h-6 text-gray-700 mr-2" />
-          Learning Path
-        </h3>
-        <ul className="text-gray-600 mb-4">
-          {[
-            "Module I — Context & Control: Precise Prompting and Workspace Awareness",
-            "Module II — Dynamic Interaction Modes: Completions, Inline Chat, Chat Panel, Terminal",
-            "Module III — Version Control & Quality: Git Workflow Integration",
-            "Module IV — Testing Framework: Automating Tests and Policy Checks",
-            "Module V — Agentic Workflows: Delegating and Supervising Autonomous Agents",
-            "Module VI — Vibe Coding: The Integrated Exploration Challenge",
-          ].map((module, idx) => (
-            <li key={idx} className="flex items-start text-gray-700 text-lg">
-              <span className="w-2 h-2 bg-indigo-500 rounded-full mt-2.5 mr-3 flex-shrink-0" />
-              {module}
-            </li>
-          ))}
-        </ul>
-      </div>
-
       {/* Feature Alignment Card */}
       <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 hover:shadow-md transition-shadow duration-300">
         <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
@@ -293,13 +269,13 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
             <h4 className="text-lg font-semibold text-gray-800 mb-3">
               2. Verify Copilot
             </h4>
-            <div className="text-gray-700 text-sm">
+            <p className="text-gray-700 text-sm">
               Verify Copilot: Open the Copilot Chat panel in VS Code and ask a
               project-aware question such as:
               <Prompt>"What is the main purpose of this repository?".</Prompt> A
               coherent response indicates Copilot is active and has access to
               the workspace.
-            </div>
+            </p>
           </div>
         </div>
       </div>
