@@ -171,11 +171,11 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
 
       {/* Learning Path Card */}
       <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 hover:shadow-md transition-shadow duration-300">
-        <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
-          <Map className="w-6 h-6 text-indigo-600 mr-2" />
-          🗺️ Learning Path
+        <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+          <Map className="w-6 h-6 text-gray-700 mr-2" />
+          Learning Path
         </h3>
-        <ul className="space-y-4">
+        <ul className="text-gray-600 mb-4">
           {[
             "Module I — Context & Control: Precise Prompting and Workspace Awareness",
             "Module II — Dynamic Interaction Modes: Completions, Inline Chat, Chat Panel, Terminal",
@@ -293,13 +293,13 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
             <h4 className="text-lg font-semibold text-gray-800 mb-3">
               2. Verify Copilot
             </h4>
-            <p className="text-gray-700 text-sm">
+            <div className="text-gray-700 text-sm">
               Verify Copilot: Open the Copilot Chat panel in VS Code and ask a
               project-aware question such as:
               <Prompt>"What is the main purpose of this repository?".</Prompt> A
               coherent response indicates Copilot is active and has access to
               the workspace.
-            </p>
+            </div>
           </div>
         </div>
       </div>

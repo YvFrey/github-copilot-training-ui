@@ -292,7 +292,7 @@ export function Module1Content({ onNext }: Module1ContentProps) {
             <Prompt>@workspace generate project instructions file</Prompt>
           </li>
         </ul>
-        <p className="text-gray-600">
+        <div className="text-gray-600">
           In both cases, Copilot analyzes the existing code and configuration
           files, creating a draft <code>.github/copilot-instructions.md</code>{" "}
           that you can then review and refine with your{" "}
@@ -303,7 +303,7 @@ export function Module1Content({ onNext }: Module1ContentProps) {
           </Prompt>{" "}
           Copilot will quote the main rules from that file if it’s being used
           correctly.
-        </p>
+        </div>
       </div>
 
       <div className="bg-gray-50 border border-gray-200 p-4 rounded-lg mt-8">
