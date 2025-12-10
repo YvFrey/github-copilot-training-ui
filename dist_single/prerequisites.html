@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Copilot Training - Prerequisites</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen p-4 md:p-8">
+    <div class="max-w-4xl mx-auto space-y-6">
+        <!-- Introduction Card -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="p-2 bg-indigo-100 rounded-lg">
+                    <!-- LayoutTemplate Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-indigo-600"><rect width="18" height="7" x="3" y="3" rx="1"/><rect width="9" height="7" x="3" y="14" rx="1"/><rect width="5" height="7" x="16" y="14" rx="1"/></svg>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900">
+                    Prerequisites and Developer Responsibility
+                </h2>
+            </div>
+
+            <div class="prose prose-indigo max-w-none">
+                <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                    This hands-on training helps engineers move beyond basic code
+                    completion by teaching practical use of GitHub Copilot for
+                    contextual guidance, agentic workflows, and safe automation to
+                    accelerate delivery and improve code quality.
+                </p>
+
+                <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                    The training is based on a
+                    <a href="https://fastapi.tiangolo.com" target="_blank" rel="noreferrer" class="text-indigo-600 hover:underline">
+                        FastAPI application
+                    </a>
+                    , manageable by any engineer familiar with foundational programming
+                    concepts. We expect everyone to explore the capabilities and
+                    limitations of GitHub Copilot. You'll learn how to prompt
+                    effectively, use agentic features safely, and validate generated
+                    code.
+                </p>
+
+                <p class="text-gray-600 text-lg leading-relaxed">
+                    We encourage you to discuss actively with your colleagues during the
+                    session, and manifest your new learned skills by continuing to
+                    practice the concepts outside of the classroom.
+                </p>
+            </div>
+        </div>
+
+        <!-- Prerequisites Checklist Card -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8">
+            <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                <!-- CheckCircle2 Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-green-500 mr-2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                Prerequisites Checklist
+            </h3>
+            <p class="text-gray-600 mb-4">
+                To ensure a smooth session, please ensure the following items are
+                verified before the start of the hands-on session:
+            </p>
+
+            <div class="grid gap-2">
+                <!-- Item 1 -->
+                <div class="flex items-start p-2.5 bg-gray-50/50 rounded-lg border border-gray-100 hover:bg-gray-50 transition-colors">
+                    <div class="min-w-6 mr-3 mt-1">
+                        <div class="w-5 h-5 rounded-full border border-indigo-200 bg-white flex items-center justify-center text-[10px] font-bold text-indigo-600">1</div>
+                    </div>
+                    <div class="flex-1 flex flex-col gap-1">
+                        <div>
+                            <span class="font-semibold text-gray-900 text-sm">GitHub Copilot License: </span>
+                            <ul class="list-disc list-inside ml-2 mt-1 space-y-1">
+                                <li class="text-gray-600 text-sm">
+                                    <strong>Use the 30-day free trial</strong> —
+                                    <a href="https://github.com/github-copilot/pro" target="_blank" rel="noreferrer" class="text-indigo-600 hover:underline">
+                                        Sign up for the 30-day free trial for GitHub Copilot Pro
+                                    </a>
+                                </li>
+                                <li class="text-gray-600 text-sm">
+                                    <strong>Already used the trial?</strong> — Contact us so we can find a solution.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="flex items-start p-2.5 bg-gray-50/50 rounded-lg border border-gray-100 hover:bg-gray-50 transition-colors">
+                    <div class="min-w-6 mr-3 mt-1">
+                        <div class="w-5 h-5 rounded-full border border-indigo-200 bg-white flex items-center justify-center text-[10px] font-bold text-indigo-600">2</div>
+                    </div>
+                    <div class="flex-1 flex flex-col gap-1">
+                        <div class="flex items-center flex-wrap gap-2">
+                            <span class="font-semibold text-gray-900 text-sm">Visual Studio Code: </span>
+                            <span class="text-gray-600 text-sm">Recommended to use latest stable VS Code to ensure agent/chat features are available</span>
+                        </div>
+                        <a href="https://marketplace.visualstudio.com/items?itemName=GitHub.copilot" target="_blank" rel="noreferrer" class="inline-flex items-center text-indigo-600 hover:text-indigo-700 text-xs font-medium mt-1 hover:underline">
+                            Install VS Code <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 ml-1"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="flex items-start p-2.5 bg-gray-50/50 rounded-lg border border-gray-100 hover:bg-gray-50 transition-colors">
+                    <div class="min-w-6 mr-3 mt-1">
+                        <div class="w-5 h-5 rounded-full border border-indigo-200 bg-white flex items-center justify-center text-[10px] font-bold text-indigo-600">3</div>
+                    </div>
+                    <div class="flex-1 flex flex-col gap-1">
+                        <div class="flex items-center flex-wrap gap-2">
+                            <span class="font-semibold text-gray-900 text-sm">Required Extensions: </span>
+                            <span class="text-gray-600 text-sm">Install the GitHub Copilot and GitHub Pull Requests & Issues extensions in VS Code</span>
+                        </div>
+                        <a href="https://code.visualstudio.com/download" target="_blank" rel="noreferrer" class="inline-flex items-center text-indigo-600 hover:text-indigo-700 text-xs font-medium mt-1 hover:underline">
+                            Install Extensions <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 ml-1"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="flex items-start p-2.5 bg-gray-50/50 rounded-lg border border-gray-100 hover:bg-gray-50 transition-colors">
+                    <div class="min-w-6 mr-3 mt-1">
+                        <div class="w-5 h-5 rounded-full border border-indigo-200 bg-white flex items-center justify-center text-[10px] font-bold text-indigo-600">4</div>
+                    </div>
+                    <div class="flex-1 flex flex-col gap-1">
+                        <div class="flex items-center flex-wrap gap-2">
+                            <span class="font-semibold text-gray-900 text-sm">uv Package Manager: </span>
+                            <span class="text-gray-600 text-sm">The uv utility is required for fast environment and dependency management: uv Installation Guide</span>
+                        </div>
+                        <a href="https://docs.astral.sh/uv/getting-started/installation/" target="_blank" rel="noreferrer" class="inline-flex items-center text-indigo-600 hover:text-indigo-700 text-xs font-medium mt-1 hover:underline">
+                            uv Installation Guide <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 ml-1"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="flex items-start p-2.5 bg-gray-50/50 rounded-lg border border-gray-100 hover:bg-gray-50 transition-colors">
+                    <div class="min-w-6 mr-3 mt-1">
+                        <div class="w-5 h-5 rounded-full border border-indigo-200 bg-white flex items-center justify-center text-[10px] font-bold text-indigo-600">5</div>
+                    </div>
+                    <div class="flex-1 flex flex-col gap-1">
+                        <div class="flex items-center flex-wrap gap-2">
+                            <span class="font-semibold text-gray-900 text-sm">Code Base: </span>
+                            <span class="text-gray-600 text-sm">Fork the course repository to your own GitHub account. Clone **your project** locally. This setup ensures you have all necessary permissions in GitHub when running your custom agents.</span>
+                        </div>
+                        <a href="https://github.com/YvFrey/github-copilot-training.git" target="_blank" rel="noreferrer" class="inline-flex items-center text-indigo-600 hover:text-indigo-700 text-xs font-medium mt-1 hover:underline">
+                            Training Repository <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 ml-1"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Learning Path Card -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 hover:shadow-md transition-shadow duration-300">
+            <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center">
+                <!-- Map Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-indigo-600 mr-2"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" x2="9" y1="3" y2="18"/><line x1="15" x2="15" y1="6" y2="21"/></svg>
+                🗺️ Learning Path
+            </h3>
+            <ul class="space-y-4">
+                <li class="flex items-start text-gray-700 text-lg">
+                    <span class="w-2 h-2 bg-indigo-500 rounded-full mt-2.5 mr-3 flex-shrink-0"></span>
+                    Module I — Context & Control: Precise Prompting and Workspace Awareness
+                </li>
+                <li class="flex items-start text-gray-700 text-lg">
+                    <span class="w-2 h-2 bg-indigo-500 rounded-full mt-2.5 mr-3 flex-shrink-0"></span>
+                    Module II — Dynamic Interaction Modes: Completions, Inline Chat, Chat Panel, Terminal
+                </li>
+                <li class="flex items-start text-gray-700 text-lg">
+                    <span class="w-2 h-2 bg-indigo-500 rounded-full mt-2.5 mr-3 flex-shrink-0"></span>
+                    Module III — Version Control & Quality: Git Workflow Integration
+                </li>
+                <li class="flex items-start text-gray-700 text-lg">
+                    <span class="w-2 h-2 bg-indigo-500 rounded-full mt-2.5 mr-3 flex-shrink-0"></span>
+                    Module IV — Testing Framework: Automating Tests and Policy Checks
+                </li>
+                <li class="flex items-start text-gray-700 text-lg">
+                    <span class="w-2 h-2 bg-indigo-500 rounded-full mt-2.5 mr-3 flex-shrink-0"></span>
+                    Module V — Agentic Workflows: Delegating and Supervising Autonomous Agents
+                </li>
+                <li class="flex items-start text-gray-700 text-lg">
+                    <span class="w-2 h-2 bg-indigo-500 rounded-full mt-2.5 mr-3 flex-shrink-0"></span>
+                    Module VI — Vibe Coding: The Integrated Exploration Challenge
+                </li>
+            </ul>
+        </div>
+
+        <!-- Feature Alignment Card -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 hover:shadow-md transition-shadow duration-300">
+            <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                <!-- Settings Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-gray-700 mr-2"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.1a2 2 0 0 1-1-1.72v-.51a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+                Important: Feature Alignment and Version Check
+            </h3>
+            <p class="text-gray-600 mb-4">
+                Due to the rapid pace of AI feature development, specific Copilot
+                functionality may have changed or moved since this training was
+                finalized.
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-600 mb-4 ml-2">
+                <li>
+                    <strong>Embrace Discrepancies:</strong> If a task behaves
+                    differently, view it as a learning opportunity. Verify your version,
+                    read the latest docs, or report the change to the trainer.
+                </li>
+                <li>
+                    <strong>Challenge the Ask:</strong> Always feel free to move beyond
+                    the explicit ask if you discover a newly released feature or a
+                    better, more efficient workflow.
+                </li>
+            </ul>
+            <p class="text-gray-600 mb-4">
+                This training was developed on the following versions:
+            </p>
+            <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                <ul class="space-y-2 text-sm text-gray-700 font-mono">
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-indigo-400 rounded-full mr-2"></span>
+                        VS Code Version: 1.106.3
+                    </li>
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-indigo-400 rounded-full mr-2"></span>
+                        GitHub Copilot Extension: github.copilot@1.388.0, github.copilot-chat@0.33.3
+                    </li>
+                    <li class="flex items-center">
+                        <span class="w-2 h-2 bg-indigo-400 rounded-full mr-2"></span>
+                        Python Environment Manager (uv): 0.8.10
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Getting Started Card -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 hover:shadow-md transition-shadow duration-300">
+            <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center">
+                <!-- Terminal Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-gray-700 mr-2"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></svg>
+                Getting Started
+            </h3>
+
+            <div class="space-y-8">
+                <!-- Section 1 -->
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-800 mb-3">
+                        1. Running the FastAPI App
+                    </h4>
+                    <p class="text-gray-600 mb-4">
+                        Run the following in the project root to install <code>uv</code>,
+                        sync the environment, and start the app locally. These commands
+                        assume you have a Python environment and <code>pip</code>
+                        available.
+                    </p>
+
+                    <div class="bg-gray-900 rounded-lg p-4 text-gray-100 font-mono text-sm overflow-x-auto shadow-inner">
+                        <div class="flex gap-2 mb-2 border-b border-gray-700 pb-2">
+                            <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                            <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+                            <span class="w-3 h-3 rounded-full bg-green-500"></span>
+                        </div>
+                        <p class="mb-1">
+                            <span class="text-gray-500"># Install and sync</span>
+                        </p>
+                        <p class="mb-2">cd app</p>
+                        <p class="mb-2">pip install --upgrade uv</p>
+                        <p class="mb-2">uv sync</p>
+                        <p class="mb-1">
+                            <span class="text-gray-500"># Run server</span>
+                        </p>
+                        <p>
+                            uv run uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+                        </p>
+                    </div>
+                    <p class="mt-4 text-gray-600">
+                        The Swagger UI will now be available at:
+                        <a href="http://127.0.0.1:8000/docs" class="text-indigo-600 hover:underline">
+                            http://127.0.0.1:8000/docs
+                        </a>
+                    </p>
+                </div>
+
+                <!-- Section 2 -->
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-800 mb-3">
+                        2. Verify Copilot
+                    </h4>
+                    <p class="text-gray-700 text-sm">
+                        Verify Copilot: Open the Copilot Chat panel in VS Code and ask a
+                        project-aware question such as:
+                        <span class="inline-block bg-indigo-50 border border-indigo-200 rounded px-2 py-0.5 text-indigo-700 font-medium">"What is the main purpose of this repository?".</span> A
+                        coherent response indicates Copilot is active and has access to
+                        the workspace.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Responsibility Mandate -->
+        <div class="bg-white border border-gray-200 p-6 rounded-lg shadow-sm">
+            <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                <!-- AlertTriangle Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-gray-900 mr-2"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" x2="12" y1="9" y2="13"/><line x1="12" x2="12.01" y1="17" y2="17"/></svg>
+                Developer Responsibility Mandate
+            </h3>
+            <div class="text-gray-700 text-sm leading-relaxed space-y-2">
+                <p>
+                    As an AI coding tool, Copilot provides suggestions based on learned
+                    patterns, but it does not guarantee correctness, optimality, or
+                    security.
+                    <strong class="text-gray-900">
+                        The developer remains the final authority.
+                    </strong>
+                </p>
+                <p>
+                    You are responsible for
+                    <strong>rigorously reviewing, testing, and validating</strong> all
+                    code generated by Copilot before deployment, ensuring compliance
+                    with all security standards.
+                    <span> Always be skeptical of generated code.</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
