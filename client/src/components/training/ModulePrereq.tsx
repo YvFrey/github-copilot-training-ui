@@ -108,13 +108,13 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
             {
               title: "Visual Studio Code",
               desc: "Recommended to use latest stable VS Code to ensure agent/chat features are available",
-              link: "https://marketplace.visualstudio.com/items?itemName=GitHub.copilot",
+              link: "https://code.visualstudio.com/download",
               linkText: "Install VS Code",
             },
             {
               title: "Required Extensions",
               desc: "Install the GitHub Copilot and GitHub Pull Requests & Issues extensions in VS Code",
-              link: "https://code.visualstudio.com/download",
+              link: "https://marketplace.visualstudio.com/items?itemName=GitHub.copilot",
               linkText: "Install Extensions",
             },
             {
