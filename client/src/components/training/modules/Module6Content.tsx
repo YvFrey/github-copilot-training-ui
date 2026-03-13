@@ -1,221 +1,236 @@
 import React from "react";
+import { Prompt } from "../Prompt";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+
+interface Module6ContentProps {
+  onNext?: () => void;
+}
 
 export const Module6Intro = (
   <>
     <h3 className="text-xl font-bold text-gray-900 mb-4">
-      📚 Goal: Implement a functional prototype feature using your AI Coding
-      Assistants to accelerate the entire development cycle.
+      📚 Goal: Learn how to use prepared GitHub Copilot agents and Subagents to
+      offload context, delegate focused work, and combine specialized results
+      inside a single IDE workflow.
     </h3>
+    <p className="text-gray-600 mb-4">
+      In the previous module, you worked with Custom Agents and autonomous
+      Coding Agent workflows. In this module, you will reuse prepared local
+      agents inside VS Code and learn how Subagents isolate repository research,
+      implementation, and review inside the same Copilot Chat request.
+    </p>
+    <p className="text-gray-600">
+      Subagents allow Copilot to delegate focused work into isolated contexts
+      and return only the useful result back to the main chat thread. This helps
+      reduce context overload, improves visibility into multi-step workflows,
+      and makes complex requests easier to structure and inspect.
+    </p>
   </>
 );
 
-export function Module6Content() {
+export function Module6Content({ onNext }: Module6ContentProps) {
   return (
     <div className="prose prose-indigo max-w-none">
-      <div className="mb-8">
-        <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-          🧠 Vibe Coding Developer's Framework
-        </h3>
-        <p className="text-gray-700 mb-4">
-          The Vibe Coding steps are your toolkit for maximizing AI productivity.
-        </p>
 
-        <ul className="list-disc list-inside space-y-3 text-gray-700">
-          <li>
-            <strong>Process Guardrails:</strong> You can adjust these steps or
-            substitute them based on your own experimentation and experience,
-            but{" "}
-            <strong>
-              you must ensure that you guard the process and clearly define
-              milestones
-            </strong>{" "}
-            to maintain code quality and risk mitigation.
-          </li>
-          <li>
-            <strong>AI Tool Flexibility:</strong> While this training is
-            designed to strengthen your expertise in{" "}
-            <strong>GitHub Copilot</strong>, you have full flexibility on AI
-            tools. Feel free to enhance your workflow by integrating other
-            generative AI tools.
-          </li>
+      {/* Version Requirement */}
+      <div className="bg-amber-50 border border-amber-200 p-5 rounded-lg mb-8">
+        <h3 className="text-base font-bold text-amber-800 mb-3 flex items-center gap-2">
+          ⚠️ Version Requirement
+        </h3>
+        <ul className="list-disc list-inside space-y-1 text-amber-900 text-sm">
+          <li><strong>VS Code 1.109 or newer</strong></li>
+          <li>Current GitHub Copilot and GitHub Copilot Chat extensions</li>
+          <li><strong><code>chat.customAgentInSubagent.enabled</code></strong> enabled</li>
+          <li><strong><code>runSubagent</code></strong> enabled in Copilot Chat tools</li>
         </ul>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 relative">
-        {/* Connecting line for desktop */}
-        <div className="hidden md:block absolute top-8 left-0 w-full h-0.5 bg-indigo-100 -z-10 transform translate-y-4"></div>
-
-        <div className="bg-white border border-gray-200 p-6 rounded-lg shadow-sm relative">
-          <div className="absolute -top-4 left-6 bg-indigo-600 text-white px-3 py-1 rounded-full text-sm font-bold shadow-sm">
-            Phase I
-          </div>
-          <h4 className="text-xl font-bold text-indigo-700 mt-2 mb-3">
-            Vision & Context Architecture
-          </h4>
-          <p className="text-gray-600 text-sm mb-3">
-            This phase requires <strong>structured thinking</strong> to define
-            the Product Requirements and Context to preemptively set standards.
-          </p>
-          <ul className="list-disc list-inside space-y-2 text-gray-900 text-sm">
-            <li>Do not start coding until the vision is clear.</li>
-            <li>
-              Break the problem down into the four thinking levels: Logical,
-              Analytical, Computational, Procedural.
-            </li>
-            <li>Always provide the AI with the most detail.</li>
-          </ul>
-        </div>
-
-        <div className="bg-white border border-gray-200 p-6 rounded-lg shadow-sm relative">
-          <div className="absolute -top-4 left-6 bg-indigo-600 text-white px-3 py-1 rounded-full text-sm font-bold shadow-sm">
-            Phase II
-          </div>
-          <h4 className="text-xl font-bold text-indigo-700 mt-2 mb-3">
-            Standards & Quality Execution
-          </h4>
-          <p className="text-gray-600 text-sm mb-3">
-            This phase integrates the actual building of the code with risk
-            mitigation.
-          </p>
-          <ul className="list-disc list-inside space-y-2 text-gray-900 text-sm">
-            <li>
-              Enforce standards by explicitly instructing the AI on the required
-              Frameworks and language standards.
-            </li>
-            <li>
-              Create a checkpoint (commit) whenever a major function or test
-              passes, allowing for a quick rollback.
-            </li>
-          </ul>
-        </div>
-
-        <div className="bg-white border border-gray-200 p-6 rounded-lg shadow-sm relative">
-          <div className="absolute -top-4 left-6 bg-indigo-600 text-white px-3 py-1 rounded-full text-sm font-bold shadow-sm">
-            Phase III
-          </div>
-          <h4 className="text-xl font-bold text-indigo-700 mt-2 mb-3">
-            Iteration & Self-Correction Loop
-          </h4>
-          <p className="text-gray-600 text-sm mb-3">
-            This phase is where systematic engineering skills are applied
-            through continuous validation and refinement.
-          </p>
-          <ul className="list-disc list-inside space-y-2 text-gray-900 text-sm">
-            <li>Treat the AI like a mentor.</li>
-            <li>
-              Use the Debugging principle by providing the full error message
-              and file context to guide the AI to an efficient self-correction.
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div className="bg-white border border-gray-200 p-6 rounded-lg mb-8">
-        <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-          🚀 The Challenge: The Integrated Workflow
-        </h3>
-        <p className="text-gray-600 mb-4">
-          <strong>Mission:</strong> <strong>Be creative!</strong> Choose a
-          business-related problem to solve and implement the core
-          functionality. This is your chance to{" "}
-          <strong>dive into a new technology</strong> to truly feel the power of
-          AI assistance. Guide your chosen AI pair programmer through the entire
-          software development lifecycle to implement your feature.
+      {/* Why Subagents Matter */}
+      <div className="bg-white border border-gray-200 p-6 rounded-lg mb-8 shadow-sm">
+        <h3 className="text-xl font-bold text-gray-900 mb-4">🧠 Why Subagents Matter</h3>
+        <p className="text-gray-700 mb-4">
+          Subagents are useful when one chat session would otherwise become noisy or overloaded.
+          They let Copilot offload focused work into isolated contexts, bring back only the
+          relevant result, and keep the main thread easier to understand.
         </p>
-
-        <ul className="list-disc list-inside space-y-2 text-gray-600">
-          <li>
-            <strong>Start</strong> by defining and structuring your vision.
-          </li>
-          <li>
-            <strong>Generate</strong> the code, tests, and documentation,
-            ensuring you fuel the AI with context and rules.
-          </li>
-          <li>
-            <strong>Finish</strong> by using the debugging principles to correct
-            at least one intentional error and committing your final work.
-          </li>
+        <p className="text-gray-700 mb-3 font-semibold">Typical examples:</p>
+        <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
+          <li><strong>Research</strong> → inspect the codebase and identify patterns</li>
+          <li><strong>Implementation</strong> → make focused edits</li>
+          <li><strong>Review</strong> → validate correctness, maintainability, type hints, and tests</li>
         </ul>
+        <div className="bg-indigo-50 border border-indigo-100 rounded-md p-4 mt-4">
+          <p className="text-indigo-800 text-sm font-semibold mb-1">⭐ Key Takeaway</p>
+          <p className="text-indigo-700 text-sm">
+            Subagents let Copilot break one complex request into specialized internal runs while
+            preserving one coherent top-level workflow. This lets you offload context, use
+            specialized worker agents, experiment with different worker models, and inspect what
+            each worker contributed back to the final answer.
+          </p>
+        </div>
       </div>
 
-      <div className="bg-white border border-gray-200 p-6 rounded-lg shadow-sm">
+      {/* Exercises Table */}
+      <h2 className="text-2xl font-bold text-gray-900 mb-4">Exercises</h2>
+      <div className="overflow-x-auto border rounded-lg mb-8">
+        <table className="min-w-full divide-y divide-gray-200">
+          <thead className="bg-gray-50">
+            <tr>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Step</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Feature</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Instructions</th>
+            </tr>
+          </thead>
+          <tbody className="bg-white divide-y divide-gray-200">
+            <tr>
+              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">6.1</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Enable Subagents</td>
+              <td className="px-6 py-4 text-sm text-gray-600">
+                Open <strong>Copilot Chat</strong>, switch the mode picker to <strong>Agent</strong>, open the{" "}
+                <strong>Tools</strong> menu, and enable <strong><code>runSubagent</code></strong>. Also verify
+                the setting <strong>Chat &gt; Agent in Subagent</strong> (<code>chat.customAgentInSubagent.enabled</code>) is enabled.
+              </td>
+            </tr>
+            <tr>
+              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">6.2</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Review Prepared Agents</td>
+              <td className="px-6 py-4 text-sm text-gray-600">
+                Review the prepared agents in <strong><code>.github/agents</code></strong>:{" "}
+                <code>FeatureBuilder</code>, <code>RepoResearcher</code>, <code>Implementer</code>, and{" "}
+                <code>Reviewer</code>. Focus on each agent's role, tools, and model configuration.
+              </td>
+            </tr>
+            <tr>
+              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">6.3</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Use the Coordinator</td>
+              <td className="px-6 py-4 text-sm text-gray-600">
+                In Copilot Chat, keep the mode picker on <strong>Agent</strong> and select{" "}
+                <strong>Feature Builder</strong> from the custom agent picker.
+              </td>
+            </tr>
+            <tr>
+              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">6.4</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Run a Structured Task</td>
+              <td className="px-6 py-4 text-sm text-gray-600">
+                <strong>Chat:</strong>
+                <Prompt>
+                  Build a new endpoint to change task status. Use Repo Researcher as a subagent to
+                  locate the FastAPI structure and current status handling. Then use Implementer as a
+                  subagent to add the endpoint. Then use Reviewer as a subagent to review correctness,
+                  typing, and tests. Finish with a concise summary, risks, and follow-up.
+                </Prompt>
+              </td>
+            </tr>
+            <tr>
+              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">6.5</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Inspect the Execution</td>
+              <td className="px-6 py-4 text-sm text-gray-600">
+                Expand the collapsed tool calls and identify which subagent ran for each step.
+                Note what each one contributed back to the coordinator.
+              </td>
+            </tr>
+            <tr>
+              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">6.6</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Review the Reusable Prompt</td>
+              <td className="px-6 py-4 text-sm text-gray-600">
+                Open <strong><code>feature-builder.prompt.md</code></strong> and review how it
+                standardizes the same subagent workflow into a reusable slash command.
+              </td>
+            </tr>
+            <tr>
+              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">6.7</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Make One Meaningful Extension</td>
+              <td className="px-6 py-4 text-sm text-gray-600">
+                Extend the completed workflow with one improvement. Example ideas: add stronger
+                validation, improve the test, refine the response model, or improve the review criteria.
+              </td>
+            </tr>
+            <tr>
+              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">6.8</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Explore Freely</td>
+              <td className="px-6 py-4 text-sm text-gray-600">
+                Now go beyond the guided task. Change one worker agent, change one model, add a new
+                specialized subagent, or try a new feature request of your own. The goal is to observe
+                how orchestration changes result quality, visibility, and workflow feel.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      {/* Lesson Learned */}
+      <div className="bg-white border border-gray-200 p-6 rounded-lg mt-8 shadow-sm">
         <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-          🧠 Lesson Learned: Developer Guidance is the Key
+          🧠 Lesson Learned: Offloading Context Improves AI Collaboration
         </h3>
         <p className="text-gray-700 mb-4">
-          Vibe Coding confirms that{" "}
-          <strong>effective engineering thought</strong> is the key to
-          maximizing AI productivity.
+          Subagents introduce a practical engineering pattern for AI-assisted development:
         </p>
         <ul className="list-disc list-inside space-y-2 text-gray-700">
-          <li>
-            <strong>Developer's Role:</strong> Your role is to provide constant{" "}
-            <strong>guidance</strong>, not code. Be patient, point out the AI's
-            mistakes with full error messages, and guide it to self-correct.
-          </li>
-          <li>
-            <strong>Context is King:</strong> Always provide the full context
-            because <strong>better input equals better output</strong>.
-          </li>
+          <li><strong>Offload context</strong> so the main thread stays concise</li>
+          <li><strong>Specialize workers</strong> for research, implementation, and review</li>
+          <li><strong>Coordinate results</strong> in one final response</li>
+          <li><strong>Experiment deliberately</strong> with agent roles, models, and output formats</li>
         </ul>
+        <p className="text-gray-600 mt-4 text-sm">
+          This is the next step after Agentic Workflow: not only delegating work, but structuring
+          that delegation so it is easier to inspect, compare, and improve.
+        </p>
       </div>
+
+      {/* Go Further */}
+      <div className="bg-indigo-50 border border-indigo-100 p-6 rounded-lg mt-8">
+        <h3 className="text-lg font-bold text-indigo-900 mb-3">💡 Go Further</h3>
+        <p className="text-indigo-800 text-sm mb-3">
+          After completing the guided workflow, use the prepared agents as a starting point and
+          explore your own orchestration style. Try changing:
+        </p>
+        <ul className="list-disc list-inside space-y-1 text-indigo-700 text-sm">
+          <li>one worker agent</li>
+          <li>one model</li>
+          <li>one prompt structure</li>
+          <li>one output format</li>
+          <li>or one feature request</li>
+        </ul>
+        <p className="text-indigo-700 text-sm mt-3">
+          The goal is not to memorize one workflow, but to learn how to shape and inspect
+          multi-agent collaboration inside Copilot.
+        </p>
+      </div>
+
+      {/* References */}
       <div className="bg-gray-50 border border-gray-200 p-4 rounded-lg mt-8">
-        <h3 className="text-lg font-bold text-gray-900 mb-2">
-          💡 References & Tools
-        </h3>
-        <ul className="list-disc list-inside text-indigo-600">
+        <h3 className="text-lg font-bold text-gray-900 mb-2">💡 References &amp; Further Reading</h3>
+        <ul className="list-disc list-inside text-indigo-600 space-y-1">
           <li>
-            <a
-              href="https://replit.com/"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:underline"
-            >
-              Replit
+            <a href="https://code.visualstudio.com/docs/copilot/agents/subagents" target="_blank" rel="noreferrer" className="hover:underline">
+              VS Code: Subagents
             </a>
           </li>
           <li>
-            <a
-              href="https://cursor.com/"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:underline"
-            >
-              Cursor
+            <a href="https://code.visualstudio.com/updates/v1_109" target="_blank" rel="noreferrer" className="hover:underline">
+              VS Code Update 1.109
             </a>
           </li>
           <li>
-            <a
-              href="https://lovable.dev/"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:underline"
-            >
-              Lovable
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://claude.com/product/overview/"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:underline"
-            >
-              Claude
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://bolt.new/"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:underline"
-            >
-              Bolt.new
+            <a href="https://code.visualstudio.com/blogs/2026/02/05/multi-agent-development" target="_blank" rel="noreferrer" className="hover:underline">
+              VS Code Blog: Your Home for Multi-Agent Development
             </a>
           </li>
         </ul>
       </div>
+
+      {onNext && (
+        <div className="flex justify-end pt-4 mt-8">
+          <Button
+            onClick={onNext}
+            className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all rounded-xl flex items-center gap-2"
+          >
+            Go to Module VII <ArrowRight className="w-5 h-5" />
+          </Button>
+        </div>
+      )}
     </div>
   );
 }

@@ -7,6 +7,7 @@ import {
   Bot,
   LayoutTemplate,
   Sparkles,
+  Network,
 } from "lucide-react";
 import { ModulePrereq } from "@/components/training/ModulePrereq";
 import { ModulePlaceholder } from "@/components/training/ModulePlaceholder";
@@ -38,6 +39,10 @@ import {
   Module6Content,
   Module6Intro,
 } from "@/components/training/modules/Module6Content";
+import {
+  Module7Content,
+  Module7Intro,
+} from "@/components/training/modules/Module7Content";
 
 type TabId =
   | "prereq"
@@ -46,7 +51,8 @@ type TabId =
   | "module3"
   | "module4"
   | "module5"
-  | "module6";
+  | "module6"
+  | "module7";
 
 interface Tab {
   id: TabId;
@@ -107,10 +113,18 @@ const tabs: Tab[] = [
   },
   {
     id: "module6",
-    label: "Module VI (Optional)",
+    label: "Module VI",
+    topic: "Subagents",
+    icon: <Network className="w-4 h-4" />,
+    title: "Module VI: Subagents",
+    difficulty: "Advanced",
+  },
+  {
+    id: "module7",
+    label: "Module VII (Optional)",
     topic: "Vibe Coding",
     icon: <Sparkles className="w-4 h-4" />,
-    title: "Module VI: Vibe Coding",
+    title: "Module VII: Vibe Coding",
     difficulty: "Advanced",
   },
 ];
@@ -185,12 +199,23 @@ export default function CopilotTraining() {
       case "module6":
         return (
           <ModulePlaceholder
-            title="Module VI: Vibe Coding"
+            title="Module VI: Subagents"
+            subtitle="Coordinating Specialized Agents in the IDE"
+            icon={<Network className="w-8 h-8 text-indigo-600" />}
+            difficulty="Advanced"
+            introContent={Module6Intro}
+            content={<Module6Content onNext={() => handleNext("module7")} />}
+          />
+        );
+      case "module7":
+        return (
+          <ModulePlaceholder
+            title="Module VII: Vibe Coding"
             subtitle="The Integrated Exploration Challenge"
             icon={<Sparkles className="w-8 h-8 text-indigo-600" />}
             difficulty="Advanced"
-            introContent={Module6Intro}
-            content={<Module6Content />}
+            introContent={Module7Intro}
+            content={<Module7Content />}
           />
         );
       default:

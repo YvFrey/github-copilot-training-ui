@@ -104,6 +104,7 @@ export function Module5Content({ onNext }: Module5ContentProps) {
           <li><a href="https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent" target="_blank" rel="noreferrer" className="hover:underline">About Coding Agents</a></li>
           <li><a href="https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/create-custom-agents" target="_blank" rel="noreferrer" className="hover:underline">Create and Configure Custom Agents</a></li>
           <li><a href="https://code.visualstudio.com/docs/copilot/copilot-coding-agent#_method-2-delegate-from-chat" target="_blank" rel="noreferrer" className="hover:underline">Delegate from Copilot Chat (VS Code)</a></li>
+          <li><a href="https://github.com/github/awesome-copilot/" target="_blank" rel="noreferrer" className="hover:underline">Awesome GitHub Copilot</a> — Community collection of agents, instructions, workflows, and plugins.</li>
         </ul>
       </div>
 
