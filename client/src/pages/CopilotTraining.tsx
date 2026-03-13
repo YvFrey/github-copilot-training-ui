@@ -7,6 +7,7 @@ import {
   Bot,
   LayoutTemplate,
   Sparkles,
+  Network,
 } from "lucide-react";
 import { ModulePrereq } from "@/components/training/ModulePrereq";
 import { ModulePlaceholder } from "@/components/training/ModulePlaceholder";
@@ -38,6 +39,10 @@ import {
   Module6Content,
   Module6Intro,
 } from "@/components/training/modules/Module6Content";
+import {
+  Module7Content,
+  Module7Intro,
+} from "@/components/training/modules/Module7Content";
 
 type TabId =
   | "prereq"
@@ -46,7 +51,8 @@ type TabId =
   | "module3"
   | "module4"
   | "module5"
-  | "module6";
+  | "module6"
+  | "module7";
 
 interface Tab {
   id: TabId;
@@ -107,10 +113,18 @@ const tabs: Tab[] = [
   },
   {
     id: "module6",
-    label: "Module VI (Optional)",
+    label: "Module VI",
+    topic: "Subagents",
+    icon: <Network className="w-4 h-4" />,
+    title: "Module VI: Subagents",
+    difficulty: "Advanced",
+  },
+  {
+    id: "module7",
+    label: "Module VII (Optional)",
     topic: "Vibe Coding",
     icon: <Sparkles className="w-4 h-4" />,
-    title: "Module VI: Vibe Coding",
+    title: "Module VII: Vibe Coding",
     difficulty: "Advanced",
   },
 ];
@@ -185,12 +199,23 @@ export default function CopilotTraining() {
       case "module6":
         return (
           <ModulePlaceholder
-            title="Module VI: Vibe Coding"
+            title="Module VI: Subagents"
+            subtitle="Coordinating Specialized Agents in the IDE"
+            icon={<Network className="w-8 h-8 text-indigo-600" />}
+            difficulty="Advanced"
+            introContent={Module6Intro}
+            content={<Module6Content onNext={() => handleNext("module7")} />}
+          />
+        );
+      case "module7":
+        return (
+          <ModulePlaceholder
+            title="Module VII: Vibe Coding"
             subtitle="The Integrated Exploration Challenge"
             icon={<Sparkles className="w-8 h-8 text-indigo-600" />}
             difficulty="Advanced"
-            introContent={Module6Intro}
-            content={<Module6Content />}
+            introContent={Module7Intro}
+            content={<Module7Content />}
           />
         );
       default:
@@ -200,7 +225,7 @@ export default function CopilotTraining() {
 
   return (
     <div className="min-h-screen bg-gray-50/50 p-4 sm:p-6 lg:p-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-[84rem] mx-auto">
         {/* Header */}
         <header className="text-center mb-10 pt-6">
           <div className="inline-flex items-center justify-center p-3 bg-indigo-100 rounded-2xl mb-4">
@@ -266,11 +291,11 @@ export default function CopilotTraining() {
                     className={cn(
                       "text-[10px] px-2 py-0.5 rounded-full border",
                       tab.difficulty === "Beginner" &&
-                        "bg-green-50 text-green-600 border-green-100",
+                      "bg-green-50 text-green-600 border-green-100",
                       tab.difficulty === "Intermediate" &&
-                        "bg-blue-50 text-blue-600 border-blue-100",
+                      "bg-blue-50 text-blue-600 border-blue-100",
                       tab.difficulty === "Advanced" &&
-                        "bg-purple-50 text-purple-600 border-purple-100",
+                      "bg-purple-50 text-purple-600 border-purple-100",
                     )}
                   >
                     {tab.difficulty}

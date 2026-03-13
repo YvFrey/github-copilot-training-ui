@@ -107,9 +107,15 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
             },
             {
               title: "Visual Studio Code",
-              desc: "Recommended to use latest stable VS Code to ensure agent/chat features are available",
+              desc: "Version 1.111 or newer is required.",
               link: "https://code.visualstudio.com/download",
               linkText: "Install VS Code",
+            },
+            {
+              title: "GitHub Copilot Chat",
+              desc: "Version 0.39.0 or newer is required for subagent features.",
+              link: "https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat",
+              linkText: "Install GitHub Copilot Chat",
             },
             {
               title: "Required Extensions",
@@ -181,7 +187,8 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
             "Module III — Version Control & Quality: Git Workflow Integration",
             "Module IV — Testing Framework: Automating Tests and Policy Checks",
             "Module V — Agentic Workflows: Delegating and Supervising Autonomous Agents",
-            "Module VI — Vibe Coding: The Integrated Exploration Challenge",
+            "Module VI — Subagents: Coordinating Specialized Agents in the IDE",
+            "Module VII — Vibe Coding: The Integrated Exploration Challenge (Optional)",
           ].map((module, idx) => (
             <li key={idx} className="flex items-start text-gray-700 text-lg">
               <span className="w-2 h-2 bg-indigo-500 rounded-full mt-2.5 mr-3 flex-shrink-0" />
@@ -220,12 +227,12 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
           <ul className="space-y-2 text-sm text-gray-700 font-mono">
             <li className="flex items-center">
               <span className="w-2 h-2 bg-indigo-400 rounded-full mr-2"></span>
-              VS Code Version: 1.106.3
+              VS Code Version: 1.111
             </li>
             <li className="flex items-center">
               <span className="w-2 h-2 bg-indigo-400 rounded-full mr-2"></span>
               GitHub Copilot Extension: github.copilot@1.388.0,
-              github.copilot-chat@0.33.3
+              github.copilot-chat@0.39.0
             </li>
             <li className="flex items-center">
               <span className="w-2 h-2 bg-indigo-400 rounded-full mr-2"></span>
