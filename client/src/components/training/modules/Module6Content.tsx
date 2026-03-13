@@ -39,10 +39,9 @@ export function Module6Content({ onNext }: Module6ContentProps) {
           ⚠️ Version Requirement
         </h3>
         <ul className="list-disc list-inside space-y-1 text-amber-900 text-sm">
-          <li><strong>VS Code 1.109 or newer</strong></li>
-          <li>Current GitHub Copilot and GitHub Copilot Chat extensions</li>
+          <li><strong>VS Code 1.111 or newer</strong></li>
+          <li>Latest GitHub Copilot Chat extension, <strong>0.39.0 or newer</strong></li>
           <li><strong><code>chat.customAgentInSubagent.enabled</code></strong> enabled</li>
-          <li><strong><code>runSubagent</code></strong> enabled in Copilot Chat tools</li>
         </ul>
       </div>
 
@@ -87,8 +86,7 @@ export function Module6Content({ onNext }: Module6ContentProps) {
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">6.1</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Enable Subagents</td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                Open <strong>Copilot Chat</strong>, switch the mode picker to <strong>Agent</strong>, open the{" "}
-                <strong>Tools</strong> menu, and enable <strong><code>runSubagent</code></strong>. Also verify
+                Open <strong>Copilot Chat</strong>, switch the mode picker to <strong>Agent</strong>, and verify
                 the setting <strong>Chat &gt; Agent in Subagent</strong> (<code>chat.customAgentInSubagent.enabled</code>) is enabled.
               </td>
             </tr>
@@ -206,11 +204,6 @@ export function Module6Content({ onNext }: Module6ContentProps) {
           <li>
             <a href="https://code.visualstudio.com/docs/copilot/agents/subagents" target="_blank" rel="noreferrer" className="hover:underline">
               VS Code: Subagents
-            </a>
-          </li>
-          <li>
-            <a href="https://code.visualstudio.com/updates/v1_109" target="_blank" rel="noreferrer" className="hover:underline">
-              VS Code Update 1.109
             </a>
           </li>
           <li>
