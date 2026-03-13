@@ -225,7 +225,7 @@ export default function CopilotTraining() {
 
   return (
     <div className="min-h-screen bg-gray-50/50 p-4 sm:p-6 lg:p-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-[84rem] mx-auto">
         {/* Header */}
         <header className="text-center mb-10 pt-6">
           <div className="inline-flex items-center justify-center p-3 bg-indigo-100 rounded-2xl mb-4">
