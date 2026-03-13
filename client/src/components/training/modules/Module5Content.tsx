@@ -10,11 +10,11 @@ interface Module5ContentProps {
 export const Module5Intro = (
   <>
     <h3 className="text-xl font-bold text-gray-900 mb-4">📚 Goal: Master the creation of a Custom Agent and delegate autonomous, multi-step tasks using both the GitHub Issue and the Copilot Chat interface.</h3>
-    
+
     <p className="text-gray-600 mb-4">
       <strong>Copilot Coding Agents 🤖 are autonomous AI assistants</strong> designed to perform multi-step, iterative coding tasks in an <strong>asynchronous</strong> manner. They are the only Copilot tools that can run, commit, and open PRs in a loop without human intervention. Agent workflows can be triggered in multiple ways via GitHub UI, GitHub CLI or Chat.
     </p>
-    
+
     <p className="text-gray-600">
       <strong>Custom Agents 🤖 are user-defined agent profiles</strong> that encapsulate a specific workflow or rule set, ensuring specialized, consistent task execution.
     </p>
@@ -25,7 +25,7 @@ export function Module5Content({ onNext }: Module5ContentProps) {
   return (
     <div className="prose prose-indigo max-w-none">
       <h2 className="text-2xl font-bold text-gray-900 mb-4">Exercises</h2>
-      
+
       <div className="overflow-x-auto border rounded-lg">
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
@@ -40,7 +40,7 @@ export function Module5Content({ onNext }: Module5ContentProps) {
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">5.1</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Agent Profile</td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                1. <strong>Review</strong> the custom agent profile: <strong>.github/agents/MypyFixer.md</strong>.<br/>
+                1. <strong>Review</strong> the custom agent profile: <strong>.github/agents/MypyFixer.md</strong>.<br />
                 2. Confirm there are Mypy type errors present in the codebase (e.g., in <code>app/main.py</code>) but do not fix them.
               </td>
             </tr>
@@ -48,8 +48,8 @@ export function Module5Content({ onNext }: Module5ContentProps) {
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">5.2</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">Delegation via GitHub Issue</td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                1. Go to your repository's <strong>Issues</strong> tab on GitHub and create a new issue. e.g. titled: <Prompt>@copilot Request: Fix All Outstanding Mypy Errors of the App</Prompt><br/>
-                2. <strong>Assign</strong> this new issue to the <strong><code>@copilot</code></strong> agent.<br/>
+                1. Go to your repository's <strong>Issues</strong> tab on GitHub and create a new issue. e.g. titled: <Prompt>@copilot Request: Fix All Outstanding Mypy Errors of the App</Prompt><br />
+                2. <strong>Assign</strong> this new issue to the <strong><code>@copilot</code></strong> agent.<br />
                 3. Use the custom agent profile dropdown to select <strong><code>MypyFixer</code></strong>.
               </td>
             </tr>
@@ -110,7 +110,7 @@ export function Module5Content({ onNext }: Module5ContentProps) {
 
       {onNext && (
         <div className="flex justify-end pt-4 mt-8">
-          <Button 
+          <Button
             onClick={onNext}
             className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all rounded-xl flex items-center gap-2"
           >

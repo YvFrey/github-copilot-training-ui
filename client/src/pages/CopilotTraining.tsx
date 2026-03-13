@@ -291,11 +291,11 @@ export default function CopilotTraining() {
                     className={cn(
                       "text-[10px] px-2 py-0.5 rounded-full border",
                       tab.difficulty === "Beginner" &&
-                        "bg-green-50 text-green-600 border-green-100",
+                      "bg-green-50 text-green-600 border-green-100",
                       tab.difficulty === "Intermediate" &&
-                        "bg-blue-50 text-blue-600 border-blue-100",
+                      "bg-blue-50 text-blue-600 border-blue-100",
                       tab.difficulty === "Advanced" &&
-                        "bg-purple-50 text-purple-600 border-purple-100",
+                      "bg-purple-50 text-purple-600 border-purple-100",
                     )}
                   >
                     {tab.difficulty}
