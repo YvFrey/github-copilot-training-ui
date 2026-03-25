@@ -1,6 +1,6 @@
 import { build as esbuild } from "esbuild";
 import { build as viteBuild } from "vite";
-import { rm, readFile } from "fs/promises";
+import { rm, readFile, rename } from "fs/promises";
 import { execSync } from "child_process";
 
 // server deps to bundle to reduce openat(2) syscalls
@@ -64,6 +64,22 @@ async function buildAll() {
 
   console.log("building standalone HTML files...");
   execSync("npx vite build -c vite.singlefile.config.ts", { stdio: "inherit" });
+
+  console.log("generating prerequisite HTML...");
+  execSync("tsx script/generate-prereq-html.ts", { stdio: "inherit" });
+
+  console.log("renaming standalone HTML files to final names...");
+  // Rename in dist_single only
+  await rename(
+    "dist_single/index.html",
+    "dist_single/AIEngineeringCopilotTraining.html"
+  );
+
+  console.log("✓ Build complete!");
+  console.log("  dist/ - Full server + client application");
+  console.log(
+    "  dist_single/ - Standalone HTML files (AIEngineeringCopilotTraining.html and AIEngineeringCopilotPrerequisite.html)"
+  );
 }
 
 buildAll().catch((err) => {

@@ -4,3 +4,7 @@ dist
 server/public
 vite.config.ts.*
 *.tar.gz
+
+# Ignore generated assets in dist_single, but commit the HTML files
+dist_single/favicon.png
+dist_single/opengraph.jpg
