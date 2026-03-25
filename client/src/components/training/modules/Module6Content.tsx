@@ -10,22 +10,49 @@ interface Module6ContentProps {
 export const Module6Intro = (
   <>
     <h3 className="text-xl font-bold text-gray-900 mb-4">
-      📚 Goal: Master the use of GitHub Copilot Subagents to streamline workflows
+      📚 Goal: Master the use of Subagents to streamline workflows
       by isolating tasks, delegating specialized work, and integrating results
-      seamlessly within the IDE.
+      seamlessly.
     </h3>
     <p className="text-gray-600 mb-4">
       In the previous module, you worked with Custom Agents and autonomous
-      Coding Agent workflows. In this module, you will reuse prepared local
-      agents inside VS Code and learn how Subagents isolate repository research,
+      Coding Agent workflows. In this module, you will reuse local
+      agents inside your IDE and learn how Subagents isolate repository research,
       implementation, and review inside the same Copilot Chat request.
     </p>
-    <p className="text-gray-600">
+    <p className="text-gray-600 mb-4">
       Subagents allow Copilot to delegate focused work into isolated contexts
       and return only the useful result back to the main chat thread. This helps
       reduce context overload, improves visibility into multi-step workflows,
       and makes complex requests easier to structure and inspect.
     </p>
+
+    <h3 className="text-xl font-bold text-gray-900 mb-4 mt-6">🤖 Why Subagents Matter</h3>
+    <p className="text-gray-600 mb-4">
+      Subagents help manage complexity when a single chat session becomes overloaded or hard to follow. Instead of mixing everything into one conversation, they allow tasks to be handled in isolation and return only the relevant results. They are especially useful for separating concerns, such as:
+    </p>
+    <ul className="list-disc list-inside space-y-2 text-gray-600 mb-4">
+      <li><strong>Research</strong> → exploring the codebase and identifying patterns</li>
+      <li><strong>Implementation</strong> → making targeted changes</li>
+      <li><strong>Review</strong> → validating correctness, maintainability, typing, and tests</li>
+    </ul>
+    <p className="text-gray-600 mb-3">
+      <strong>🚨 When working on complex tasks, two common issues arise:</strong>
+    </p>
+    <ul className="list-disc list-inside space-y-2 text-gray-600 mb-4">
+      <li>A single, oversized prompt overwhelms the context</li>
+      <li>Multiple fragmented messages make the workflow harder to track</li>
+    </ul>
+    <p className="text-gray-600 mb-3">
+      <strong>💡 Subagents address both problems by:</strong>
+    </p>
+    <ul className="list-disc list-inside space-y-2 text-gray-600">
+      <li>Maintaining a single coherent workflow without fragmentation</li>
+      <li>Offloading detailed context away from the main thread</li>
+      <li>Assigning specialized agents to distinct responsibilities</li>
+      <li>Allowing experimentation with different worker strategies</li>
+      <li>Making it easier to inspect and understand each agent's contribution—especially the final output</li>
+    </ul>
   </>
 );
 
@@ -33,58 +60,16 @@ export function Module6Content({ onNext }: Module6ContentProps) {
   return (
     <div className="prose prose-indigo max-w-none">
 
-      {/* Version Requirement */}
-      <div className="bg-amber-50 border border-amber-200 p-5 rounded-lg mb-8">
-        <h3 className="text-base font-bold text-amber-800 mb-3 flex items-center gap-2">
-          ⚠️ Version Requirement
-        </h3>
-        <ul className="list-disc list-inside space-y-1 text-amber-900 text-sm">
-          <li><strong>VS Code 1.111 or newer</strong></li>
-          <li>Latest GitHub Copilot Chat extension, <strong>0.39.0 or newer</strong></li>
-          <li><strong><code>chat.customAgentInSubagent.enabled</code></strong> enabled</li>
-        </ul>
-      </div>
-
-      {/* Why Subagents Matter */}
-      <div className="bg-white border border-gray-200 p-6 rounded-lg mb-8 shadow-sm">
-        <h3 className="text-xl font-bold text-gray-900 mb-4">🧠 Why Subagents Matter</h3>
-        <p className="text-gray-700 mb-4">
-          Subagents are useful when one chat session would otherwise become noisy or overloaded.
-          They let Copilot isolate focused tasks, bring back only the relevant result, and keep
-          the main thread easier to understand.
-        </p>
-        <p className="text-gray-700 mb-3 font-semibold">Typical examples:</p>
-        <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
-          <li><strong>Research</strong> → inspect the codebase and identify patterns</li>
-          <li><strong>Implementation</strong> → make focused edits</li>
-          <li><strong>Review</strong> → validate correctness, maintainability, type hints, and tests</li>
-        </ul>
-        <div className="bg-indigo-50 border border-indigo-100 rounded-md p-4 mt-4">
-          <p className="text-indigo-800 text-sm font-semibold mb-1">⭐ Key Takeaway</p>
-          <p className="text-indigo-700 text-sm mb-3">
-            Subagents let Copilot break one complex request into specialized internal runs while
-            preserving one coherent top-level workflow. This solves two common problems at once:
-          </p>
-          <ul className="list-disc list-inside space-y-1 text-indigo-700 text-sm mb-3">
-            <li>without subagents, you often write <strong>one very large prompt</strong> that overloads the main context</li>
-            <li>or you split the work into <strong>multiple chat messages</strong>, which increases the number of requests</li>
-          </ul>
-          <p className="text-indigo-700 text-sm mb-3">
-            Subagents provide a third option: one top-level request can coordinate multiple focused
-            internal runs, offload context from the main thread, and bring back only the useful
-            results in a more organized way. This also makes it easier to:
-          </p>
-          <ul className="list-disc list-inside space-y-1 text-indigo-700 text-sm">
-            <li>isolate task-specific work instead of pushing every detail into the main chat thread</li>
-            <li>use specialized agents for different responsibilities</li>
-            <li>experiment with different worker models</li>
-            <li>inspect what each worker contributed back to the final answer</li>
-          </ul>
-        </div>
-      </div>
-
       {/* Exercises Table */}
       <h2 className="text-2xl font-bold text-gray-900 mb-4">Exercises</h2>
+
+      {/* Version Requirement */}
+      <div className="bg-amber-50 border border-amber-200 p-3 rounded-lg mb-8">
+        <p className="text-amber-900 text-sm font-medium">
+          ⚠️ Make sure <strong><code>chat.customAgentInSubagent.enabled</code></strong> is enabled.
+        </p>
+      </div>
+
       <div className="overflow-x-auto border rounded-lg mb-8">
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
@@ -180,14 +165,14 @@ export function Module6Content({ onNext }: Module6ContentProps) {
           <li><strong>Coordinate results</strong> in one final response</li>
           <li><strong>Experiment deliberately</strong> with agent roles, models, and output formats</li>
         </ul>
-        <p className="text-gray-600 text-sm mb-3">
+        <p className="text-gray-600 mb-3">
           In the previous module, you learned about Agentic Workflows: delegating work to a single
           autonomous agent handling a task end-to-end. Subagents build on this foundation: not only
           delegating work, but structuring that delegation across specialized roles so you can
           inspect, compare, and improve each step independently. This compartmentalization makes
           multi-step workflows transparent and maintainable.
         </p>
-        <p className="text-gray-600 text-sm">
+        <p className="text-gray-600">
           A practical Copilot-specific takeaway is that subagents help you avoid the usual tradeoff
           between one oversized prompt that overloads context, or many separate messages that
           fragment the workflow. Instead, you can keep one coordinated top-level interaction while
@@ -203,15 +188,15 @@ export function Module6Content({ onNext }: Module6ContentProps) {
           explore your own orchestration style. Try changing:
         </p>
         <ul className="list-disc list-inside space-y-1 text-indigo-700 text-sm">
-          <li>one worker agent</li>
-          <li>one model</li>
-          <li>one prompt structure</li>
-          <li>one output format</li>
-          <li>or one feature request</li>
+          <li>Worker agents</li>
+          <li>Models</li>
+          <li>Prompt structure</li>
+          <li>Output format</li>
+          <li>Feature request</li>
         </ul>
         <p className="text-indigo-700 text-sm mt-3">
           The goal is not to memorize one workflow, but to learn how to shape and inspect
-          multi-agent collaboration inside Copilot.
+          multi-agent collaboration.
         </p>
       </div>
 
