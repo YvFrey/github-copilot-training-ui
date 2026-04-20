@@ -20,9 +20,14 @@ export function Module1Content({ onNext }: Module1ContentProps) {
   return (
     <div className="prose prose-indigo max-w-none">
       <h2 className="text-2xl font-bold text-gray-900 mb-4">
-        Exercises: Explicit Context-Awareness
+        Exercises
       </h2>
-
+          {/* Choose the Chat Participant */}
+      <div className="bg-amber-50 border border-amber-200 p-3 rounded-lg mb-8">
+        <p className="text-amber-900 text-sm font-medium">
+          ⚠️ Be aware which chat participant you select. Agent mode is often selected by default. We start by exploring the Ask mode. Each task indicates which one to choose.
+        </p>
+      </div>
       <div className="overflow-x-auto border rounded-lg">
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">

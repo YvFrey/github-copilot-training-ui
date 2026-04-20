@@ -33,10 +33,7 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
 
         <div className="prose prose-indigo max-w-none">
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            This hands-on training helps engineers move beyond basic code
-            completion by teaching practical use of GitHub Copilot for
-            contextual guidance, agentic workflows, and safe automation to
-            accelerate delivery and improve code quality.
+            This hands-on training helps engineers move beyond basic code completion by teaching practical use of GitHub Copilot for contextual guidance, agentic workflows, and safe automation to accelerate delivery and improve code quality.
           </p>
 
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
@@ -49,17 +46,11 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
             >
               FastAPI application
             </a>
-            , manageable by any engineer familiar with foundational programming
-            concepts. We expect everyone to explore the capabilities and
-            limitations of GitHub Copilot. You'll learn how to prompt
-            effectively, use agentic features safely, and validate generated
-            code.
+            , manageable by any engineer familiar with foundational programming concepts. You don't need to be familiar with Python—the focus is not on the programming language, but on how to effectively work with AI tools. We expect everyone to explore the capabilities and limitations of GitHub Copilot. You'll learn how to prompt effectively, use agentic features safely, and validate generated code.
           </p>
 
           <p className="text-gray-600 text-lg leading-relaxed">
-            We encourage you to discuss actively with your colleagues during the
-            session, and manifest your new learned skills by continuing to
-            practice the concepts outside of the classroom.
+            We encourage you to actively discuss with your colleagues during the session and continue practicing these concepts outside the classroom. AI is here to accelerate your workflow and is becoming an essential part of modern engineering.
           </p>
         </div>
       </div>
@@ -106,6 +97,12 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
               ),
             },
             {
+              title: "Install Python",
+              desc: "Python 3.9 or newer is required.",
+              link: "https://www.python.org/downloads/",
+              linkText: "Install Python",
+            },
+            {
               title: "Visual Studio Code",
               desc: "Version 1.111 or newer is required.",
               link: "https://code.visualstudio.com/download",
@@ -131,7 +128,7 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
             },
             {
               title: "Code Base",
-              desc: "Fork the course repository to your own GitHub account. Clone **your project** locally. This setup ensures you have all necessary permissions in GitHub when running your custom agents.",
+              desc: "Mirror fork the course repository to your own GitHub account (including all branches). Clone your project locally. This setup ensures you have all necessary permissions in GitHub when running your custom agents.",
               link: "https://github.com/YvFrey/github-copilot-training.git",
               linkText: "Training Repository",
             },
@@ -237,6 +234,10 @@ export function ModulePrereq({ onNext }: ModulePrereqProps) {
             <li className="flex items-center">
               <span className="w-2 h-2 bg-indigo-400 rounded-full mr-2"></span>
               Python Environment Manager (uv): 0.8.10
+            </li>
+            <li className="flex items-center">
+              <span className="w-2 h-2 bg-indigo-400 rounded-full mr-2"></span>
+              Python: 3.13
             </li>
           </ul>
         </div>
